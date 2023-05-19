@@ -18,10 +18,41 @@ functions:
   udafs: {}
   expressions: {}
 subgraphs: {}
-sqlModels: {}
+sqlModels:
+  .prophecy/metadata/sqlmodels/test_perf_model_1:
+    name: test_perf_model_1
+    description: null
+    author: abhisheks+e2etests@prophecy.io
+    files:
+    - models/test_perf_model_1.sql
+    - .prophecy/ide/models/test_perf_model_1.json
+    sqlDependencies:
+      models: []
+      datasets: []
+    createdAt: '2023-05-19 12:50:42'
+    modifiedAt: '2023-05-19 12:50:42'
 sqlMacros: {}
 sqlSeeds: {}
-sqlSources: {}
+sqlSources:
+  .prophecy/metadata/sqlsources/spark_catalog_qa_performance_database:
+    name: spark_catalog.qa_performance_database
+    description: null
+    author: abhisheks+e2etests@prophecy.io
+    files:
+    - prophecy-sources/sources.yml
+    createdAt: '2023-05-19 13:01:25'
+    modifiedAt: '2023-05-19 13:01:25'
+    tables:
+    - name: all_type_non_partitioned
+      description: null
+      author: abhisheks+e2etests@prophecy.io
+      createdAt: '2023-05-19 13:01:25'
+      modifiedAt: '2023-05-19 13:01:25'
+    - name: all_type_partitioned
+      description: null
+      author: abhisheks+e2etests@prophecy.io
+      createdAt: '2023-05-19 13:01:25'
+      modifiedAt: '2023-05-19 13:01:25'
 sqlUnreferencedSources: {}
 sqlPipeline:
   name: sqlPipeline
