@@ -913,10 +913,78 @@
       "ports" : {
         "inputs" : [ {
           "id" : "zxpKvMqv",
+          "schema" : {
+            "providerType" : "Databricks",
+            "fields" : [ {
+              "name" : "description_1",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "industry_1",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "level_1",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "size_1",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "line_code",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "value_1",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            } ]
+          },
           "slug" : "Join_2"
         } ],
         "outputs" : [ {
           "id" : "UbbNNh1w",
+          "schema" : {
+            "providerType" : "Databricks",
+            "fields" : [ {
+              "name" : "description_1",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "industry_1",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "level_1",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "size_1",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "line_code",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "value_1",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            } ]
+          },
           "slug" : "out"
         } ],
         "isCustomOutputSchema" : false
@@ -1006,10 +1074,608 @@
       "ports" : {
         "inputs" : [ {
           "id" : "ZRxxYgUDxFcbZ9K0AdkDO$$bCXvp4v-x79rpQ6L4wIRw",
+          "schema" : {
+            "providerType" : "Databricks",
+            "fields" : [ {
+              "name" : "Div_1",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Date_1",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "HomeTeam_1",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "AwayTeam_1",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "FTHG_1",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "FTAG_1",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "FTR_1",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "HTHG_1",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "HTAG_1",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "HTR_1",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Referee_1",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "HS_1",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "AS_1",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "HST_1",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "AST_1",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "HF_1",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "AF_1",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "HC_1",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "AC_1",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "HY_1",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "AY_1",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "HR_1",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "AR_1",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "B365H_1",
+              "dataType" : {
+                "type" : "Float"
+              }
+            }, {
+              "name" : "B365D_1",
+              "dataType" : {
+                "type" : "Float"
+              }
+            }, {
+              "name" : "B365A_1",
+              "dataType" : {
+                "type" : "Float"
+              }
+            }, {
+              "name" : "BWH_1",
+              "dataType" : {
+                "type" : "Float"
+              }
+            }, {
+              "name" : "BWD_1",
+              "dataType" : {
+                "type" : "Float"
+              }
+            }, {
+              "name" : "BWA_1",
+              "dataType" : {
+                "type" : "Float"
+              }
+            }, {
+              "name" : "IWH_1",
+              "dataType" : {
+                "type" : "Float"
+              }
+            }, {
+              "name" : "IWD_1",
+              "dataType" : {
+                "type" : "Float"
+              }
+            }, {
+              "name" : "IWA_1",
+              "dataType" : {
+                "type" : "Float"
+              }
+            }, {
+              "name" : "PSH_1",
+              "dataType" : {
+                "type" : "Float"
+              }
+            }, {
+              "name" : "PSD_1",
+              "dataType" : {
+                "type" : "Float"
+              }
+            }, {
+              "name" : "PSA_1",
+              "dataType" : {
+                "type" : "Float"
+              }
+            }, {
+              "name" : "WHH_1",
+              "dataType" : {
+                "type" : "Float"
+              }
+            }, {
+              "name" : "WHD_1",
+              "dataType" : {
+                "type" : "Float"
+              }
+            }, {
+              "name" : "WHA_1",
+              "dataType" : {
+                "type" : "Float"
+              }
+            }, {
+              "name" : "VCH_1",
+              "dataType" : {
+                "type" : "Float"
+              }
+            }, {
+              "name" : "VCD_1",
+              "dataType" : {
+                "type" : "Float"
+              }
+            }, {
+              "name" : "VCA_1",
+              "dataType" : {
+                "type" : "Float"
+              }
+            }, {
+              "name" : "Bb1X2_1",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "BbMxH_1",
+              "dataType" : {
+                "type" : "Float"
+              }
+            }, {
+              "name" : "BbAvH_1",
+              "dataType" : {
+                "type" : "Float"
+              }
+            }, {
+              "name" : "BbMxD_1",
+              "dataType" : {
+                "type" : "Float"
+              }
+            }, {
+              "name" : "BbAvD_1",
+              "dataType" : {
+                "type" : "Float"
+              }
+            }, {
+              "name" : "BbMxA_1",
+              "dataType" : {
+                "type" : "Float"
+              }
+            }, {
+              "name" : "BbAvA_1",
+              "dataType" : {
+                "type" : "Float"
+              }
+            }, {
+              "name" : "BbOU_1",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "BbMx_2_5",
+              "dataType" : {
+                "type" : "Float"
+              }
+            }, {
+              "name" : "BbAv_2_5",
+              "dataType" : {
+                "type" : "Float"
+              }
+            }, {
+              "name" : "BbAH_1",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "BbMxAHH_1",
+              "dataType" : {
+                "type" : "Float"
+              }
+            }, {
+              "name" : "BbAvAHH_1",
+              "dataType" : {
+                "type" : "Float"
+              }
+            }, {
+              "name" : "BbMxAHA_1",
+              "dataType" : {
+                "type" : "Float"
+              }
+            }, {
+              "name" : "BbAvAHA_1",
+              "dataType" : {
+                "type" : "Float"
+              }
+            }, {
+              "name" : "PSCH_1",
+              "dataType" : {
+                "type" : "Float"
+              }
+            }, {
+              "name" : "PSCD_1",
+              "dataType" : {
+                "type" : "Float"
+              }
+            }, {
+              "name" : "PSCA_1",
+              "dataType" : {
+                "type" : "Float"
+              }
+            } ]
+          },
           "slug" : "in0"
         } ],
         "outputs" : [ {
           "id" : "oHs4pxjyWIjNby2szinSW$$A_hseQbpnQ2-dNpmN1N1z",
+          "schema" : {
+            "providerType" : "Databricks",
+            "fields" : [ {
+              "name" : "Div_1",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Date_1",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "HomeTeam_1",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "AwayTeam_1",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "FTHG_1",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "FTAG_1",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "FTR_1",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "HTHG_1",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "HTAG_1",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "HTR_1",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Referee_1",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "HS_1",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "AS_1",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "HST_1",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "AST_1",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "HF_1",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "AF_1",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "HC_1",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "AC_1",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "HY_1",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "AY_1",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "HR_1",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "AR_1",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "B365H_1",
+              "dataType" : {
+                "type" : "Float"
+              }
+            }, {
+              "name" : "B365D_1",
+              "dataType" : {
+                "type" : "Float"
+              }
+            }, {
+              "name" : "B365A_1",
+              "dataType" : {
+                "type" : "Float"
+              }
+            }, {
+              "name" : "BWH_1",
+              "dataType" : {
+                "type" : "Float"
+              }
+            }, {
+              "name" : "BWD_1",
+              "dataType" : {
+                "type" : "Float"
+              }
+            }, {
+              "name" : "BWA_1",
+              "dataType" : {
+                "type" : "Float"
+              }
+            }, {
+              "name" : "IWH_1",
+              "dataType" : {
+                "type" : "Float"
+              }
+            }, {
+              "name" : "IWD_1",
+              "dataType" : {
+                "type" : "Float"
+              }
+            }, {
+              "name" : "IWA_1",
+              "dataType" : {
+                "type" : "Float"
+              }
+            }, {
+              "name" : "PSH_1",
+              "dataType" : {
+                "type" : "Float"
+              }
+            }, {
+              "name" : "PSD_1",
+              "dataType" : {
+                "type" : "Float"
+              }
+            }, {
+              "name" : "PSA_1",
+              "dataType" : {
+                "type" : "Float"
+              }
+            }, {
+              "name" : "WHH_1",
+              "dataType" : {
+                "type" : "Float"
+              }
+            }, {
+              "name" : "WHD_1",
+              "dataType" : {
+                "type" : "Float"
+              }
+            }, {
+              "name" : "WHA_1",
+              "dataType" : {
+                "type" : "Float"
+              }
+            }, {
+              "name" : "VCH_1",
+              "dataType" : {
+                "type" : "Float"
+              }
+            }, {
+              "name" : "VCD_1",
+              "dataType" : {
+                "type" : "Float"
+              }
+            }, {
+              "name" : "VCA_1",
+              "dataType" : {
+                "type" : "Float"
+              }
+            }, {
+              "name" : "Bb1X2_1",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "BbMxH_1",
+              "dataType" : {
+                "type" : "Float"
+              }
+            }, {
+              "name" : "BbAvH_1",
+              "dataType" : {
+                "type" : "Float"
+              }
+            }, {
+              "name" : "BbMxD_1",
+              "dataType" : {
+                "type" : "Float"
+              }
+            }, {
+              "name" : "BbAvD_1",
+              "dataType" : {
+                "type" : "Float"
+              }
+            }, {
+              "name" : "BbMxA_1",
+              "dataType" : {
+                "type" : "Float"
+              }
+            }, {
+              "name" : "BbAvA_1",
+              "dataType" : {
+                "type" : "Float"
+              }
+            }, {
+              "name" : "BbOU_1",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "BbMx_2_5",
+              "dataType" : {
+                "type" : "Float"
+              }
+            }, {
+              "name" : "BbAv_2_5",
+              "dataType" : {
+                "type" : "Float"
+              }
+            }, {
+              "name" : "BbAH_1",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "BbMxAHH_1",
+              "dataType" : {
+                "type" : "Float"
+              }
+            }, {
+              "name" : "BbAvAHH_1",
+              "dataType" : {
+                "type" : "Float"
+              }
+            }, {
+              "name" : "BbMxAHA_1",
+              "dataType" : {
+                "type" : "Float"
+              }
+            }, {
+              "name" : "BbAvAHA_1",
+              "dataType" : {
+                "type" : "Float"
+              }
+            }, {
+              "name" : "PSCH_1",
+              "dataType" : {
+                "type" : "Float"
+              }
+            }, {
+              "name" : "PSCD_1",
+              "dataType" : {
+                "type" : "Float"
+              }
+            }, {
+              "name" : "PSCA_1",
+              "dataType" : {
+                "type" : "Float"
+              }
+            } ]
+          },
           "slug" : "out"
         } ],
         "isCustomOutputSchema" : false
@@ -1072,6 +1738,305 @@
       "ports" : {
         "inputs" : [ {
           "id" : "myG1rsfIx1OsXdFpyHo8G$$pvgttcoWoFj31RRLxUzb1",
+          "schema" : {
+            "providerType" : "Databricks",
+            "fields" : [ {
+              "name" : "Div_1",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Date_1",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "HomeTeam_1",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "AwayTeam_1",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "FTHG_1",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "FTAG_1",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "FTR_1",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "HTHG_1",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "HTAG_1",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "HTR_1",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Referee_1",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "HS_1",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "AS_1",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "HST_1",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "AST_1",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "HF_1",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "AF_1",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "HC_1",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "AC_1",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "HY_1",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "AY_1",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "HR_1",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "AR_1",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "B365H_1",
+              "dataType" : {
+                "type" : "Float"
+              }
+            }, {
+              "name" : "B365D_1",
+              "dataType" : {
+                "type" : "Float"
+              }
+            }, {
+              "name" : "B365A_1",
+              "dataType" : {
+                "type" : "Float"
+              }
+            }, {
+              "name" : "BWH_1",
+              "dataType" : {
+                "type" : "Float"
+              }
+            }, {
+              "name" : "BWD_1",
+              "dataType" : {
+                "type" : "Float"
+              }
+            }, {
+              "name" : "BWA_1",
+              "dataType" : {
+                "type" : "Float"
+              }
+            }, {
+              "name" : "IWH_1",
+              "dataType" : {
+                "type" : "Float"
+              }
+            }, {
+              "name" : "IWD_1",
+              "dataType" : {
+                "type" : "Float"
+              }
+            }, {
+              "name" : "IWA_1",
+              "dataType" : {
+                "type" : "Float"
+              }
+            }, {
+              "name" : "PSH_1",
+              "dataType" : {
+                "type" : "Float"
+              }
+            }, {
+              "name" : "PSD_1",
+              "dataType" : {
+                "type" : "Float"
+              }
+            }, {
+              "name" : "PSA_1",
+              "dataType" : {
+                "type" : "Float"
+              }
+            }, {
+              "name" : "WHH_1",
+              "dataType" : {
+                "type" : "Float"
+              }
+            }, {
+              "name" : "WHD_1",
+              "dataType" : {
+                "type" : "Float"
+              }
+            }, {
+              "name" : "WHA_1",
+              "dataType" : {
+                "type" : "Float"
+              }
+            }, {
+              "name" : "VCH_1",
+              "dataType" : {
+                "type" : "Float"
+              }
+            }, {
+              "name" : "VCD_1",
+              "dataType" : {
+                "type" : "Float"
+              }
+            }, {
+              "name" : "VCA_1",
+              "dataType" : {
+                "type" : "Float"
+              }
+            }, {
+              "name" : "Bb1X2_1",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "BbMxH_1",
+              "dataType" : {
+                "type" : "Float"
+              }
+            }, {
+              "name" : "BbAvH_1",
+              "dataType" : {
+                "type" : "Float"
+              }
+            }, {
+              "name" : "BbMxD_1",
+              "dataType" : {
+                "type" : "Float"
+              }
+            }, {
+              "name" : "BbAvD_1",
+              "dataType" : {
+                "type" : "Float"
+              }
+            }, {
+              "name" : "BbMxA_1",
+              "dataType" : {
+                "type" : "Float"
+              }
+            }, {
+              "name" : "BbAvA_1",
+              "dataType" : {
+                "type" : "Float"
+              }
+            }, {
+              "name" : "BbOU_1",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "BbMx_2_5",
+              "dataType" : {
+                "type" : "Float"
+              }
+            }, {
+              "name" : "BbAv_2_5",
+              "dataType" : {
+                "type" : "Float"
+              }
+            }, {
+              "name" : "BbAH_1",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "BbMxAHH_1",
+              "dataType" : {
+                "type" : "Float"
+              }
+            }, {
+              "name" : "BbAvAHH_1",
+              "dataType" : {
+                "type" : "Float"
+              }
+            }, {
+              "name" : "BbMxAHA_1",
+              "dataType" : {
+                "type" : "Float"
+              }
+            }, {
+              "name" : "BbAvAHA_1",
+              "dataType" : {
+                "type" : "Float"
+              }
+            }, {
+              "name" : "PSCH_1",
+              "dataType" : {
+                "type" : "Float"
+              }
+            }, {
+              "name" : "PSCD_1",
+              "dataType" : {
+                "type" : "Float"
+              }
+            }, {
+              "name" : "PSCA_1",
+              "dataType" : {
+                "type" : "Float"
+              }
+            } ]
+          },
           "slug" : "in0"
         }, {
           "id" : "I58loirLLzY2YxonT3s-Q$$It0jdlB9qwYDOjg_ru7ft",
@@ -1113,6 +2078,40 @@
         } ],
         "outputs" : [ {
           "id" : "PZsvUMdlFRGPXF8gFjTwI$$mtPccXO6AGkXE6IUwotrJ",
+          "schema" : {
+            "providerType" : "Databricks",
+            "fields" : [ {
+              "name" : "description_1",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "industry_1",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "level_1",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "size_1",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "line_code",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "value_1",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            } ]
+          },
           "slug" : "out"
         } ],
         "isCustomOutputSchema" : false
@@ -1816,12 +2815,12 @@
                 "type" : "Float"
               }
             }, {
-              "name" : "BbMx_2_5",
+              "name" : "BbMx_2_5_1",
               "dataType" : {
                 "type" : "Float"
               }
             }, {
-              "name" : "BbAv_2_5",
+              "name" : "BbAv_2_5_1",
               "dataType" : {
                 "type" : "Float"
               }
@@ -2044,6 +3043,305 @@
         } ],
         "outputs" : [ {
           "id" : "xLfWyUI9OeMHqwv9tVrNG$$1tyrfDi4kco_fzeAAioNh",
+          "schema" : {
+            "providerType" : "Databricks",
+            "fields" : [ {
+              "name" : "Div_1",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Date_1",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "HomeTeam_1",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "AwayTeam_1",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "FTHG_1",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "FTAG_1",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "FTR_1",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "HTHG_1",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "HTAG_1",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "HTR_1",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Referee_1",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "HS_1",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "AS_1",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "HST_1",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "AST_1",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "HF_1",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "AF_1",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "HC_1",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "AC_1",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "HY_1",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "AY_1",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "HR_1",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "AR_1",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "B365H_1",
+              "dataType" : {
+                "type" : "Float"
+              }
+            }, {
+              "name" : "B365D_1",
+              "dataType" : {
+                "type" : "Float"
+              }
+            }, {
+              "name" : "B365A_1",
+              "dataType" : {
+                "type" : "Float"
+              }
+            }, {
+              "name" : "BWH_1",
+              "dataType" : {
+                "type" : "Float"
+              }
+            }, {
+              "name" : "BWD_1",
+              "dataType" : {
+                "type" : "Float"
+              }
+            }, {
+              "name" : "BWA_1",
+              "dataType" : {
+                "type" : "Float"
+              }
+            }, {
+              "name" : "IWH_1",
+              "dataType" : {
+                "type" : "Float"
+              }
+            }, {
+              "name" : "IWD_1",
+              "dataType" : {
+                "type" : "Float"
+              }
+            }, {
+              "name" : "IWA_1",
+              "dataType" : {
+                "type" : "Float"
+              }
+            }, {
+              "name" : "PSH_1",
+              "dataType" : {
+                "type" : "Float"
+              }
+            }, {
+              "name" : "PSD_1",
+              "dataType" : {
+                "type" : "Float"
+              }
+            }, {
+              "name" : "PSA_1",
+              "dataType" : {
+                "type" : "Float"
+              }
+            }, {
+              "name" : "WHH_1",
+              "dataType" : {
+                "type" : "Float"
+              }
+            }, {
+              "name" : "WHD_1",
+              "dataType" : {
+                "type" : "Float"
+              }
+            }, {
+              "name" : "WHA_1",
+              "dataType" : {
+                "type" : "Float"
+              }
+            }, {
+              "name" : "VCH_1",
+              "dataType" : {
+                "type" : "Float"
+              }
+            }, {
+              "name" : "VCD_1",
+              "dataType" : {
+                "type" : "Float"
+              }
+            }, {
+              "name" : "VCA_1",
+              "dataType" : {
+                "type" : "Float"
+              }
+            }, {
+              "name" : "Bb1X2_1",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "BbMxH_1",
+              "dataType" : {
+                "type" : "Float"
+              }
+            }, {
+              "name" : "BbAvH_1",
+              "dataType" : {
+                "type" : "Float"
+              }
+            }, {
+              "name" : "BbMxD_1",
+              "dataType" : {
+                "type" : "Float"
+              }
+            }, {
+              "name" : "BbAvD_1",
+              "dataType" : {
+                "type" : "Float"
+              }
+            }, {
+              "name" : "BbMxA_1",
+              "dataType" : {
+                "type" : "Float"
+              }
+            }, {
+              "name" : "BbAvA_1",
+              "dataType" : {
+                "type" : "Float"
+              }
+            }, {
+              "name" : "BbOU_1",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "BbMx_2_5",
+              "dataType" : {
+                "type" : "Float"
+              }
+            }, {
+              "name" : "BbAv_2_5",
+              "dataType" : {
+                "type" : "Float"
+              }
+            }, {
+              "name" : "BbAH_1",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "BbMxAHH_1",
+              "dataType" : {
+                "type" : "Float"
+              }
+            }, {
+              "name" : "BbAvAHH_1",
+              "dataType" : {
+                "type" : "Float"
+              }
+            }, {
+              "name" : "BbMxAHA_1",
+              "dataType" : {
+                "type" : "Float"
+              }
+            }, {
+              "name" : "BbAvAHA_1",
+              "dataType" : {
+                "type" : "Float"
+              }
+            }, {
+              "name" : "PSCH_1",
+              "dataType" : {
+                "type" : "Float"
+              }
+            }, {
+              "name" : "PSCD_1",
+              "dataType" : {
+                "type" : "Float"
+              }
+            }, {
+              "name" : "PSCA_1",
+              "dataType" : {
+                "type" : "Float"
+              }
+            } ]
+          },
           "slug" : "out"
         } ],
         "isCustomOutputSchema" : false
@@ -2388,12 +3686,12 @@
                 "type" : "Float"
               }
             }, {
-              "name" : "BbMx_2_5",
+              "name" : "BbMx_2_5_1",
               "dataType" : {
                 "type" : "Float"
               }
             }, {
-              "name" : "BbAv_2_5",
+              "name" : "BbAv_2_5_1",
               "dataType" : {
                 "type" : "Float"
               }

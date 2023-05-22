@@ -140,6 +140,17 @@ sqlModels:
     createdAt: '2023-05-22 13:26:20'
     modifiedAt: '2023-05-22 13:26:20'
 sqlMacros:
+  .prophecy/metadata/sqlmacros/tpcds_macros_query_1:
+    name: tpcds_macros_query_1
+    macroType: query
+    description: null
+    author: abhisheks+e2etests@prophecy.io
+    files:
+    - macros/tpcds_macros_query_1.sql
+    - .prophecy/ide/macros/tpcds_macros_query_1.json
+    - macros/macros.yml
+    createdAt: '2023-05-22 15:05:04'
+    modifiedAt: '2023-05-22 15:05:04'
   .prophecy/metadata/sqlmacros/bigquery__language_specific_concat_base:
     name: bigquery__language_specific_concat_base
     macroType: expression
@@ -158,15 +169,6 @@ sqlMacros:
     - macros/qa_concat_macro_base.sql
     createdAt: '2023-05-22 12:04:44'
     modifiedAt: '2023-05-22 12:04:44'
-  .prophecy/metadata/sqlmacros/qa_all_not_null_base:
-    name: qa_all_not_null_base
-    macroType: query
-    description: null
-    author: abhisheks+e2etests@prophecy.io
-    files:
-    - macros/qa_epl_data_macro_base.sql
-    createdAt: '2023-05-22 12:06:55'
-    modifiedAt: '2023-05-22 12:06:55'
   .prophecy/metadata/sqlmacros/qa_all_null_base:
     name: qa_all_null_base
     macroType: query
@@ -185,6 +187,16 @@ sqlMacros:
     - macros/language_specific_concat_base.sql
     createdAt: '2023-05-22 12:06:27'
     modifiedAt: '2023-05-22 12:06:27'
+  .prophecy/metadata/sqlmacros/tpcds_macros_query_2:
+    name: tpcds_macros_query_2
+    macroType: query
+    description: null
+    author: abhisheks+e2etests@prophecy.io
+    files:
+    - macros/tpcds_macros_query_1.sql
+    - macros/macros.yml
+    createdAt: '2023-05-22 15:05:18'
+    modifiedAt: '2023-05-22 15:05:18'
   .prophecy/metadata/sqlmacros/multi_macro_expressions_base:
     name: multi_macro_expressions_base
     macroType: expression
@@ -285,6 +297,25 @@ sqlMacros:
     - macros/qa_concat_macro_base.sql
     createdAt: '2023-05-22 12:04:44'
     modifiedAt: '2023-05-22 12:04:44'
+  .prophecy/metadata/sqlmacros/tpcds_macros_query_3:
+    name: tpcds_macros_query_3
+    macroType: query
+    description: null
+    author: abhisheks+e2etests@prophecy.io
+    files:
+    - macros/tpcds_macros_query_1.sql
+    - macros/macros.yml
+    createdAt: '2023-05-22 15:05:18'
+    modifiedAt: '2023-05-22 15:05:18'
+  .prophecy/metadata/sqlmacros/qa_all_not_null_base:
+    name: qa_all_not_null_base
+    macroType: query
+    description: null
+    author: abhisheks+e2etests@prophecy.io
+    files:
+    - macros/qa_epl_data_macro_base.sql
+    createdAt: '2023-05-22 12:06:55'
+    modifiedAt: '2023-05-22 12:06:55'
   .prophecy/metadata/sqlmacros/language_specific_concat_base:
     name: language_specific_concat_base
     macroType: query
