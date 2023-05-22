@@ -1,0 +1,1463 @@
+{
+  "id" : "tpcds_perf_sql_3_useall_tpcds",
+  "metainfo" : {
+    "label" : "tpcds_perf_sql_3_useall_tpcds",
+    "autoLayout" : false,
+    "staleState" : "none",
+    "sourceSuggestions" : {
+      "sources" : [ ]
+    }
+  },
+  "processes" : {
+    "WVbIKCe2YMb0sQsMrsW7B$$kErHIrHssn5hXATRrbUMt" : {
+      "id" : "WVbIKCe2YMb0sQsMrsW7B$$kErHIrHssn5hXATRrbUMt",
+      "component" : "Join",
+      "metadata" : {
+        "label" : "Join_1",
+        "slug" : "Join_1",
+        "x" : -500,
+        "y" : 240,
+        "phase" : 0,
+        "macroDependencies" : [ ]
+      },
+      "properties" : {
+        "conditions" : [ {
+          "alias" : "in1",
+          "expression" : {
+            "expression" : "in0.cc_name!=in1.Excess_Discount_Description"
+          },
+          "joinType" : "inner"
+        } ],
+        "expressions" : [ {
+          "expression" : {
+            "expression" : "in0.sm_type"
+          },
+          "alias" : "sm_type"
+        }, {
+          "expression" : {
+            "expression" : "in0.cc_name"
+          },
+          "alias" : "cc_name"
+        }, {
+          "expression" : {
+            "expression" : "in0.t_30days"
+          },
+          "alias" : "t_30days"
+        }, {
+          "expression" : {
+            "expression" : "in0.t_31_60_days"
+          },
+          "alias" : "t_31_60_days"
+        }, {
+          "expression" : {
+            "expression" : "in0.t_61_90_days"
+          },
+          "alias" : "t_61_90_days"
+        }, {
+          "expression" : {
+            "expression" : "in0.t_91_120_days"
+          },
+          "alias" : "t_91_120_days"
+        }, {
+          "expression" : {
+            "expression" : "in0.t_morethan_120days"
+          },
+          "alias" : "t_morethan_120days"
+        }, {
+          "expression" : {
+            "expression" : "in1.Excess_Discount_Amount"
+          },
+          "alias" : "Excess_Discount_Amount"
+        }, {
+          "expression" : {
+            "expression" : "in1.Excess_Discount_Description"
+          },
+          "alias" : "Excess_Discount_Description"
+        } ],
+        "activeTab" : "expressions",
+        "columnsSelector" : [ "ZJdNiKEMEOUXO5HW-IY6D$$8fQhlm0BfkuqWgMh-Ch3H##cc_name", "by5lzNPZc_9kl2k2vbQKH$$W_KJgEcCD2QzMPBQ3Ntqm##Excess_Discount_Description", "ZJdNiKEMEOUXO5HW-IY6D$$8fQhlm0BfkuqWgMh-Ch3H##sm_type", "ZJdNiKEMEOUXO5HW-IY6D$$8fQhlm0BfkuqWgMh-Ch3H##cc_name", "ZJdNiKEMEOUXO5HW-IY6D$$8fQhlm0BfkuqWgMh-Ch3H##t_30days", "ZJdNiKEMEOUXO5HW-IY6D$$8fQhlm0BfkuqWgMh-Ch3H##t_31_60_days", "ZJdNiKEMEOUXO5HW-IY6D$$8fQhlm0BfkuqWgMh-Ch3H##t_61_90_days", "ZJdNiKEMEOUXO5HW-IY6D$$8fQhlm0BfkuqWgMh-Ch3H##t_91_120_days", "ZJdNiKEMEOUXO5HW-IY6D$$8fQhlm0BfkuqWgMh-Ch3H##t_morethan_120days", "by5lzNPZc_9kl2k2vbQKH$$W_KJgEcCD2QzMPBQ3Ntqm##Excess_Discount_Amount", "by5lzNPZc_9kl2k2vbQKH$$W_KJgEcCD2QzMPBQ3Ntqm##Excess_Discount_Description" ],
+        "headAlias" : "in0"
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "ZJdNiKEMEOUXO5HW-IY6D$$8fQhlm0BfkuqWgMh-Ch3H",
+          "schema" : {
+            "providerType" : "Databricks",
+            "fields" : [ {
+              "name" : "substr(w_warehouse_name, 1, 20)",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "sm_type",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "cc_name",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "t_30days",
+              "dataType" : {
+                "type" : "Bigint"
+              }
+            }, {
+              "name" : "t_31_60_days",
+              "dataType" : {
+                "type" : "Bigint"
+              }
+            }, {
+              "name" : "t_61_90_days",
+              "dataType" : {
+                "type" : "Bigint"
+              }
+            }, {
+              "name" : "t_91_120_days",
+              "dataType" : {
+                "type" : "Bigint"
+              }
+            }, {
+              "name" : "t_morethan_120days",
+              "dataType" : {
+                "type" : "Bigint"
+              }
+            } ]
+          },
+          "slug" : "in0"
+        }, {
+          "id" : "by5lzNPZc_9kl2k2vbQKH$$W_KJgEcCD2QzMPBQ3Ntqm",
+          "schema" : {
+            "providerType" : "Databricks",
+            "fields" : [ {
+              "name" : "Excess_Discount_Amount",
+              "dataType" : {
+                "type" : "Decimal"
+              }
+            }, {
+              "name" : "Excess_Discount_Description",
+              "dataType" : {
+                "type" : "String"
+              }
+            } ]
+          },
+          "slug" : "in1"
+        } ],
+        "outputs" : [ {
+          "id" : "6zRppH98YEfyZbVodyVwM$$uA5J2zz-boIJzgPD4j5Bz",
+          "schema" : {
+            "providerType" : "Databricks",
+            "fields" : [ {
+              "name" : "sm_type",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "cc_name",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "t_30days",
+              "dataType" : {
+                "type" : "Bigint"
+              }
+            }, {
+              "name" : "t_31_60_days",
+              "dataType" : {
+                "type" : "Bigint"
+              }
+            }, {
+              "name" : "t_61_90_days",
+              "dataType" : {
+                "type" : "Bigint"
+              }
+            }, {
+              "name" : "t_91_120_days",
+              "dataType" : {
+                "type" : "Bigint"
+              }
+            }, {
+              "name" : "t_morethan_120days",
+              "dataType" : {
+                "type" : "Bigint"
+              }
+            }, {
+              "name" : "Excess_Discount_Amount",
+              "dataType" : {
+                "type" : "Decimal"
+              }
+            }, {
+              "name" : "Excess_Discount_Description",
+              "dataType" : {
+                "type" : "String"
+              }
+            } ]
+          },
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
+    "S8p4gzxmc7K4-l6BdL8Fp$$VSd11v43IjjPgTc7AK0yy" : {
+      "id" : "S8p4gzxmc7K4-l6BdL8Fp$$VSd11v43IjjPgTc7AK0yy",
+      "component" : "SQLStatement",
+      "metadata" : {
+        "label" : "SQLStatement_1",
+        "slug" : "SQLStatement_1",
+        "x" : -680,
+        "y" : 220,
+        "phase" : 0,
+        "macroDependencies" : [ ]
+      },
+      "properties" : {
+        "fileTabs" : [ {
+          "path" : "out",
+          "id" : "out",
+          "language" : "sql",
+          "content" : "select  \n   substr(w_warehouse_name,1,20)\n  ,sm_type\n  ,cc_name\n  ,sum(case when (cs_ship_date_sk - cs_sold_date_sk <= 30 ) then 1 else 0 end)  as t_30days\n  ,sum(case when (cs_ship_date_sk - cs_sold_date_sk > 30) and \n                 (cs_ship_date_sk - cs_sold_date_sk <= 60) then 1 else 0 end )  as t_31_60_days\n  ,sum(case when (cs_ship_date_sk - cs_sold_date_sk > 60) and \n                 (cs_ship_date_sk - cs_sold_date_sk <= 90) then 1 else 0 end)  as t_61_90_days \n  ,sum(case when (cs_ship_date_sk - cs_sold_date_sk > 90) and\n                 (cs_ship_date_sk - cs_sold_date_sk <= 120) then 1 else 0 end)  as t_91_120_days \n  ,sum(case when (cs_ship_date_sk - cs_sold_date_sk  > 120) then 1 else 0 end)  as t_morethan_120days \nfrom\n   spark_catalog.qa_performance_database.catalog_sales\n  ,spark_catalog.qa_performance_database.warehouse\n  ,spark_catalog.qa_performance_database.ship_mode\n  ,spark_catalog.qa_performance_database.call_center\n  ,spark_catalog.qa_performance_database.date_dim\nwhere\n    d_month_seq between 1200 and 1200 + 11\nand cs_ship_date_sk   = d_date_sk\nand cs_warehouse_sk   = w_warehouse_sk\nand cs_ship_mode_sk   = sm_ship_mode_sk\nand cs_call_center_sk = cc_call_center_sk\ngroup by\n   substr(w_warehouse_name,1,20)\n  ,sm_type\n  ,cc_name\norder by substr(w_warehouse_name,1,20)\n        ,sm_type\n        ,cc_name\nlimit 100"
+        } ]
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "bcN6zeDuJDbnGCk60iVSd$$38bL1QGOQCIa3bMXx-NyH",
+          "schema" : {
+            "providerType" : "Databricks",
+            "fields" : [ {
+              "name" : "substr(w_warehouse_name, 1, 20)",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "sm_type",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "cc_name",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "t_30days",
+              "dataType" : {
+                "type" : "Bigint"
+              }
+            }, {
+              "name" : "t_31_60_days",
+              "dataType" : {
+                "type" : "Bigint"
+              }
+            }, {
+              "name" : "t_61_90_days",
+              "dataType" : {
+                "type" : "Bigint"
+              }
+            }, {
+              "name" : "t_91_120_days",
+              "dataType" : {
+                "type" : "Bigint"
+              }
+            }, {
+              "name" : "t_morethan_120days",
+              "dataType" : {
+                "type" : "Bigint"
+              }
+            } ]
+          },
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
+    "Y6Rnz7LkgDu9WBQl2R-ig" : {
+      "id" : "Y6Rnz7LkgDu9WBQl2R-ig",
+      "component" : "Model",
+      "metadata" : {
+        "label" : "tpcds_perf_sql_1",
+        "slug" : "tpcds_perf_sql_1",
+        "x" : -700,
+        "y" : -200,
+        "phase" : 0
+      },
+      "properties" : {
+        "table" : {
+          "name" : "tpcds_perf_sql_1",
+          "sourceType" : "Model",
+          "alias" : ""
+        }
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "IOGdurporFE3BTtfwmp6v",
+          "schema" : {
+            "providerType" : "Databricks",
+            "fields" : [ {
+              "name" : "sm_type",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "cc_name",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "days_30",
+              "dataType" : {
+                "type" : "Bigint"
+              }
+            }, {
+              "name" : "days_31_60",
+              "dataType" : {
+                "type" : "Bigint"
+              }
+            }, {
+              "name" : "days_61_90",
+              "dataType" : {
+                "type" : "Bigint"
+              }
+            }, {
+              "name" : "days_90_120",
+              "dataType" : {
+                "type" : "Bigint"
+              }
+            }, {
+              "name" : "days_more_than_120",
+              "dataType" : {
+                "type" : "Bigint"
+              }
+            }, {
+              "name" : "i_item_id",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "i_item_desc",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "i_category",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "i_class",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "i_current_price",
+              "dataType" : {
+                "type" : "Decimal"
+              }
+            }, {
+              "name" : "itemrevenue",
+              "dataType" : {
+                "type" : "Decimal"
+              }
+            }, {
+              "name" : "revenueratio",
+              "dataType" : {
+                "type" : "Decimal"
+              }
+            }, {
+              "name" : "h8_30_to_9",
+              "dataType" : {
+                "type" : "Bigint"
+              }
+            }, {
+              "name" : "h9_to_9_30",
+              "dataType" : {
+                "type" : "Bigint"
+              }
+            }, {
+              "name" : "h9_30_to_10",
+              "dataType" : {
+                "type" : "Bigint"
+              }
+            }, {
+              "name" : "h10_to_10_30",
+              "dataType" : {
+                "type" : "Bigint"
+              }
+            }, {
+              "name" : "h10_30_to_11",
+              "dataType" : {
+                "type" : "Bigint"
+              }
+            }, {
+              "name" : "h11_to_11_30",
+              "dataType" : {
+                "type" : "Bigint"
+              }
+            }, {
+              "name" : "h11_30_to_12",
+              "dataType" : {
+                "type" : "Bigint"
+              }
+            }, {
+              "name" : "h12_to_12_30",
+              "dataType" : {
+                "type" : "Bigint"
+              }
+            } ]
+          },
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
+    "jqHFIGLrxHMRYPxBcAwmX" : {
+      "id" : "jqHFIGLrxHMRYPxBcAwmX",
+      "component" : "Model",
+      "metadata" : {
+        "label" : "tpcds_perf_sql_2_1",
+        "slug" : "tpcds_perf_sql_2_1",
+        "x" : -700,
+        "y" : -20,
+        "phase" : 0
+      },
+      "properties" : {
+        "table" : {
+          "name" : "tpcds_perf_sql_2",
+          "sourceType" : "Model",
+          "alias" : ""
+        }
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "A_sDlWCpvwu2_eJGYUAF0",
+          "schema" : {
+            "providerType" : "Databricks",
+            "fields" : [ {
+              "name" : "sm_type",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "cc_name",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "a_30_days",
+              "dataType" : {
+                "type" : "Bigint"
+              }
+            }, {
+              "name" : "a_31_60_days",
+              "dataType" : {
+                "type" : "Bigint"
+              }
+            }, {
+              "name" : "a_61_90_days",
+              "dataType" : {
+                "type" : "Bigint"
+              }
+            }, {
+              "name" : "a_91_120_days",
+              "dataType" : {
+                "type" : "Bigint"
+              }
+            }, {
+              "name" : "a_120_days_and_more",
+              "dataType" : {
+                "type" : "Bigint"
+              }
+            }, {
+              "name" : "i_item_id",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "i_item_desc",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "i_category",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "i_class",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "i_current_price",
+              "dataType" : {
+                "type" : "Decimal"
+              }
+            }, {
+              "name" : "itemrevenue",
+              "dataType" : {
+                "type" : "Decimal"
+              }
+            }, {
+              "name" : "revenueratio",
+              "dataType" : {
+                "type" : "Decimal"
+              }
+            } ]
+          },
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
+    "tBepgp5tBMoZ7q8AXausN$$HkECL2x9elkmyQdUJ6HQ1" : {
+      "id" : "tBepgp5tBMoZ7q8AXausN$$HkECL2x9elkmyQdUJ6HQ1",
+      "component" : "Join",
+      "metadata" : {
+        "label" : "Join_2",
+        "slug" : "Join_2",
+        "x" : -160,
+        "y" : 0,
+        "phase" : 0,
+        "macroDependencies" : [ ]
+      },
+      "properties" : {
+        "conditions" : [ {
+          "alias" : "tpcds_perf_sql_1",
+          "expression" : {
+            "expression" : "tpcds_perf_sql_1.sm_type = tpcds_perf_sql_2_1.sm_type"
+          },
+          "joinType" : "inner"
+        }, {
+          "alias" : "in2",
+          "expression" : {
+            "expression" : "tpcds_perf_sql_2_1.sm_type!=in2.sm_type"
+          },
+          "joinType" : "inner"
+        } ],
+        "expressions" : [ {
+          "expression" : {
+            "expression" : "tpcds_perf_sql_2_1.a_30_days"
+          },
+          "alias" : "a_30_days"
+        }, {
+          "expression" : {
+            "expression" : "tpcds_perf_sql_2_1.a_31_60_days"
+          },
+          "alias" : "a_31_60_days"
+        }, {
+          "expression" : {
+            "expression" : "tpcds_perf_sql_2_1.a_61_90_days"
+          },
+          "alias" : "a_61_90_days"
+        }, {
+          "expression" : {
+            "expression" : "tpcds_perf_sql_2_1.a_91_120_days"
+          },
+          "alias" : "a_91_120_days"
+        }, {
+          "expression" : {
+            "expression" : "tpcds_perf_sql_2_1.a_120_days_and_more"
+          },
+          "alias" : "a_120_days_and_more"
+        }, {
+          "expression" : {
+            "expression" : "tpcds_perf_sql_1.h10_30_to_11"
+          },
+          "alias" : "h10_30_to_11"
+        }, {
+          "expression" : {
+            "expression" : "tpcds_perf_sql_1.h9_30_to_10"
+          },
+          "alias" : "h9_30_to_10"
+        }, {
+          "expression" : {
+            "expression" : "tpcds_perf_sql_1.h9_to_9_30"
+          },
+          "alias" : "h9_to_9_30"
+        }, {
+          "expression" : {
+            "expression" : "tpcds_perf_sql_1.days_31_60"
+          },
+          "alias" : "days_31_60"
+        }, {
+          "expression" : {
+            "expression" : "tpcds_perf_sql_1.days_30"
+          },
+          "alias" : "days_30"
+        }, {
+          "expression" : {
+            "expression" : "tpcds_perf_sql_1.i_current_price"
+          },
+          "alias" : "i_current_price"
+        }, {
+          "expression" : {
+            "expression" : "tpcds_perf_sql_1.i_item_id"
+          },
+          "alias" : "i_item_id"
+        }, {
+          "expression" : {
+            "expression" : "tpcds_perf_sql_1.days_61_90"
+          },
+          "alias" : "days_61_90"
+        }, {
+          "expression" : {
+            "expression" : "tpcds_perf_sql_1.i_item_desc"
+          },
+          "alias" : "i_item_desc"
+        }, {
+          "expression" : {
+            "expression" : "tpcds_perf_sql_1.revenueratio"
+          },
+          "alias" : "revenueratio"
+        }, {
+          "expression" : {
+            "expression" : "tpcds_perf_sql_1.days_more_than_120"
+          },
+          "alias" : "days_more_than_120"
+        }, {
+          "expression" : {
+            "expression" : "tpcds_perf_sql_1.h11_to_11_30"
+          },
+          "alias" : "h11_to_11_30"
+        }, {
+          "expression" : {
+            "expression" : "tpcds_perf_sql_1.sm_type"
+          },
+          "alias" : "sm_type"
+        }, {
+          "expression" : {
+            "expression" : "tpcds_perf_sql_1.i_category"
+          },
+          "alias" : "i_category"
+        }, {
+          "expression" : {
+            "expression" : "tpcds_perf_sql_1.h11_30_to_12"
+          },
+          "alias" : "h11_30_to_12"
+        }, {
+          "expression" : {
+            "expression" : "tpcds_perf_sql_1.i_class"
+          },
+          "alias" : "i_class"
+        }, {
+          "expression" : {
+            "expression" : "tpcds_perf_sql_1.cc_name"
+          },
+          "alias" : "cc_name"
+        }, {
+          "expression" : {
+            "expression" : "tpcds_perf_sql_1.itemrevenue"
+          },
+          "alias" : "itemrevenue"
+        }, {
+          "expression" : {
+            "expression" : "tpcds_perf_sql_1.h12_to_12_30"
+          },
+          "alias" : "h12_to_12_30"
+        }, {
+          "expression" : {
+            "expression" : "tpcds_perf_sql_1.h8_30_to_9"
+          },
+          "alias" : "h8_30_to_9"
+        }, {
+          "expression" : {
+            "expression" : "tpcds_perf_sql_1.h10_to_10_30"
+          },
+          "alias" : "h10_to_10_30"
+        }, {
+          "expression" : {
+            "expression" : "tpcds_perf_sql_1.days_90_120"
+          },
+          "alias" : "days_90_120"
+        } ],
+        "activeTab" : "conditions",
+        "columnsSelector" : [ "dTk5BUwNMXViUWKKt_sAC$$pwq-w0nPD5cCYkRpVJfQS##sm_type", "wQpT0_nO_S5Gt-cCrQOiu$$9qoX_X8Mcc3RYTvPdiM6a##sm_type", "On9s4-M57pzuEnWL9rH2s$$yx-8babGDsuMHNpuQV8Ag##sm_type", "wQpT0_nO_S5Gt-cCrQOiu$$9qoX_X8Mcc3RYTvPdiM6a##a_30_days", "wQpT0_nO_S5Gt-cCrQOiu$$9qoX_X8Mcc3RYTvPdiM6a##a_31_60_days", "wQpT0_nO_S5Gt-cCrQOiu$$9qoX_X8Mcc3RYTvPdiM6a##a_61_90_days", "wQpT0_nO_S5Gt-cCrQOiu$$9qoX_X8Mcc3RYTvPdiM6a##a_91_120_days", "wQpT0_nO_S5Gt-cCrQOiu$$9qoX_X8Mcc3RYTvPdiM6a##a_120_days_and_more", "dTk5BUwNMXViUWKKt_sAC$$pwq-w0nPD5cCYkRpVJfQS##h10_30_to_11", "dTk5BUwNMXViUWKKt_sAC$$pwq-w0nPD5cCYkRpVJfQS##h9_30_to_10", "dTk5BUwNMXViUWKKt_sAC$$pwq-w0nPD5cCYkRpVJfQS##h9_to_9_30", "dTk5BUwNMXViUWKKt_sAC$$pwq-w0nPD5cCYkRpVJfQS##days_31_60", "dTk5BUwNMXViUWKKt_sAC$$pwq-w0nPD5cCYkRpVJfQS##days_30", "dTk5BUwNMXViUWKKt_sAC$$pwq-w0nPD5cCYkRpVJfQS##i_current_price", "dTk5BUwNMXViUWKKt_sAC$$pwq-w0nPD5cCYkRpVJfQS##i_item_id", "dTk5BUwNMXViUWKKt_sAC$$pwq-w0nPD5cCYkRpVJfQS##days_61_90", "dTk5BUwNMXViUWKKt_sAC$$pwq-w0nPD5cCYkRpVJfQS##i_item_desc", "dTk5BUwNMXViUWKKt_sAC$$pwq-w0nPD5cCYkRpVJfQS##revenueratio", "dTk5BUwNMXViUWKKt_sAC$$pwq-w0nPD5cCYkRpVJfQS##days_more_than_120", "dTk5BUwNMXViUWKKt_sAC$$pwq-w0nPD5cCYkRpVJfQS##h11_to_11_30", "dTk5BUwNMXViUWKKt_sAC$$pwq-w0nPD5cCYkRpVJfQS##sm_type", "dTk5BUwNMXViUWKKt_sAC$$pwq-w0nPD5cCYkRpVJfQS##i_category", "dTk5BUwNMXViUWKKt_sAC$$pwq-w0nPD5cCYkRpVJfQS##h11_30_to_12", "dTk5BUwNMXViUWKKt_sAC$$pwq-w0nPD5cCYkRpVJfQS##i_class", "dTk5BUwNMXViUWKKt_sAC$$pwq-w0nPD5cCYkRpVJfQS##cc_name", "dTk5BUwNMXViUWKKt_sAC$$pwq-w0nPD5cCYkRpVJfQS##itemrevenue", "dTk5BUwNMXViUWKKt_sAC$$pwq-w0nPD5cCYkRpVJfQS##h12_to_12_30", "dTk5BUwNMXViUWKKt_sAC$$pwq-w0nPD5cCYkRpVJfQS##h8_30_to_9", "dTk5BUwNMXViUWKKt_sAC$$pwq-w0nPD5cCYkRpVJfQS##h10_to_10_30", "dTk5BUwNMXViUWKKt_sAC$$pwq-w0nPD5cCYkRpVJfQS##days_90_120" ],
+        "headAlias" : "tpcds_perf_sql_1"
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "dTk5BUwNMXViUWKKt_sAC$$pwq-w0nPD5cCYkRpVJfQS",
+          "schema" : {
+            "providerType" : "Databricks",
+            "fields" : [ {
+              "name" : "sm_type",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "cc_name",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "days_30",
+              "dataType" : {
+                "type" : "Bigint"
+              }
+            }, {
+              "name" : "days_31_60",
+              "dataType" : {
+                "type" : "Bigint"
+              }
+            }, {
+              "name" : "days_61_90",
+              "dataType" : {
+                "type" : "Bigint"
+              }
+            }, {
+              "name" : "days_90_120",
+              "dataType" : {
+                "type" : "Bigint"
+              }
+            }, {
+              "name" : "days_more_than_120",
+              "dataType" : {
+                "type" : "Bigint"
+              }
+            }, {
+              "name" : "i_item_id",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "i_item_desc",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "i_category",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "i_class",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "i_current_price",
+              "dataType" : {
+                "type" : "Decimal"
+              }
+            }, {
+              "name" : "itemrevenue",
+              "dataType" : {
+                "type" : "Decimal"
+              }
+            }, {
+              "name" : "revenueratio",
+              "dataType" : {
+                "type" : "Decimal"
+              }
+            }, {
+              "name" : "h8_30_to_9",
+              "dataType" : {
+                "type" : "Bigint"
+              }
+            }, {
+              "name" : "h9_to_9_30",
+              "dataType" : {
+                "type" : "Bigint"
+              }
+            }, {
+              "name" : "h9_30_to_10",
+              "dataType" : {
+                "type" : "Bigint"
+              }
+            }, {
+              "name" : "h10_to_10_30",
+              "dataType" : {
+                "type" : "Bigint"
+              }
+            }, {
+              "name" : "h10_30_to_11",
+              "dataType" : {
+                "type" : "Bigint"
+              }
+            }, {
+              "name" : "h11_to_11_30",
+              "dataType" : {
+                "type" : "Bigint"
+              }
+            }, {
+              "name" : "h11_30_to_12",
+              "dataType" : {
+                "type" : "Bigint"
+              }
+            }, {
+              "name" : "h12_to_12_30",
+              "dataType" : {
+                "type" : "Bigint"
+              }
+            } ]
+          },
+          "slug" : "tpcds_perf_sql_1"
+        }, {
+          "id" : "wQpT0_nO_S5Gt-cCrQOiu$$9qoX_X8Mcc3RYTvPdiM6a",
+          "schema" : {
+            "providerType" : "Databricks",
+            "fields" : [ {
+              "name" : "sm_type",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "cc_name",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "a_30_days",
+              "dataType" : {
+                "type" : "Bigint"
+              }
+            }, {
+              "name" : "a_31_60_days",
+              "dataType" : {
+                "type" : "Bigint"
+              }
+            }, {
+              "name" : "a_61_90_days",
+              "dataType" : {
+                "type" : "Bigint"
+              }
+            }, {
+              "name" : "a_91_120_days",
+              "dataType" : {
+                "type" : "Bigint"
+              }
+            }, {
+              "name" : "a_120_days_and_more",
+              "dataType" : {
+                "type" : "Bigint"
+              }
+            }, {
+              "name" : "i_item_id",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "i_item_desc",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "i_category",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "i_class",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "i_current_price",
+              "dataType" : {
+                "type" : "Decimal"
+              }
+            }, {
+              "name" : "itemrevenue",
+              "dataType" : {
+                "type" : "Decimal"
+              }
+            }, {
+              "name" : "revenueratio",
+              "dataType" : {
+                "type" : "Decimal"
+              }
+            } ]
+          },
+          "slug" : "tpcds_perf_sql_2_1"
+        }, {
+          "id" : "On9s4-M57pzuEnWL9rH2s$$yx-8babGDsuMHNpuQV8Ag",
+          "schema" : {
+            "providerType" : "Databricks",
+            "fields" : [ {
+              "name" : "sm_type",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "cc_name",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "t_30days",
+              "dataType" : {
+                "type" : "Bigint"
+              }
+            }, {
+              "name" : "t_31_60_days",
+              "dataType" : {
+                "type" : "Bigint"
+              }
+            }, {
+              "name" : "t_61_90_days",
+              "dataType" : {
+                "type" : "Bigint"
+              }
+            }, {
+              "name" : "t_91_120_days",
+              "dataType" : {
+                "type" : "Bigint"
+              }
+            }, {
+              "name" : "t_morethan_120days",
+              "dataType" : {
+                "type" : "Bigint"
+              }
+            }, {
+              "name" : "Excess_Discount_Amount",
+              "dataType" : {
+                "type" : "Decimal"
+              }
+            }, {
+              "name" : "Excess_Discount_Description",
+              "dataType" : {
+                "type" : "String"
+              }
+            } ]
+          },
+          "slug" : "in2"
+        } ],
+        "outputs" : [ {
+          "id" : "kDhOnjk4esECiOwhXtUkq$$g-L_BBrhkwusxJPYJEwrK",
+          "schema" : {
+            "providerType" : "Databricks",
+            "fields" : [ {
+              "name" : "a_30_days",
+              "dataType" : {
+                "type" : "Bigint"
+              }
+            }, {
+              "name" : "a_31_60_days",
+              "dataType" : {
+                "type" : "Bigint"
+              }
+            }, {
+              "name" : "a_61_90_days",
+              "dataType" : {
+                "type" : "Bigint"
+              }
+            }, {
+              "name" : "a_91_120_days",
+              "dataType" : {
+                "type" : "Bigint"
+              }
+            }, {
+              "name" : "a_120_days_and_more",
+              "dataType" : {
+                "type" : "Bigint"
+              }
+            }, {
+              "name" : "h10_30_to_11",
+              "dataType" : {
+                "type" : "Bigint"
+              }
+            }, {
+              "name" : "h9_30_to_10",
+              "dataType" : {
+                "type" : "Bigint"
+              }
+            }, {
+              "name" : "h9_to_9_30",
+              "dataType" : {
+                "type" : "Bigint"
+              }
+            }, {
+              "name" : "days_31_60",
+              "dataType" : {
+                "type" : "Bigint"
+              }
+            }, {
+              "name" : "days_30",
+              "dataType" : {
+                "type" : "Bigint"
+              }
+            }, {
+              "name" : "i_current_price",
+              "dataType" : {
+                "type" : "Decimal"
+              }
+            }, {
+              "name" : "i_item_id",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "days_61_90",
+              "dataType" : {
+                "type" : "Bigint"
+              }
+            }, {
+              "name" : "i_item_desc",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "revenueratio",
+              "dataType" : {
+                "type" : "Decimal"
+              }
+            }, {
+              "name" : "days_more_than_120",
+              "dataType" : {
+                "type" : "Bigint"
+              }
+            }, {
+              "name" : "h11_to_11_30",
+              "dataType" : {
+                "type" : "Bigint"
+              }
+            }, {
+              "name" : "sm_type",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "i_category",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "h11_30_to_12",
+              "dataType" : {
+                "type" : "Bigint"
+              }
+            }, {
+              "name" : "i_class",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "cc_name",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "itemrevenue",
+              "dataType" : {
+                "type" : "Decimal"
+              }
+            }, {
+              "name" : "h12_to_12_30",
+              "dataType" : {
+                "type" : "Bigint"
+              }
+            }, {
+              "name" : "h8_30_to_9",
+              "dataType" : {
+                "type" : "Bigint"
+              }
+            }, {
+              "name" : "h10_to_10_30",
+              "dataType" : {
+                "type" : "Bigint"
+              }
+            }, {
+              "name" : "days_90_120",
+              "dataType" : {
+                "type" : "Bigint"
+              }
+            } ]
+          },
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
+    "tpcds_perf_sql_3_useall_tpcds##q1Y8V2Ge" : {
+      "id" : "tpcds_perf_sql_3_useall_tpcds##q1Y8V2Ge",
+      "component" : "TargetModel",
+      "metadata" : {
+        "label" : "tpcds_perf_sql_3_useall_tpcds",
+        "x" : 260,
+        "y" : 0,
+        "phase" : 0,
+        "macroDependencies" : [ ]
+      },
+      "properties" : {
+        "customQueryDisabled" : true,
+        "customQuery" : false,
+        "incrementalEditorDisabled" : true,
+        "query" : "SELECT * \n\nFROM Join_2\n",
+        "incrementalKey" : false,
+        "incremental" : {
+          "expression" : "true"
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "Amj7zsHO",
+          "schema" : {
+            "providerType" : "Databricks",
+            "fields" : [ {
+              "name" : "a_30_days",
+              "dataType" : {
+                "type" : "Bigint"
+              }
+            }, {
+              "name" : "a_31_60_days",
+              "dataType" : {
+                "type" : "Bigint"
+              }
+            }, {
+              "name" : "a_61_90_days",
+              "dataType" : {
+                "type" : "Bigint"
+              }
+            }, {
+              "name" : "a_91_120_days",
+              "dataType" : {
+                "type" : "Bigint"
+              }
+            }, {
+              "name" : "a_120_days_and_more",
+              "dataType" : {
+                "type" : "Bigint"
+              }
+            }, {
+              "name" : "h10_30_to_11",
+              "dataType" : {
+                "type" : "Bigint"
+              }
+            }, {
+              "name" : "h9_30_to_10",
+              "dataType" : {
+                "type" : "Bigint"
+              }
+            }, {
+              "name" : "h9_to_9_30",
+              "dataType" : {
+                "type" : "Bigint"
+              }
+            }, {
+              "name" : "days_31_60",
+              "dataType" : {
+                "type" : "Bigint"
+              }
+            }, {
+              "name" : "days_30",
+              "dataType" : {
+                "type" : "Bigint"
+              }
+            }, {
+              "name" : "i_current_price",
+              "dataType" : {
+                "type" : "Decimal"
+              }
+            }, {
+              "name" : "i_item_id",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "days_61_90",
+              "dataType" : {
+                "type" : "Bigint"
+              }
+            }, {
+              "name" : "i_item_desc",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "revenueratio",
+              "dataType" : {
+                "type" : "Decimal"
+              }
+            }, {
+              "name" : "days_more_than_120",
+              "dataType" : {
+                "type" : "Bigint"
+              }
+            }, {
+              "name" : "h11_to_11_30",
+              "dataType" : {
+                "type" : "Bigint"
+              }
+            }, {
+              "name" : "sm_type",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "i_category",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "h11_30_to_12",
+              "dataType" : {
+                "type" : "Bigint"
+              }
+            }, {
+              "name" : "i_class",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "cc_name",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "itemrevenue",
+              "dataType" : {
+                "type" : "Decimal"
+              }
+            }, {
+              "name" : "h12_to_12_30",
+              "dataType" : {
+                "type" : "Bigint"
+              }
+            }, {
+              "name" : "h8_30_to_9",
+              "dataType" : {
+                "type" : "Bigint"
+              }
+            }, {
+              "name" : "h10_to_10_30",
+              "dataType" : {
+                "type" : "Bigint"
+              }
+            }, {
+              "name" : "days_90_120",
+              "dataType" : {
+                "type" : "Bigint"
+              }
+            } ]
+          },
+          "slug" : "Join_2"
+        } ],
+        "outputs" : [ {
+          "id" : "J2u7iFyb",
+          "schema" : {
+            "providerType" : "Databricks",
+            "fields" : [ {
+              "name" : "a_30_days",
+              "dataType" : {
+                "type" : "Bigint"
+              }
+            }, {
+              "name" : "a_31_60_days",
+              "dataType" : {
+                "type" : "Bigint"
+              }
+            }, {
+              "name" : "a_61_90_days",
+              "dataType" : {
+                "type" : "Bigint"
+              }
+            }, {
+              "name" : "a_91_120_days",
+              "dataType" : {
+                "type" : "Bigint"
+              }
+            }, {
+              "name" : "a_120_days_and_more",
+              "dataType" : {
+                "type" : "Bigint"
+              }
+            }, {
+              "name" : "h10_30_to_11",
+              "dataType" : {
+                "type" : "Bigint"
+              }
+            }, {
+              "name" : "h9_30_to_10",
+              "dataType" : {
+                "type" : "Bigint"
+              }
+            }, {
+              "name" : "h9_to_9_30",
+              "dataType" : {
+                "type" : "Bigint"
+              }
+            }, {
+              "name" : "days_31_60",
+              "dataType" : {
+                "type" : "Bigint"
+              }
+            }, {
+              "name" : "days_30",
+              "dataType" : {
+                "type" : "Bigint"
+              }
+            }, {
+              "name" : "i_current_price",
+              "dataType" : {
+                "type" : "Decimal"
+              }
+            }, {
+              "name" : "i_item_id",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "days_61_90",
+              "dataType" : {
+                "type" : "Bigint"
+              }
+            }, {
+              "name" : "i_item_desc",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "revenueratio",
+              "dataType" : {
+                "type" : "Decimal"
+              }
+            }, {
+              "name" : "days_more_than_120",
+              "dataType" : {
+                "type" : "Bigint"
+              }
+            }, {
+              "name" : "h11_to_11_30",
+              "dataType" : {
+                "type" : "Bigint"
+              }
+            }, {
+              "name" : "sm_type",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "i_category",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "h11_30_to_12",
+              "dataType" : {
+                "type" : "Bigint"
+              }
+            }, {
+              "name" : "i_class",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "cc_name",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "itemrevenue",
+              "dataType" : {
+                "type" : "Decimal"
+              }
+            }, {
+              "name" : "h12_to_12_30",
+              "dataType" : {
+                "type" : "Bigint"
+              }
+            }, {
+              "name" : "h8_30_to_9",
+              "dataType" : {
+                "type" : "Bigint"
+              }
+            }, {
+              "name" : "h10_to_10_30",
+              "dataType" : {
+                "type" : "Bigint"
+              }
+            }, {
+              "name" : "days_90_120",
+              "dataType" : {
+                "type" : "Bigint"
+              }
+            } ]
+          },
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
+    "ro6GsN-T2fIamia-tKw4P" : {
+      "id" : "ro6GsN-T2fIamia-tKw4P",
+      "component" : "Model",
+      "metadata" : {
+        "label" : "tpcds_perf_sql_0",
+        "slug" : "tpcds_perf_sql_0",
+        "x" : -700,
+        "y" : 380,
+        "phase" : 0
+      },
+      "properties" : {
+        "table" : {
+          "name" : "tpcds_perf_sql_0",
+          "sourceType" : "Model",
+          "alias" : ""
+        }
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "JGVwRwutbjQJ1uBF4Bsuh",
+          "schema" : {
+            "providerType" : "Databricks",
+            "fields" : [ {
+              "name" : "Excess_Discount_Amount",
+              "dataType" : {
+                "type" : "Decimal"
+              }
+            }, {
+              "name" : "Excess_Discount_Description",
+              "dataType" : {
+                "type" : "String"
+              }
+            } ]
+          },
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    }
+  },
+  "connections" : [ {
+    "id" : "TVaSscWlNqSZ2i70ztRzZ$$dsOOTw1E4ywt2r9lMdctv",
+    "source" : "Y6Rnz7LkgDu9WBQl2R-ig",
+    "sourcePort" : "IOGdurporFE3BTtfwmp6v",
+    "target" : "tBepgp5tBMoZ7q8AXausN$$HkECL2x9elkmyQdUJ6HQ1",
+    "targetPort" : "dTk5BUwNMXViUWKKt_sAC$$pwq-w0nPD5cCYkRpVJfQS"
+  }, {
+    "id" : "UOHVAJPsqMUraCG-i2VuZ$$bEJlJrGVhBEAfGLQ8LDTs",
+    "source" : "jqHFIGLrxHMRYPxBcAwmX",
+    "sourcePort" : "A_sDlWCpvwu2_eJGYUAF0",
+    "target" : "tBepgp5tBMoZ7q8AXausN$$HkECL2x9elkmyQdUJ6HQ1",
+    "targetPort" : "wQpT0_nO_S5Gt-cCrQOiu$$9qoX_X8Mcc3RYTvPdiM6a"
+  }, {
+    "id" : "IR06YA1QUQY82NV1P_chf",
+    "source" : "tBepgp5tBMoZ7q8AXausN$$HkECL2x9elkmyQdUJ6HQ1",
+    "sourcePort" : "kDhOnjk4esECiOwhXtUkq$$g-L_BBrhkwusxJPYJEwrK",
+    "target" : "tpcds_perf_sql_3_useall_tpcds##q1Y8V2Ge",
+    "targetPort" : "Amj7zsHO"
+  }, {
+    "id" : "Sg4kI7N7ZwceewQOzS814$$HjCwgpXpFWc3_j0iz5PS2",
+    "source" : "S8p4gzxmc7K4-l6BdL8Fp$$VSd11v43IjjPgTc7AK0yy",
+    "sourcePort" : "bcN6zeDuJDbnGCk60iVSd$$38bL1QGOQCIa3bMXx-NyH",
+    "target" : "WVbIKCe2YMb0sQsMrsW7B$$kErHIrHssn5hXATRrbUMt",
+    "targetPort" : "ZJdNiKEMEOUXO5HW-IY6D$$8fQhlm0BfkuqWgMh-Ch3H"
+  }, {
+    "id" : "YYVA1DzbtM74WlxfTNvUy",
+    "source" : "WVbIKCe2YMb0sQsMrsW7B$$kErHIrHssn5hXATRrbUMt",
+    "sourcePort" : "6zRppH98YEfyZbVodyVwM$$uA5J2zz-boIJzgPD4j5Bz",
+    "target" : "tBepgp5tBMoZ7q8AXausN$$HkECL2x9elkmyQdUJ6HQ1",
+    "targetPort" : "On9s4-M57pzuEnWL9rH2s$$yx-8babGDsuMHNpuQV8Ag"
+  }, {
+    "id" : "ZthYOHOICfI5l893mUCkP",
+    "source" : "ro6GsN-T2fIamia-tKw4P",
+    "sourcePort" : "JGVwRwutbjQJ1uBF4Bsuh",
+    "target" : "WVbIKCe2YMb0sQsMrsW7B$$kErHIrHssn5hXATRrbUMt",
+    "targetPort" : "by5lzNPZc_9kl2k2vbQKH$$W_KJgEcCD2QzMPBQ3Ntqm"
+  } ],
+  "component" : "Model"
+}

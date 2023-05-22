@@ -1,0 +1,184 @@
+{
+  "id" : "tpcds_perf_sql_0",
+  "metainfo" : {
+    "label" : "tpcds_perf_sql_0",
+    "autoLayout" : false,
+    "staleState" : "none",
+    "sourceSuggestions" : {
+      "sources" : [ ]
+    }
+  },
+  "processes" : {
+    "tpcds_perf_sql_0##KCEGD0L1" : {
+      "id" : "tpcds_perf_sql_0##KCEGD0L1",
+      "component" : "TargetModel",
+      "metadata" : {
+        "label" : "tpcds_perf_sql_0",
+        "x" : 60,
+        "y" : 180,
+        "phase" : 0,
+        "macroDependencies" : [ ]
+      },
+      "properties" : {
+        "customQueryDisabled" : true,
+        "customQuery" : false,
+        "incrementalEditorDisabled" : true,
+        "query" : "SELECT * \n\nFROM Reformat_1\n",
+        "incrementalKey" : false,
+        "incremental" : {
+          "expression" : "true"
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "zbP0LfKQ",
+          "schema" : {
+            "providerType" : "Databricks",
+            "fields" : [ {
+              "name" : "Excess_Discount_Amount",
+              "dataType" : {
+                "type" : "Decimal"
+              }
+            }, {
+              "name" : "Excess_Discount_Description",
+              "dataType" : {
+                "type" : "String"
+              }
+            } ]
+          },
+          "slug" : "Reformat_1"
+        } ],
+        "outputs" : [ {
+          "id" : "yFHj8Nzr",
+          "schema" : {
+            "providerType" : "Databricks",
+            "fields" : [ {
+              "name" : "Excess_Discount_Amount",
+              "dataType" : {
+                "type" : "Decimal"
+              }
+            }, {
+              "name" : "Excess_Discount_Description",
+              "dataType" : {
+                "type" : "String"
+              }
+            } ]
+          },
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
+    "8XCk1SHlFMi8Y8fDKaNPL$$H5WstXV50FwmWBc3OnqD5" : {
+      "id" : "8XCk1SHlFMi8Y8fDKaNPL$$H5WstXV50FwmWBc3OnqD5",
+      "component" : "SQLStatement",
+      "metadata" : {
+        "label" : "SQLStatement_1",
+        "slug" : "SQLStatement_1",
+        "x" : -700,
+        "y" : 180,
+        "phase" : 0,
+        "macroDependencies" : [ ]
+      },
+      "properties" : {
+        "fileTabs" : [ {
+          "path" : "out",
+          "id" : "out",
+          "language" : "sql",
+          "content" : "select  \n   sum(ws_ext_discount_amt)  as Excess_Discount_Amount\nfrom \n    spark_catalog.qa_performance_database.web_sales \n   ,spark_catalog.qa_performance_database.item \n   ,spark_catalog.qa_performance_database.date_dim\nwhere\ni_manufact_id = 939\nand i_item_sk = ws_item_sk \nand d_date between '2002-02-16' and \n        dateadd(day,90,to_date('2002-02-16'))\nand d_date_sk = ws_sold_date_sk \nand ws_ext_discount_amt  \n     > ( \n         SELECT \n            1.3 * avg(ws_ext_discount_amt) \n         FROM \n            spark_catalog.qa_performance_database.web_sales \n           ,spark_catalog.qa_performance_database.date_dim\n         WHERE \n              ws_item_sk = i_item_sk \n          and d_date between '2002-02-16' and\n                             dateadd(day,90,to_date('2002-02-16'))\n          and d_date_sk = ws_sold_date_sk \n      ) \norder by sum(ws_ext_discount_amt)\nlimit 100"
+        } ]
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "T6z538AyveBasLsqewrh7$$EVtJRrgjrqLjRg_FzbNDJ",
+          "schema" : {
+            "providerType" : "Databricks",
+            "fields" : [ {
+              "name" : "Excess_Discount_Amount",
+              "dataType" : {
+                "type" : "Decimal"
+              }
+            } ]
+          },
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
+    "q14WC7bD5MXF9Zk3n0c1-$$9Ky-SKPD-K7fdSC9GmS2d" : {
+      "id" : "q14WC7bD5MXF9Zk3n0c1-$$9Ky-SKPD-K7fdSC9GmS2d",
+      "component" : "Reformat",
+      "metadata" : {
+        "label" : "Reformat_1",
+        "slug" : "Reformat_1",
+        "x" : -520,
+        "y" : 180,
+        "phase" : 0,
+        "macroDependencies" : [ ]
+      },
+      "properties" : {
+        "columnsSelector" : [ "eYnwLsoFZ98KyZSF1BV1E$$bcRFsJURrBdkyzFlYkVgv##Excess_Discount_Amount" ],
+        "expressions" : [ {
+          "expression" : {
+            "expression" : "Excess_Discount_Amount"
+          },
+          "alias" : "Excess_Discount_Amount"
+        }, {
+          "expression" : {
+            "expression" : "concat('Discount is:', Excess_Discount_Amount)"
+          },
+          "alias" : "Excess_Discount_Description"
+        } ]
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "eYnwLsoFZ98KyZSF1BV1E$$bcRFsJURrBdkyzFlYkVgv",
+          "schema" : {
+            "providerType" : "Databricks",
+            "fields" : [ {
+              "name" : "Excess_Discount_Amount",
+              "dataType" : {
+                "type" : "Decimal"
+              }
+            } ]
+          },
+          "slug" : "in0"
+        } ],
+        "outputs" : [ {
+          "id" : "4ChBruU9aY415iLJIcpe7$$cSxvYVE1D8gy3ogVOndfI",
+          "schema" : {
+            "providerType" : "Databricks",
+            "fields" : [ {
+              "name" : "Excess_Discount_Amount",
+              "dataType" : {
+                "type" : "Decimal"
+              }
+            }, {
+              "name" : "Excess_Discount_Description",
+              "dataType" : {
+                "type" : "String"
+              }
+            } ]
+          },
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    }
+  },
+  "connections" : [ {
+    "id" : "l80jAfu5XCSg9wMqCMeRi$$mGCmwiv45lpPRGAmFmN0f",
+    "source" : "8XCk1SHlFMi8Y8fDKaNPL$$H5WstXV50FwmWBc3OnqD5",
+    "sourcePort" : "T6z538AyveBasLsqewrh7$$EVtJRrgjrqLjRg_FzbNDJ",
+    "target" : "q14WC7bD5MXF9Zk3n0c1-$$9Ky-SKPD-K7fdSC9GmS2d",
+    "targetPort" : "eYnwLsoFZ98KyZSF1BV1E$$bcRFsJURrBdkyzFlYkVgv"
+  }, {
+    "id" : "NAyW2wv2fRSltw9K8r8Rn",
+    "source" : "q14WC7bD5MXF9Zk3n0c1-$$9Ky-SKPD-K7fdSC9GmS2d",
+    "sourcePort" : "4ChBruU9aY415iLJIcpe7$$cSxvYVE1D8gy3ogVOndfI",
+    "target" : "tpcds_perf_sql_0##KCEGD0L1",
+    "targetPort" : "zbP0LfKQ"
+  } ],
+  "component" : "Model"
+}

@@ -1,0 +1,206 @@
+{
+  "qa_macro_call_another_macro_base" : {
+    "name" : "qa_macro_call_another_macro_base",
+    "macroType" : "expression",
+    "definition" : "concat(\n  {{ SQL_BaseGitDepProjectAllFinal.qa_concat_macro_base(final_param_string_only) }}, \n  '{{final_param_string_only}}')",
+    "parameters" : {
+      "type" : "record",
+      "fields" : [ {
+        "name" : "final_param_string_only",
+        "kind" : {
+          "type" : "value",
+          "value" : "'random data'"
+        },
+        "optional" : true,
+        "isWorkflowNodeConfiguration" : false
+      } ]
+    },
+    "staleState" : "none"
+  },
+  "qa_macro_call_another_macro_base_column" : {
+    "name" : "qa_macro_call_another_macro_base_column",
+    "macroType" : "expression",
+    "definition" : "concat({{ SQL_BaseGitDepProjectAllFinal.qa_concat_macro_base_column(param_column) }}, {{param_column}})",
+    "parameters" : {
+      "type" : "record",
+      "fields" : [ {
+        "name" : "param_column",
+        "kind" : {
+          "type" : "value"
+        },
+        "optional" : false,
+        "isWorkflowNodeConfiguration" : false
+      } ]
+    },
+    "staleState" : "none"
+  },
+  "qa_concat_macro_base_column" : {
+    "name" : "qa_concat_macro_base_column",
+    "macroType" : "expression",
+    "definition" : "concat({{param1_column}}, 'hellomain')",
+    "parameters" : {
+      "type" : "record",
+      "fields" : [ {
+        "name" : "param1_column",
+        "kind" : {
+          "type" : "value"
+        },
+        "optional" : false,
+        "isWorkflowNodeConfiguration" : false
+      } ]
+    },
+    "staleState" : "none"
+  },
+  "_round_function_base" : {
+    "name" : "_round_function_base",
+    "macroType" : "expression",
+    "definition" : "ROUND({{n1}}, {{scale}})",
+    "parameters" : {
+      "type" : "record",
+      "fields" : [ {
+        "name" : "n1",
+        "kind" : {
+          "type" : "value"
+        },
+        "optional" : false,
+        "isWorkflowNodeConfiguration" : false
+      }, {
+        "name" : "scale",
+        "kind" : {
+          "type" : "value",
+          "value" : "2"
+        },
+        "optional" : true,
+        "isWorkflowNodeConfiguration" : false
+      } ]
+    },
+    "staleState" : "none"
+  },
+  "multi_macro_expressions_base" : {
+    "name" : "multi_macro_expressions_base",
+    "macroType" : "expression",
+    "definition" : "concat({{param_float}} + {{param_array[0]}}, 'hello')",
+    "parameters" : {
+      "type" : "record",
+      "fields" : [ {
+        "name" : "param_float",
+        "kind" : {
+          "type" : "value",
+          "value" : "12"
+        },
+        "optional" : true,
+        "isWorkflowNodeConfiguration" : false
+      }, {
+        "name" : "param_array",
+        "kind" : {
+          "type" : "value",
+          "value" : "[1, 2, 3]"
+        },
+        "optional" : true,
+        "isWorkflowNodeConfiguration" : false
+      }, {
+        "name" : "param_dict",
+        "kind" : {
+          "type" : "value",
+          "value" : "[1, 2, 3]"
+        },
+        "optional" : true,
+        "isWorkflowNodeConfiguration" : false
+      } ]
+    },
+    "staleState" : "none"
+  },
+  "_qa_concat_string_cols" : {
+    "name" : "_qa_concat_string_cols",
+    "macroType" : "expression",
+    "definition" : "concat({{input_col1}}, {{input_col2}})",
+    "parameters" : {
+      "type" : "record",
+      "fields" : [ {
+        "name" : "input_col1",
+        "kind" : {
+          "type" : "value"
+        },
+        "optional" : false,
+        "isWorkflowNodeConfiguration" : false
+      }, {
+        "name" : "input_col2",
+        "kind" : {
+          "type" : "value"
+        },
+        "optional" : false,
+        "isWorkflowNodeConfiguration" : false
+      } ]
+    },
+    "staleState" : "none"
+  },
+  "_qa_concat_param_type_base" : {
+    "name" : "_qa_concat_param_type_base",
+    "macroType" : "expression",
+    "definition" : "concat('{{input_string}}', {{int_param}})",
+    "parameters" : {
+      "type" : "record",
+      "fields" : [ {
+        "name" : "input_string",
+        "kind" : {
+          "type" : "value",
+          "value" : "'hello'"
+        },
+        "optional" : true,
+        "isWorkflowNodeConfiguration" : false
+      }, {
+        "name" : "int_param_or_col",
+        "kind" : {
+          "type" : "value",
+          "value" : "10"
+        },
+        "optional" : true,
+        "isWorkflowNodeConfiguration" : false
+      } ]
+    },
+    "staleState" : "none"
+  },
+  "qa_concat_macro_base" : {
+    "name" : "qa_concat_macro_base",
+    "macroType" : "expression",
+    "definition" : "concat('{{param1_string_only}}', 'hellomain')",
+    "parameters" : {
+      "type" : "record",
+      "fields" : [ {
+        "name" : "param1_string_only",
+        "kind" : {
+          "type" : "value",
+          "value" : "'hello'"
+        },
+        "optional" : true,
+        "isWorkflowNodeConfiguration" : false
+      } ]
+    },
+    "staleState" : "none"
+  },
+  "round_function_base" : {
+    "name" : "round_function_base",
+    "macroType" : "expression",
+    "definition" : "ROUND({{n1}}, {{scale}})",
+    "parameters" : {
+      "type" : "record",
+      "fields" : [ {
+        "name" : "n1",
+        "kind" : {
+          "type" : "value"
+        },
+        "optional" : false,
+        "isWorkflowNodeConfiguration" : false
+      }, {
+        "name" : "scale",
+        "kind" : {
+          "type" : "value",
+          "value" : "2"
+        },
+        "optional" : true,
+        "isWorkflowNodeConfiguration" : false
+      } ]
+    },
+    "staleState" : "none"
+  }
+}

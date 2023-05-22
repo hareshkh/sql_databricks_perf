@@ -1,0 +1,702 @@
+{
+  "id" : "test_perf_model_0",
+  "metainfo" : {
+    "label" : "test_perf_model_0",
+    "autoLayout" : false,
+    "staleState" : "none",
+    "sourceSuggestions" : {
+      "sources" : [ {
+        "source" : {
+          "table" : {
+            "name" : "ecards_transactions_perf",
+            "sourceType" : "Seed"
+          }
+        },
+        "sourceComponentKind" : "Seed",
+        "sourceLabel" : "ecards_transactions_perf",
+        "canJoinWith" : [ {
+          "processLabel" : "annual_enterprise_perf",
+          "processId" : "n8yRi2K_C7YqcoqnPdFfd",
+          "properties" : {
+            "activeTab" : "conditions",
+            "columnsSelector" : [ "Units_1" ],
+            "conditions" : [ {
+              "alias" : "annual_enterprise_perf",
+              "expression" : {
+                "expression" : "annual_enterprise_perf.Units_1 = ecards_transactions_perf.Units_1"
+              },
+              "joinType" : "inner"
+            } ],
+            "expressions" : [ {
+              "expression" : {
+                "expression" : "ecards_transactions_perf.Series_reference"
+              },
+              "alias" : "Series_reference"
+            }, {
+              "expression" : {
+                "expression" : "ecards_transactions_perf.Period_1"
+              },
+              "alias" : "Period_1"
+            }, {
+              "expression" : {
+                "expression" : "ecards_transactions_perf.Data_value_1"
+              },
+              "alias" : "Data_value_1"
+            }, {
+              "expression" : {
+                "expression" : "ecards_transactions_perf.Suppressed_1"
+              },
+              "alias" : "Suppressed_1"
+            }, {
+              "expression" : {
+                "expression" : "ecards_transactions_perf.STATUS_1"
+              },
+              "alias" : "STATUS_1"
+            }, {
+              "expression" : {
+                "expression" : "ecards_transactions_perf.UNITS_1"
+              },
+              "alias" : "UNITS_1"
+            }, {
+              "expression" : {
+                "expression" : "ecards_transactions_perf.Magnitude_1"
+              },
+              "alias" : "Magnitude_1"
+            }, {
+              "expression" : {
+                "expression" : "ecards_transactions_perf.Subject_1"
+              },
+              "alias" : "Subject_1"
+            }, {
+              "expression" : {
+                "expression" : "ecards_transactions_perf.Group_1"
+              },
+              "alias" : "Group_1"
+            }, {
+              "expression" : {
+                "expression" : "ecards_transactions_perf.Series_title_1"
+              },
+              "alias" : "Series_title_1"
+            }, {
+              "expression" : {
+                "expression" : "ecards_transactions_perf.Series_title_2"
+              },
+              "alias" : "Series_title_2"
+            }, {
+              "expression" : {
+                "expression" : "ecards_transactions_perf.Series_title_3"
+              },
+              "alias" : "Series_title_3"
+            }, {
+              "expression" : {
+                "expression" : "ecards_transactions_perf.Series_title_4"
+              },
+              "alias" : "Series_title_4"
+            }, {
+              "expression" : {
+                "expression" : "ecards_transactions_perf.Series_title_5"
+              },
+              "alias" : "Series_title_5"
+            }, {
+              "expression" : {
+                "expression" : "annual_enterprise_perf.Variable_category_1"
+              },
+              "alias" : "Variable_category_1"
+            }, {
+              "expression" : {
+                "expression" : "annual_enterprise_perf.Industry_code_NZSIOC"
+              },
+              "alias" : "Industry_code_NZSIOC"
+            }, {
+              "expression" : {
+                "expression" : "annual_enterprise_perf.Year_1"
+              },
+              "alias" : "Year_1"
+            }, {
+              "expression" : {
+                "expression" : "annual_enterprise_perf.Industry_code_ANZSIC06"
+              },
+              "alias" : "Industry_code_ANZSIC06"
+            }, {
+              "expression" : {
+                "expression" : "annual_enterprise_perf.Variable_name_1"
+              },
+              "alias" : "Variable_name_1"
+            }, {
+              "expression" : {
+                "expression" : "annual_enterprise_perf.Industry_aggregation_NZSIOC"
+              },
+              "alias" : "Industry_aggregation_NZSIOC"
+            }, {
+              "expression" : {
+                "expression" : "annual_enterprise_perf.Variable_code_1"
+              },
+              "alias" : "Variable_code_1"
+            }, {
+              "expression" : {
+                "expression" : "annual_enterprise_perf.Value_1"
+              },
+              "alias" : "Value_1"
+            }, {
+              "expression" : {
+                "expression" : "annual_enterprise_perf.Industry_name_NZSIOC"
+              },
+              "alias" : "Industry_name_NZSIOC"
+            }, {
+              "expression" : {
+                "expression" : "annual_enterprise_perf.Units_1"
+              },
+              "alias" : "Units_1"
+            } ],
+            "headAlias" : "ecards_transactions_perf"
+          },
+          "isRecommended" : false
+        } ]
+      }, {
+        "source" : {
+          "table" : {
+            "name" : "economic_survey_perf",
+            "sourceType" : "Seed"
+          }
+        },
+        "sourceComponentKind" : "Seed",
+        "sourceLabel" : "economic_survey_perf",
+        "canJoinWith" : [ {
+          "processLabel" : "annual_enterprise_perf",
+          "processId" : "n8yRi2K_C7YqcoqnPdFfd",
+          "properties" : {
+            "activeTab" : "conditions",
+            "columnsSelector" : [ "Units_1" ],
+            "conditions" : [ {
+              "alias" : "annual_enterprise_perf",
+              "expression" : {
+                "expression" : "annual_enterprise_perf.Units_1 = economic_survey_perf.Units_1"
+              },
+              "joinType" : "inner"
+            } ],
+            "expressions" : [ {
+              "expression" : {
+                "expression" : "economic_survey_perf.Series_reference"
+              },
+              "alias" : "Series_reference"
+            }, {
+              "expression" : {
+                "expression" : "economic_survey_perf.Period_1"
+              },
+              "alias" : "Period_1"
+            }, {
+              "expression" : {
+                "expression" : "economic_survey_perf.Data_value"
+              },
+              "alias" : "Data_value"
+            }, {
+              "expression" : {
+                "expression" : "economic_survey_perf.Suppressed_1"
+              },
+              "alias" : "Suppressed_1"
+            }, {
+              "expression" : {
+                "expression" : "economic_survey_perf.STATUS_1"
+              },
+              "alias" : "STATUS_1"
+            }, {
+              "expression" : {
+                "expression" : "economic_survey_perf.UNITS_1"
+              },
+              "alias" : "UNITS_1"
+            }, {
+              "expression" : {
+                "expression" : "economic_survey_perf.Magnitude_1"
+              },
+              "alias" : "Magnitude_1"
+            }, {
+              "expression" : {
+                "expression" : "economic_survey_perf.Subject_1"
+              },
+              "alias" : "Subject_1"
+            }, {
+              "expression" : {
+                "expression" : "economic_survey_perf.Group_1"
+              },
+              "alias" : "Group_1"
+            }, {
+              "expression" : {
+                "expression" : "economic_survey_perf.Series_title_1"
+              },
+              "alias" : "Series_title_1"
+            }, {
+              "expression" : {
+                "expression" : "economic_survey_perf.Series_title_2"
+              },
+              "alias" : "Series_title_2"
+            }, {
+              "expression" : {
+                "expression" : "economic_survey_perf.Series_title_3"
+              },
+              "alias" : "Series_title_3"
+            }, {
+              "expression" : {
+                "expression" : "economic_survey_perf.Series_title_4"
+              },
+              "alias" : "Series_title_4"
+            }, {
+              "expression" : {
+                "expression" : "economic_survey_perf.Series_title_5"
+              },
+              "alias" : "Series_title_5"
+            }, {
+              "expression" : {
+                "expression" : "annual_enterprise_perf.Variable_category_1"
+              },
+              "alias" : "Variable_category_1"
+            }, {
+              "expression" : {
+                "expression" : "annual_enterprise_perf.Industry_code_NZSIOC"
+              },
+              "alias" : "Industry_code_NZSIOC"
+            }, {
+              "expression" : {
+                "expression" : "annual_enterprise_perf.Year_1"
+              },
+              "alias" : "Year_1"
+            }, {
+              "expression" : {
+                "expression" : "annual_enterprise_perf.Industry_code_ANZSIC06"
+              },
+              "alias" : "Industry_code_ANZSIC06"
+            }, {
+              "expression" : {
+                "expression" : "annual_enterprise_perf.Variable_name_1"
+              },
+              "alias" : "Variable_name_1"
+            }, {
+              "expression" : {
+                "expression" : "annual_enterprise_perf.Industry_aggregation_NZSIOC"
+              },
+              "alias" : "Industry_aggregation_NZSIOC"
+            }, {
+              "expression" : {
+                "expression" : "annual_enterprise_perf.Variable_code_1"
+              },
+              "alias" : "Variable_code_1"
+            }, {
+              "expression" : {
+                "expression" : "annual_enterprise_perf.Value_1"
+              },
+              "alias" : "Value_1"
+            }, {
+              "expression" : {
+                "expression" : "annual_enterprise_perf.Industry_name_NZSIOC"
+              },
+              "alias" : "Industry_name_NZSIOC"
+            }, {
+              "expression" : {
+                "expression" : "annual_enterprise_perf.Units_1"
+              },
+              "alias" : "Units_1"
+            } ],
+            "headAlias" : "economic_survey_perf"
+          },
+          "isRecommended" : false
+        } ]
+      }, {
+        "source" : {
+          "table" : {
+            "name" : "test_perf_model_2",
+            "sourceType" : "Model"
+          }
+        },
+        "sourceComponentKind" : "Model",
+        "sourceLabel" : "test_perf_model_2",
+        "canJoinWith" : [ {
+          "processLabel" : "annual_enterprise_perf",
+          "processId" : "n8yRi2K_C7YqcoqnPdFfd",
+          "properties" : {
+            "activeTab" : "conditions",
+            "columnsSelector" : [ "Year_1", "Industry_aggregation_NZSIOC", "Industry_code_NZSIOC", "Industry_name_NZSIOC", "Units_1", "Variable_code_1", "Variable_name_1", "Variable_category_1", "Value_1", "Industry_code_ANZSIC06" ],
+            "conditions" : [ {
+              "alias" : "annual_enterprise_perf",
+              "expression" : {
+                "expression" : "annual_enterprise_perf.Year_1 = test_perf_model_2.Year_1 AND annual_enterprise_perf.Industry_aggregation_NZSIOC = test_perf_model_2.Industry_aggregation_NZSIOC AND annual_enterprise_perf.Industry_code_NZSIOC = test_perf_model_2.Industry_code_NZSIOC AND annual_enterprise_perf.Industry_name_NZSIOC = test_perf_model_2.Industry_name_NZSIOC AND annual_enterprise_perf.Units_1 = test_perf_model_2.Units_1 AND annual_enterprise_perf.Variable_code_1 = test_perf_model_2.Variable_code_1 AND annual_enterprise_perf.Variable_name_1 = test_perf_model_2.Variable_name_1 AND annual_enterprise_perf.Variable_category_1 = test_perf_model_2.Variable_category_1 AND annual_enterprise_perf.Value_1 = test_perf_model_2.Value_1 AND annual_enterprise_perf.Industry_code_ANZSIC06 = test_perf_model_2.Industry_code_ANZSIC06"
+              },
+              "joinType" : "inner"
+            } ],
+            "expressions" : [ {
+              "expression" : {
+                "expression" : "test_perf_model_2.Series_reference"
+              },
+              "alias" : "Series_reference"
+            }, {
+              "expression" : {
+                "expression" : "test_perf_model_2.Period_1"
+              },
+              "alias" : "Period_1"
+            }, {
+              "expression" : {
+                "expression" : "test_perf_model_2.Data_value_1"
+              },
+              "alias" : "Data_value_1"
+            }, {
+              "expression" : {
+                "expression" : "test_perf_model_2.Suppressed_1"
+              },
+              "alias" : "Suppressed_1"
+            }, {
+              "expression" : {
+                "expression" : "test_perf_model_2.STATUS_1"
+              },
+              "alias" : "STATUS_1"
+            }, {
+              "expression" : {
+                "expression" : "test_perf_model_2.UNITS_1"
+              },
+              "alias" : "UNITS_1"
+            }, {
+              "expression" : {
+                "expression" : "test_perf_model_2.Magnitude_1"
+              },
+              "alias" : "Magnitude_1"
+            }, {
+              "expression" : {
+                "expression" : "test_perf_model_2.Subject_1"
+              },
+              "alias" : "Subject_1"
+            }, {
+              "expression" : {
+                "expression" : "test_perf_model_2.Group_1"
+              },
+              "alias" : "Group_1"
+            }, {
+              "expression" : {
+                "expression" : "test_perf_model_2.Series_title_1"
+              },
+              "alias" : "Series_title_1"
+            }, {
+              "expression" : {
+                "expression" : "test_perf_model_2.Series_title_2"
+              },
+              "alias" : "Series_title_2"
+            }, {
+              "expression" : {
+                "expression" : "test_perf_model_2.Series_title_3"
+              },
+              "alias" : "Series_title_3"
+            }, {
+              "expression" : {
+                "expression" : "test_perf_model_2.Series_title_4"
+              },
+              "alias" : "Series_title_4"
+            }, {
+              "expression" : {
+                "expression" : "test_perf_model_2.Series_title_5"
+              },
+              "alias" : "Series_title_5"
+            }, {
+              "expression" : {
+                "expression" : "test_perf_model_2.code_1"
+              },
+              "alias" : "code_1"
+            }, {
+              "expression" : {
+                "expression" : "test_perf_model_2.service_label_1"
+              },
+              "alias" : "service_label_1"
+            }, {
+              "expression" : {
+                "expression" : "test_perf_model_2.country_code"
+              },
+              "alias" : "country_code"
+            }, {
+              "expression" : {
+                "expression" : "test_perf_model_2.country_label"
+              },
+              "alias" : "country_label"
+            }, {
+              "expression" : {
+                "expression" : "annual_enterprise_perf.Variable_category_1"
+              },
+              "alias" : "Variable_category_1"
+            }, {
+              "expression" : {
+                "expression" : "annual_enterprise_perf.Industry_code_NZSIOC"
+              },
+              "alias" : "Industry_code_NZSIOC"
+            }, {
+              "expression" : {
+                "expression" : "annual_enterprise_perf.Year_1"
+              },
+              "alias" : "Year_1"
+            }, {
+              "expression" : {
+                "expression" : "annual_enterprise_perf.Industry_code_ANZSIC06"
+              },
+              "alias" : "Industry_code_ANZSIC06"
+            }, {
+              "expression" : {
+                "expression" : "annual_enterprise_perf.Variable_name_1"
+              },
+              "alias" : "Variable_name_1"
+            }, {
+              "expression" : {
+                "expression" : "annual_enterprise_perf.Industry_aggregation_NZSIOC"
+              },
+              "alias" : "Industry_aggregation_NZSIOC"
+            }, {
+              "expression" : {
+                "expression" : "annual_enterprise_perf.Variable_code_1"
+              },
+              "alias" : "Variable_code_1"
+            }, {
+              "expression" : {
+                "expression" : "annual_enterprise_perf.Value_1"
+              },
+              "alias" : "Value_1"
+            }, {
+              "expression" : {
+                "expression" : "annual_enterprise_perf.Industry_name_NZSIOC"
+              },
+              "alias" : "Industry_name_NZSIOC"
+            }, {
+              "expression" : {
+                "expression" : "annual_enterprise_perf.Units_1"
+              },
+              "alias" : "Units_1"
+            } ],
+            "headAlias" : "test_perf_model_2"
+          },
+          "isRecommended" : false
+        } ]
+      } ]
+    }
+  },
+  "processes" : {
+    "test_perf_model_0##cbqT5pzg" : {
+      "id" : "test_perf_model_0##cbqT5pzg",
+      "component" : "TargetModel",
+      "metadata" : {
+        "label" : "test_perf_model_0",
+        "x" : 20,
+        "y" : 20,
+        "phase" : 0,
+        "macroDependencies" : [ ]
+      },
+      "properties" : {
+        "customQueryDisabled" : true,
+        "customQuery" : false,
+        "incrementalEditorDisabled" : true,
+        "query" : "SELECT * \n\nFROM annual_enterprise_perf\n",
+        "incrementalKey" : false,
+        "incremental" : {
+          "expression" : "true"
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "yJTiCy3x",
+          "schema" : {
+            "providerType" : "Databricks",
+            "fields" : [ {
+              "name" : "Year_1",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "Industry_aggregation_NZSIOC",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Industry_code_NZSIOC",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "Industry_name_NZSIOC",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Units_1",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Variable_code_1",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Variable_name_1",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Variable_category_1",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Value_1",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Industry_code_ANZSIC06",
+              "dataType" : {
+                "type" : "String"
+              }
+            } ]
+          },
+          "slug" : "annual_enterprise_perf"
+        } ],
+        "outputs" : [ {
+          "id" : "QgbcFzvE",
+          "schema" : {
+            "providerType" : "Databricks",
+            "fields" : [ {
+              "name" : "Year_1",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "Industry_aggregation_NZSIOC",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Industry_code_NZSIOC",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "Industry_name_NZSIOC",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Units_1",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Variable_code_1",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Variable_name_1",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Variable_category_1",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Value_1",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Industry_code_ANZSIC06",
+              "dataType" : {
+                "type" : "String"
+              }
+            } ]
+          },
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
+    "n8yRi2K_C7YqcoqnPdFfd" : {
+      "id" : "n8yRi2K_C7YqcoqnPdFfd",
+      "component" : "Seed",
+      "metadata" : {
+        "label" : "annual_enterprise_perf",
+        "slug" : "annual_enterprise_perf",
+        "x" : -640,
+        "y" : -140,
+        "phase" : 0
+      },
+      "properties" : {
+        "table" : {
+          "name" : "annual_enterprise_perf",
+          "sourceType" : "Seed",
+          "alias" : ""
+        }
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "4aNLxWzvalWiGi2xjEjsU",
+          "schema" : {
+            "providerType" : "Databricks",
+            "fields" : [ {
+              "name" : "Year_1",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "Industry_aggregation_NZSIOC",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Industry_code_NZSIOC",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "Industry_name_NZSIOC",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Units_1",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Variable_code_1",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Variable_name_1",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Variable_category_1",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Value_1",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Industry_code_ANZSIC06",
+              "dataType" : {
+                "type" : "String"
+              }
+            } ]
+          },
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    }
+  },
+  "connections" : [ {
+    "id" : "ya-fCONf3AbN33FddNRuu",
+    "source" : "n8yRi2K_C7YqcoqnPdFfd",
+    "sourcePort" : "4aNLxWzvalWiGi2xjEjsU",
+    "target" : "test_perf_model_0##cbqT5pzg",
+    "targetPort" : "yJTiCy3x"
+  } ],
+  "component" : "Model"
+}

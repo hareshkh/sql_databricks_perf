@@ -1,0 +1,280 @@
+{
+  "qa_multi_models_base" : {
+    "name" : "qa_multi_models_base",
+    "macroType" : "query",
+    "definition" : "\n\nselect {{model1}}.{{col_model_1}} from {{model1}},{{model2}},{{model3}},{{model4}},{{model5}}",
+    "parameters" : {
+      "type" : "record",
+      "fields" : [ {
+        "name" : "model1",
+        "kind" : {
+          "type" : "value"
+        },
+        "optional" : false,
+        "isWorkflowNodeConfiguration" : false
+      }, {
+        "name" : "col_model_1",
+        "kind" : {
+          "type" : "value"
+        },
+        "optional" : false,
+        "isWorkflowNodeConfiguration" : false
+      }, {
+        "name" : "model2",
+        "kind" : {
+          "type" : "value"
+        },
+        "optional" : false,
+        "isWorkflowNodeConfiguration" : false
+      }, {
+        "name" : "model3",
+        "kind" : {
+          "type" : "value"
+        },
+        "optional" : false,
+        "isWorkflowNodeConfiguration" : false
+      }, {
+        "name" : "model4",
+        "kind" : {
+          "type" : "value"
+        },
+        "optional" : false,
+        "isWorkflowNodeConfiguration" : false
+      }, {
+        "name" : "model5",
+        "kind" : {
+          "type" : "value"
+        },
+        "optional" : false,
+        "isWorkflowNodeConfiguration" : false
+      } ]
+    },
+    "staleState" : "none"
+  },
+  "qa_all_null_base" : {
+    "name" : "qa_all_null_base",
+    "macroType" : "query",
+    "definition" : "\n\n\n\n\nselect * from {{ model }} where {{ column_name }} is not null",
+    "parameters" : {
+      "type" : "record",
+      "fields" : [ {
+        "name" : "model",
+        "kind" : {
+          "type" : "value",
+          "value" : "'customers'"
+        },
+        "optional" : true,
+        "isWorkflowNodeConfiguration" : false
+      }, {
+        "name" : "column_name",
+        "kind" : {
+          "type" : "value",
+          "value" : "'id'"
+        },
+        "optional" : true,
+        "isWorkflowNodeConfiguration" : false
+      } ]
+    },
+    "staleState" : "none"
+  },
+  "qa_all_not_null_base" : {
+    "name" : "qa_all_not_null_base",
+    "macroType" : "query",
+    "definition" : "\n\n\nselect * from {{ model }} where {{ column_name }} is not null",
+    "parameters" : {
+      "type" : "record",
+      "fields" : [ {
+        "name" : "model",
+        "kind" : {
+          "type" : "value"
+        },
+        "optional" : false,
+        "isWorkflowNodeConfiguration" : false
+      }, {
+        "name" : "column_name",
+        "kind" : {
+          "type" : "value"
+        },
+        "optional" : false,
+        "isWorkflowNodeConfiguration" : false
+      } ]
+    },
+    "staleState" : "none"
+  },
+  "qa_model_all_above_given_id_base" : {
+    "name" : "qa_model_all_above_given_id_base",
+    "macroType" : "query",
+    "definition" : "\n\nSELECT * from {{model}} where {{col}} > {{ id_min }}",
+    "parameters" : {
+      "type" : "record",
+      "fields" : [ {
+        "name" : "model",
+        "kind" : {
+          "type" : "value"
+        },
+        "optional" : false,
+        "isWorkflowNodeConfiguration" : false
+      }, {
+        "name" : "col",
+        "kind" : {
+          "type" : "value"
+        },
+        "optional" : false,
+        "isWorkflowNodeConfiguration" : false
+      }, {
+        "name" : "id_min",
+        "kind" : {
+          "type" : "value",
+          "value" : "2"
+        },
+        "optional" : true,
+        "isWorkflowNodeConfiguration" : false
+      } ]
+    },
+    "staleState" : "none"
+  },
+  "qa_test_relationship_base" : {
+    "name" : "qa_test_relationship_base",
+    "macroType" : "query",
+    "definition" : "\n\n\nselect count(*)\nfrom (\n    select {{ model1_col }} as id from {{ model1 }}\n) as child\nleft join (\n    select {{ model2_col }} as id from {{ model2 }}\n) as parent on parent.id = child.id\nwhere child.id is not null\n  and parent.id is null",
+    "parameters" : {
+      "type" : "record",
+      "fields" : [ {
+        "name" : "model1",
+        "kind" : {
+          "type" : "value"
+        },
+        "optional" : false,
+        "isWorkflowNodeConfiguration" : false
+      }, {
+        "name" : "model2",
+        "kind" : {
+          "type" : "value"
+        },
+        "optional" : false,
+        "isWorkflowNodeConfiguration" : false
+      }, {
+        "name" : "model1_col",
+        "kind" : {
+          "type" : "value"
+        },
+        "optional" : false,
+        "isWorkflowNodeConfiguration" : false
+      }, {
+        "name" : "model2_col",
+        "kind" : {
+          "type" : "value"
+        },
+        "optional" : false,
+        "isWorkflowNodeConfiguration" : false
+      } ]
+    },
+    "staleState" : "none"
+  },
+  "qa_get_unique_count_base" : {
+    "name" : "qa_get_unique_count_base",
+    "macroType" : "query",
+    "definition" : "\n\n\nselect count(*)\nfrom (\n    select\n        {{ column_name }}\n    from {{ model }}\n    where {{ column_name }} is not null\n    group by {{ column_name }}\n    having count(*) >= 1\n) validation_errors",
+    "parameters" : {
+      "type" : "record",
+      "fields" : [ {
+        "name" : "model",
+        "kind" : {
+          "type" : "value"
+        },
+        "optional" : false,
+        "isWorkflowNodeConfiguration" : false
+      }, {
+        "name" : "column_name",
+        "kind" : {
+          "type" : "value"
+        },
+        "optional" : false,
+        "isWorkflowNodeConfiguration" : false
+      } ]
+    },
+    "staleState" : "none"
+  },
+  "qa_epl_data_macro_base" : {
+    "name" : "qa_epl_data_macro_base",
+    "macroType" : "query",
+    "definition" : "\n\n\n{% set status = ['HomeTeam_1','AwayTeam_1'] %}\nwith summary as (\n{% for club in football_clubs %}\n    {% for st in status %}\n    select \n        {{ st }} as team,\n        {% if st == 'HomeTeam' %}\n                case \n                    when FTR_1 = 'H' then 3\n                    when FTR_1 = 'D' then 1\n                    else 0 end points\n        {% else %}\n                case \n                    when FTR_1 = 'A' then 3\n                    when FTR_1 = 'D' then 1\n                    else 0 end points\n        {% endif %}\n    from {{ table_name }}\n    where {{ st }} = '{{ club }}'\n        {% if not loop.last %} UNION ALL {% endif %}\n    {% endfor %}\n    {% if not loop.last %} UNION ALL {% endif %}\n{% endfor %}\n)\n\n\nselect \n    team, \n    sum(points) as total_points\nfrom summary\ngroup by team\norder by total_points desc",
+    "parameters" : {
+      "type" : "record",
+      "fields" : [ {
+        "name" : "table_name",
+        "kind" : {
+          "type" : "value"
+        },
+        "optional" : false,
+        "isWorkflowNodeConfiguration" : false
+      }, {
+        "name" : "football_clubs",
+        "kind" : {
+          "type" : "value",
+          "value" : "['Man United', 'Liverpool', 'Man City']"
+        },
+        "optional" : true,
+        "isWorkflowNodeConfiguration" : false
+      } ]
+    },
+    "staleState" : "none"
+  },
+  "_qa_all_null_base" : {
+    "name" : "_qa_all_null_base",
+    "macroType" : "query",
+    "definition" : "\n\n\nselect * from {{ model }} where {{ column_name }} is not null",
+    "parameters" : {
+      "type" : "record",
+      "fields" : [ {
+        "name" : "model",
+        "kind" : {
+          "type" : "value"
+        },
+        "optional" : false,
+        "isWorkflowNodeConfiguration" : false
+      }, {
+        "name" : "column_name",
+        "kind" : {
+          "type" : "value",
+          "value" : "'id'"
+        },
+        "optional" : true,
+        "isWorkflowNodeConfiguration" : false
+      } ]
+    },
+    "staleState" : "none"
+  },
+  "qa_complex_macro_base" : {
+    "name" : "qa_complex_macro_base",
+    "macroType" : "query",
+    "definition" : "\n\n\nwith all_values as (\n    select distinct {{column_name_int}} as col_int from {{model}}\n),\npayments_validation_errors as (\n    select\n        col_int\n    from all_values\n    where col_int not in (\n        {% for accepted_value in accepted_values %}\n            {% if accepted_value >= 5 %}\n            5\n            {% else %}\n            {{ accepted_value }}\n            {% endif %}\n            {% if not loop.last %},{% endif %}\n        {% endfor %}\n    )\n)\nselect * from payments_validation_errors",
+    "parameters" : {
+      "type" : "record",
+      "fields" : [ {
+        "name" : "model",
+        "kind" : {
+          "type" : "value"
+        },
+        "optional" : false,
+        "isWorkflowNodeConfiguration" : false
+      }, {
+        "name" : "column_name_int",
+        "kind" : {
+          "type" : "value"
+        },
+        "optional" : false,
+        "isWorkflowNodeConfiguration" : false
+      }, {
+        "name" : "accepted_values",
+        "kind" : {
+          "type" : "value",
+          "value" : "[1, 2]"
+        },
+        "optional" : true,
+        "isWorkflowNodeConfiguration" : false
+      } ]
+    },
+    "staleState" : "none"
+  }
+}

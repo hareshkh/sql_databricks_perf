@@ -15,8 +15,8 @@
       "metadata" : {
         "label" : "Join_1",
         "slug" : "Join_1",
-        "x" : 140,
-        "y" : -40,
+        "x" : 200,
+        "y" : 0,
         "phase" : 0,
         "macroDependencies" : [ ]
       },
@@ -807,8 +807,8 @@
       "metadata" : {
         "label" : "Aggregate_1",
         "slug" : "Aggregate_1",
-        "x" : -500,
-        "y" : 20,
+        "x" : -560,
+        "y" : 60,
         "phase" : 0,
         "macroDependencies" : [ ]
       },
@@ -1258,8 +1258,8 @@
       "metadata" : {
         "label" : "all_type_partitioned",
         "slug" : "all_type_partitioned",
-        "x" : -700,
-        "y" : 20,
+        "x" : -840,
+        "y" : 60,
         "phase" : 0
       },
       "properties" : {

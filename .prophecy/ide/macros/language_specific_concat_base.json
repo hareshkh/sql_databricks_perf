@@ -1,0 +1,52 @@
+{
+  "databricks__language_specific_concat_base" : {
+    "name" : "databricks__language_specific_concat_base",
+    "macroType" : "expression",
+    "definition" : "concat(\n  aes_decrypt(unhex('83F16B2AA704794132802D248E6BFD4E380078182D1544813898AC97E709B28A94'), '0000111122223333'), \n  base64(aes_encrypt('Spark SQL', '1234567890abcdef', 'ECB', 'PKCS')), \n  bin(13), \n  btrim('    SparkSQL   '), \n  char(65), \n  chr(65), \n  concat('Spark', 'SQL'), \n  concat_ws(' ', 'Spark', 'SQL'), \n  crc32('Spark'), \n  current_catalog(), \n  current_database(), \n  current_date(), \n  current_timestamp(), \n  current_timezone(), \n  current_user(), \n  date_add('2016-07-30', 1), \n  date_sub('2016-07-30', 1), \n  date_format('2016-04-08', 'y'), \n  date_from_unix_date(1), \n  date_part('YEAR', TIMESTAMP'2019-08-12 01:00:00.123456'), \n  date_part('MONTH', INTERVAL '2021-11' YEAR TO MONTH), \n  date_part('MINUTE', INTERVAL '123 23:55:59.002001' DAY TO SECOND), \n  date_trunc('HOUR', '2015-03-05T09:32:05.359'), \n  date_trunc('DD', '2015-03-05T09:32:05.359'), \n  datediff('2009-07-31', '2009-07-30'), \n  decode(encode('abc', 'utf-8'), 'utf-8'), \n  e(), \n  elt(1, 'scala', 'java'), \n  format_number(12332.123456, '##################.###'), \n  format_string('Hello World %d %s', 100, 'days'), \n  CAST(from_csv('1, 0.8', 'a INT, b DOUBLE') AS string), \n  CAST(from_json(\n    '{\"teacher\": \"Alice\", \"student\": [{\"name\": \"Bob\", \"rank\": 1}, {\"name\": \"Charlie\", \"rank\": 2}]}', \n    'STRUCT<teacher: STRING, student: ARRAY<STRUCT<name: STRING, rank: INT>>>') AS string), \n  CAST(from_unixtime(0, 'yyyy-MM-dd HH:mm:ss') AS string), \n  CAST(from_utc_timestamp('2016-08-31', 'Asia/Seoul') AS string), \n  CAST(get_json_object('{\"a\":\"b\"}', '$.a') AS string), \n  hash('Spark', array(123), 2), \n  hex(17), \n  CAST(hour('2009-07-30 12:58:59') AS string), \n  CAST(hypot(3, 4) AS string), \n  CAST(ilike('Spark', '_Park') AS string))",
+    "parameters" : {
+      "type" : "record",
+      "fields" : [ ]
+    },
+    "staleState" : "none"
+  },
+  "snowflake__language_specific_concat_base" : {
+    "name" : "snowflake__language_specific_concat_base",
+    "macroType" : "expression",
+    "definition" : "concat(\n  TRIM('?-?ABC-?-', '?-'), \n  REPLACE('abcd', 'bc'), \n  RIGHT('ABCDEFG', 3), \n  CAST(HASH(SEQ8()) AS string), \n  ASCII('A'), \n  REPEAT('xy', 5), \n  REVERSE('Hello, world!'), \n  SUBSTR('testing 1 2 3', 9, 5), \n  INSERT('abc', 1, 2, 'Z'), \n  RTRIM('$125.00', '0.'), \n  UUID_STRING(), \n  sha1('Snowflake'), \n  CAST(md5_binary('Snowflake') AS string), \n  LPAD(' hello ', 10, ' '), \n  DECOMPRESS_STRING(TO_BINARY('0920536E6F77666C616B65', 'HEX'), 'SNAPPY'), \n  LPAD('.  hi. ', 10, '$'), \n  DAYNAME(TO_DATE('2015-05-01')), \n  CAST(LAST_DAY(TO_DATE('2015-05-08T23:39:20.123-07:00')) AS string), \n  CAST(DATEADD(YEAR, 2, TO_DATE('2013-05-08')) AS string), \n  CAST(DATEDIFF(MONTH, '2021-01-01'::DATE, '2021-02-28'::DATE) AS string), \n  CAST(DATEDIFF(\n    HOUR, \n    '2013-05-08T23:39:20.123-07:00'::TIMESTAMP, \n    DATEADD(YEAR, 2, ('2013-05-08T23:39:20.123-07:00')::TIMESTAMP)) AS string), \n  CAST(TIMEDIFF(YEAR, '2017-01-01', '2019-01-01') AS string), \n  CAST(TIME_SLICE('2019-02-28'::DATE, 4, 'MONTH', 'START') AS string), \n  CAST(TRY_TO_TIME('12:30:00') AS string))",
+    "parameters" : {
+      "type" : "record",
+      "fields" : [ ]
+    },
+    "staleState" : "none"
+  },
+  "bigquery__language_specific_concat_base" : {
+    "name" : "bigquery__language_specific_concat_base",
+    "macroType" : "expression",
+    "definition" : "concat(\n  FORMAT_DATE('%b %Y', DATE'2008-12-25'), \n  CAST(LAST_DAY(DATE'2008-11-25') AS string), \n  CAST(PARSE_DATE('%A %b %e %Y', 'Thursday Dec 25 2008') AS string), \n  CAST(PARSE_DATE('%Y%m%d', '20081225') AS string), \n  CAST(UNIX_DATE(DATE'2008-12-25') AS string), \n  CAST(CURRENT_DATETIME() AS string), \n  CAST(DATETIME(TIMESTAMP'2008-12-25 05:30:00+00', \"America/Los_Angeles\") AS string), \n  CAST(DATETIME_ADD(DATETIME \"2008-12-25 15:30:00\", INTERVAL 10 MINUTE) AS string), \n  CAST(DATETIME_SUB(DATETIME \"2008-12-25 15:30:00\", INTERVAL 10 MINUTE) AS string), \n  CAST(DATETIME_DIFF(DATETIME \"2010-07-07 10:20:00\", DATETIME \"2008-12-25 15:30:00\", DAY) AS string), \n  CAST(DATETIME_TRUNC(DATETIME \"2008-12-25 15:30:00\", DAY) AS string), \n  CAST(FORMAT_DATETIME(\"%b-%d-%Y\", DATETIME \"2008-12-25 15:30:00\") AS string), \n  CAST(PARSE_DATETIME(\"%c\", \"Thu Dec 25 07:30:00 2008\") AS string), \n  CAST(PARSE_DATETIME(\"%a %b %e %I:%M:%S %Y\", \"Thu Dec 25 07:30:00 2008\") AS string), \n  CAST(PARSE_DATETIME('%m/%d/%Y %I:%M:%S %p', '8/30/2018 2:23:38 pm') AS string), \n  CAST(PARSE_DATETIME('%A, %B %e, %Y', 'Wednesday, December 19, 2018') AS string), \n  CAST(CURRENT_TIME() AS string), \n  CAST(TIME(TIMESTAMP'2008-12-25 15:30:00+08', \"America/Los_Angeles\") AS string), \n  CAST(TIME(15, 30, 0) AS string), \n  CAST(TIME_ADD(TIME \"15:30:00\", INTERVAL 10 MINUTE) AS string), \n  CAST(TIME_SUB(TIME \"15:30:00\", INTERVAL 10 MINUTE) AS string), \n  CAST(FORMAT_TIME(\"%R\", TIME \"15:30:00\") AS string), \n  CAST(PARSE_TIME(\"%I:%M:%S\", \"07:30:00\") AS string), \n  CAST(PARSE_TIME('%I:%M:%S %p', '2:23:38 pm') AS string), \n  CAST(CURRENT_TIMESTAMP() AS string), \n  STRING(TIMESTAMP'2008-12-25 15:30:00+00', \"UTC\"), \n  STRING(TIMESTAMP(\"2008-12-25 15:30:00\", \"America/Los_Angeles\")), \n  CAST(TIMESTAMP_ADD(TIMESTAMP'2008-12-25 15:30:00+00', INTERVAL 10 MINUTE) AS string), \n  CAST(TIMESTAMP_SUB(TIMESTAMP'2008-12-25 15:30:00+00', INTERVAL 10 MINUTE) AS string), \n  CAST(TIMESTAMP_TRUNC(TIMESTAMP'2008-12-25 15:30:00+00', DAY, \"UTC\") AS string), \n  CAST(FORMAT_TIMESTAMP(\"%b-%d-%Y\", TIMESTAMP'2008-12-25 15:30:00+00') AS string), \n  CAST(PARSE_TIMESTAMP(\"%a %b %e %I:%M:%S %Y\", \"Thu Dec 25 07:30:00 2008\") AS string), \n  CAST(PARSE_TIMESTAMP(\"%c\", \"Thu Dec 25 07:30:00 2008\") AS string), \n  CAST(TIMESTAMP_SECONDS(1230219000) AS string), \n  CAST(TIMESTAMP_MILLIS(1230219000000) AS string), \n  CAST(TIMESTAMP_MICROS(1230219000000000) AS string), \n  CAST(UNIX_SECONDS(TIMESTAMP'2008-12-25 15:30:00+00') AS string), \n  CAST(UNIX_MILLIS(TIMESTAMP'2008-12-25 15:30:00+00') AS string), \n  CAST(UNIX_MICROS(TIMESTAMP'2008-12-25 15:30:00+00') AS string), \n  SESSION_USER(), \n  GENERATE_UUID(), \n  CAST(NET.IP_FROM_STRING('48.49.50.51') AS string), \n  CAST(NET.SAFE_IP_FROM_STRING('48.49.50.51') AS string))",
+    "parameters" : {
+      "type" : "record",
+      "fields" : [ ]
+    },
+    "staleState" : "none"
+  },
+  "default__language_specific_concat_base" : {
+    "name" : "default__language_specific_concat_base",
+    "macroType" : "expression",
+    "definition" : "concat(\n  TRIM('?-?ABC-?-', '?-'), \n  REPLACE('abcd', 'bc'), \n  RIGHT('ABCDEFG', 3), \n  CAST(HASH(SEQ8()) AS string), \n  ASCII('A'), \n  REPEAT('xy', 5), \n  REVERSE('Hello, world!'), \n  SUBSTR('testing 1 2 3', 9, 5), \n  INSERT('abc', 1, 2, 'Z'), \n  RTRIM('$125.00', '0.'), \n  UUID_STRING(), \n  sha1('Snowflake'), \n  CAST(md5_binary('Snowflake') AS string), \n  LPAD(' hello ', 10, ' '), \n  DECOMPRESS_STRING(TO_BINARY('0920536E6F77666C616B65', 'HEX'), 'SNAPPY'), \n  LPAD('.  hi. ', 10, '$'), \n  DAYNAME(TO_DATE('2015-05-01')), \n  CAST(LAST_DAY(TO_DATE('2015-05-08T23:39:20.123-07:00')) AS string), \n  CAST(DATEADD(YEAR, 2, TO_DATE('2013-05-08')) AS string), \n  CAST(DATEDIFF(MONTH, '2021-01-01'::DATE, '2021-02-28'::DATE) AS string), \n  CAST(DATEDIFF(\n    HOUR, \n    '2013-05-08T23:39:20.123-07:00'::TIMESTAMP, \n    DATEADD(YEAR, 2, ('2013-05-08T23:39:20.123-07:00')::TIMESTAMP)) AS string), \n  CAST(TIMEDIFF(YEAR, '2017-01-01', '2019-01-01') AS string), \n  CAST(TIME_SLICE('2019-02-28'::DATE, 4, 'MONTH', 'START') AS string), \n  CAST(TRY_TO_TIME('12:30:00') AS string))",
+    "parameters" : {
+      "type" : "record",
+      "fields" : [ ]
+    },
+    "staleState" : "none"
+  },
+  "language_specific_concat_base" : {
+    "name" : "language_specific_concat_base",
+    "macroType" : "query",
+    "definition" : "{{ return(adapter.dispatch('language_specific_concat_base', 'SQL_BaseGitDepProjectAllFinal')()) }}",
+    "parameters" : {
+      "type" : "record",
+      "fields" : [ ]
+    },
+    "staleState" : "none"
+  }
+}

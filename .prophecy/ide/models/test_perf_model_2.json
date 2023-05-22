@@ -1,0 +1,2242 @@
+{
+  "id" : "test_perf_model_2",
+  "metainfo" : {
+    "label" : "test_perf_model_2",
+    "autoLayout" : false,
+    "staleState" : "none",
+    "sourceSuggestions" : {
+      "sources" : [ ]
+    }
+  },
+  "processes" : {
+    "Vt4RGueuAz6_IAvpycPJt$$XnKeMlQbB5djUY-l7w0MP" : {
+      "id" : "Vt4RGueuAz6_IAvpycPJt$$XnKeMlQbB5djUY-l7w0MP",
+      "component" : "Join",
+      "metadata" : {
+        "label" : "Join_3",
+        "slug" : "Join_3",
+        "x" : -100,
+        "y" : 240,
+        "phase" : 0,
+        "macroDependencies" : [ ]
+      },
+      "properties" : {
+        "conditions" : [ {
+          "alias" : "in1",
+          "expression" : {
+            "expression" : "in0.code_1!=in1.country_code"
+          },
+          "joinType" : "inner"
+        } ],
+        "expressions" : [ {
+          "expression" : {
+            "expression" : "in0.code_1"
+          },
+          "alias" : "code_1"
+        }, {
+          "expression" : {
+            "expression" : "in0.service_label_1"
+          },
+          "alias" : "service_label_1"
+        }, {
+          "expression" : {
+            "expression" : "in1.country_code"
+          },
+          "alias" : "country_code"
+        }, {
+          "expression" : {
+            "expression" : "in1.country_label"
+          },
+          "alias" : "country_label"
+        } ],
+        "activeTab" : "expressions",
+        "columnsSelector" : [ "vzTon9GmnyKbW2_z_csa_$$xAWND3KruRipzl84B61mj##code_1", "nFsuilH5FofqQuJcLA8Di$$h2A_skJNiRhdUvMPmU2bH##country_code", "vzTon9GmnyKbW2_z_csa_$$xAWND3KruRipzl84B61mj##code_1", "vzTon9GmnyKbW2_z_csa_$$xAWND3KruRipzl84B61mj##service_label_1", "nFsuilH5FofqQuJcLA8Di$$h2A_skJNiRhdUvMPmU2bH##country_code", "nFsuilH5FofqQuJcLA8Di$$h2A_skJNiRhdUvMPmU2bH##country_label" ],
+        "headAlias" : "in0"
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "vzTon9GmnyKbW2_z_csa_$$xAWND3KruRipzl84B61mj",
+          "schema" : {
+            "providerType" : "Databricks",
+            "fields" : [ {
+              "name" : "code_1",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "service_label_1",
+              "dataType" : {
+                "type" : "String"
+              }
+            } ]
+          },
+          "slug" : "in0"
+        }, {
+          "id" : "nFsuilH5FofqQuJcLA8Di$$h2A_skJNiRhdUvMPmU2bH",
+          "schema" : {
+            "providerType" : "Databricks",
+            "fields" : [ {
+              "name" : "country_code",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "country_label",
+              "dataType" : {
+                "type" : "String"
+              }
+            } ]
+          },
+          "slug" : "in1"
+        } ],
+        "outputs" : [ {
+          "id" : "3OmiUAU0zuwcP2L8pIh5X$$tNd5buVJiJ06_SKD26glA",
+          "schema" : {
+            "providerType" : "Databricks",
+            "fields" : [ {
+              "name" : "code_1",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "service_label_1",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "country_code",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "country_label",
+              "dataType" : {
+                "type" : "String"
+              }
+            } ]
+          },
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
+    "test_perf_model_2##sGKJEuiL" : {
+      "id" : "test_perf_model_2##sGKJEuiL",
+      "component" : "TargetModel",
+      "metadata" : {
+        "label" : "test_perf_model_2",
+        "x" : 560,
+        "y" : 320,
+        "phase" : 0,
+        "macroDependencies" : [ ]
+      },
+      "properties" : {
+        "customQueryDisabled" : true,
+        "customQuery" : false,
+        "incrementalEditorDisabled" : true,
+        "query" : "SELECT * \n\nFROM Join_4\n",
+        "incrementalKey" : false,
+        "incremental" : {
+          "expression" : "true"
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "SZ8eR47S",
+          "schema" : {
+            "providerType" : "Databricks",
+            "fields" : [ {
+              "name" : "Series_reference",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Period_1",
+              "dataType" : {
+                "type" : "Float"
+              }
+            }, {
+              "name" : "Data_value_1",
+              "dataType" : {
+                "type" : "Float"
+              }
+            }, {
+              "name" : "Suppressed_1",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "STATUS_1",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "UNITS_1",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Magnitude_1",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "Subject_1",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Group_1",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Series_title_1",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Series_title_2",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Series_title_3",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Series_title_4",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Series_title_5",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Variable_category_1",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Industry_code_NZSIOC",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "Year_1",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "Industry_code_ANZSIC06",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Variable_name_1",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Industry_aggregation_NZSIOC",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Variable_code_1",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Value_1",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Industry_name_NZSIOC",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "code_1",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "service_label_1",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "country_code",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "country_label",
+              "dataType" : {
+                "type" : "String"
+              }
+            } ]
+          },
+          "slug" : "Join_4"
+        } ],
+        "outputs" : [ {
+          "id" : "Tp3DraJS",
+          "schema" : {
+            "providerType" : "Databricks",
+            "fields" : [ {
+              "name" : "Series_reference",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Period_1",
+              "dataType" : {
+                "type" : "Float"
+              }
+            }, {
+              "name" : "Data_value_1",
+              "dataType" : {
+                "type" : "Float"
+              }
+            }, {
+              "name" : "Suppressed_1",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "STATUS_1",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "UNITS_1",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Magnitude_1",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "Subject_1",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Group_1",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Series_title_1",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Series_title_2",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Series_title_3",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Series_title_4",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Series_title_5",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Variable_category_1",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Industry_code_NZSIOC",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "Year_1",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "Industry_code_ANZSIC06",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Variable_name_1",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Industry_aggregation_NZSIOC",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Variable_code_1",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Value_1",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Industry_name_NZSIOC",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "code_1",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "service_label_1",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "country_code",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "country_label",
+              "dataType" : {
+                "type" : "String"
+              }
+            } ]
+          },
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
+    "JP-32GCyLo2QgCK6xUA4a" : {
+      "id" : "JP-32GCyLo2QgCK6xUA4a",
+      "component" : "Seed",
+      "metadata" : {
+        "label" : "economic_survey_perf",
+        "slug" : "economic_survey_perf",
+        "x" : -560,
+        "y" : 820,
+        "phase" : 0
+      },
+      "properties" : {
+        "table" : {
+          "name" : "economic_survey_perf",
+          "sourceType" : "Seed",
+          "alias" : ""
+        }
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "9u64hoLEFr9ghTZVJ8G7i",
+          "schema" : {
+            "providerType" : "Databricks",
+            "fields" : [ {
+              "name" : "Series_reference",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Period_1",
+              "dataType" : {
+                "type" : "Float"
+              }
+            }, {
+              "name" : "Data_value",
+              "dataType" : {
+                "type" : "Float"
+              }
+            }, {
+              "name" : "Suppressed_1",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "STATUS_1",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "UNITS_1",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Magnitude_1",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "Subject_1",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Group_1",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Series_title_1",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Series_title_2",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Series_title_3",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Series_title_4",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Series_title_5",
+              "dataType" : {
+                "type" : "String"
+              }
+            } ]
+          },
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
+    "xRkCcC0IvyOBv_46HOK1g" : {
+      "id" : "xRkCcC0IvyOBv_46HOK1g",
+      "component" : "Seed",
+      "metadata" : {
+        "label" : "annual_enterprise_perf",
+        "slug" : "annual_enterprise_perf",
+        "x" : -660,
+        "y" : 500,
+        "phase" : 0
+      },
+      "properties" : {
+        "table" : {
+          "name" : "annual_enterprise_perf",
+          "sourceType" : "Seed",
+          "alias" : ""
+        }
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "Hl03aRImrEL6-70Cqwuel",
+          "schema" : {
+            "providerType" : "Databricks",
+            "fields" : [ {
+              "name" : "Year_1",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "Industry_aggregation_NZSIOC",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Industry_code_NZSIOC",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "Industry_name_NZSIOC",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Units_1",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Variable_code_1",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Variable_name_1",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Variable_category_1",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Value_1",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Industry_code_ANZSIC06",
+              "dataType" : {
+                "type" : "String"
+              }
+            } ]
+          },
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
+    "De6D_CTGALdtkDOsqFWTH$$rbYQwPhR7qY6hX0cdRmOb" : {
+      "id" : "De6D_CTGALdtkDOsqFWTH$$rbYQwPhR7qY6hX0cdRmOb",
+      "component" : "Join",
+      "metadata" : {
+        "label" : "Join_2",
+        "slug" : "Join_2",
+        "x" : -360,
+        "y" : 920,
+        "phase" : 0,
+        "macroDependencies" : [ ]
+      },
+      "properties" : {
+        "conditions" : [ {
+          "alias" : "economic_survey_perf",
+          "expression" : {
+            "expression" : "economic_survey_perf.Series_reference = ecards_transactions_perf_1.Series_reference AND economic_survey_perf.Period_1 = ecards_transactions_perf_1.Period_1 AND economic_survey_perf.Suppressed_1 = ecards_transactions_perf_1.Suppressed_1 AND economic_survey_perf.STATUS_1 = ecards_transactions_perf_1.STATUS_1 AND economic_survey_perf.UNITS_1 = ecards_transactions_perf_1.UNITS_1 AND economic_survey_perf.Magnitude_1 = ecards_transactions_perf_1.Magnitude_1 AND economic_survey_perf.Subject_1 = ecards_transactions_perf_1.Subject_1 AND economic_survey_perf.Group_1 = ecards_transactions_perf_1.Group_1 AND economic_survey_perf.Series_title_1 = ecards_transactions_perf_1.Series_title_1 AND economic_survey_perf.Series_title_2 = ecards_transactions_perf_1.Series_title_2 AND economic_survey_perf.Series_title_3 = ecards_transactions_perf_1.Series_title_3 AND economic_survey_perf.Series_title_4 = ecards_transactions_perf_1.Series_title_4 AND economic_survey_perf.Series_title_5 = ecards_transactions_perf_1.Series_title_5"
+          },
+          "joinType" : "inner"
+        } ],
+        "expressions" : [ {
+          "expression" : {
+            "expression" : "ecards_transactions_perf_1.Data_value_1"
+          },
+          "alias" : "Data_value_1"
+        }, {
+          "expression" : {
+            "expression" : "economic_survey_perf.STATUS_1"
+          },
+          "alias" : "STATUS_1"
+        }, {
+          "expression" : {
+            "expression" : "economic_survey_perf.UNITS_1"
+          },
+          "alias" : "UNITS_1"
+        }, {
+          "expression" : {
+            "expression" : "economic_survey_perf.Series_reference"
+          },
+          "alias" : "Series_reference"
+        }, {
+          "expression" : {
+            "expression" : "economic_survey_perf.Series_title_2"
+          },
+          "alias" : "Series_title_2"
+        }, {
+          "expression" : {
+            "expression" : "economic_survey_perf.Magnitude_1"
+          },
+          "alias" : "Magnitude_1"
+        }, {
+          "expression" : {
+            "expression" : "economic_survey_perf.Series_title_5"
+          },
+          "alias" : "Series_title_5"
+        }, {
+          "expression" : {
+            "expression" : "economic_survey_perf.Period_1"
+          },
+          "alias" : "Period_1"
+        }, {
+          "expression" : {
+            "expression" : "economic_survey_perf.Series_title_1"
+          },
+          "alias" : "Series_title_1"
+        }, {
+          "expression" : {
+            "expression" : "economic_survey_perf.Suppressed_1"
+          },
+          "alias" : "Suppressed_1"
+        }, {
+          "expression" : {
+            "expression" : "economic_survey_perf.Subject_1"
+          },
+          "alias" : "Subject_1"
+        }, {
+          "expression" : {
+            "expression" : "economic_survey_perf.Series_title_4"
+          },
+          "alias" : "Series_title_4"
+        }, {
+          "expression" : {
+            "expression" : "economic_survey_perf.Data_value"
+          },
+          "alias" : "Data_value"
+        }, {
+          "expression" : {
+            "expression" : "economic_survey_perf.Series_title_3"
+          },
+          "alias" : "Series_title_3"
+        }, {
+          "expression" : {
+            "expression" : "economic_survey_perf.Group_1"
+          },
+          "alias" : "Group_1"
+        } ],
+        "activeTab" : "conditions",
+        "columnsSelector" : [ "xCQkra6-UNvH9J6urn2Fc$$QXmH2k-5X1nagOYRWHwce##Series_reference", "ZzO7QCWMthdLt77GKnra3$$aHWcICywf3TooFnK7t44g##Series_reference", "xCQkra6-UNvH9J6urn2Fc$$QXmH2k-5X1nagOYRWHwce##Period_1", "ZzO7QCWMthdLt77GKnra3$$aHWcICywf3TooFnK7t44g##Period_1", "xCQkra6-UNvH9J6urn2Fc$$QXmH2k-5X1nagOYRWHwce##Suppressed_1", "ZzO7QCWMthdLt77GKnra3$$aHWcICywf3TooFnK7t44g##Suppressed_1", "xCQkra6-UNvH9J6urn2Fc$$QXmH2k-5X1nagOYRWHwce##STATUS_1", "ZzO7QCWMthdLt77GKnra3$$aHWcICywf3TooFnK7t44g##STATUS_1", "xCQkra6-UNvH9J6urn2Fc$$QXmH2k-5X1nagOYRWHwce##UNITS_1", "ZzO7QCWMthdLt77GKnra3$$aHWcICywf3TooFnK7t44g##UNITS_1", "xCQkra6-UNvH9J6urn2Fc$$QXmH2k-5X1nagOYRWHwce##Magnitude_1", "ZzO7QCWMthdLt77GKnra3$$aHWcICywf3TooFnK7t44g##Magnitude_1", "xCQkra6-UNvH9J6urn2Fc$$QXmH2k-5X1nagOYRWHwce##Subject_1", "ZzO7QCWMthdLt77GKnra3$$aHWcICywf3TooFnK7t44g##Subject_1", "xCQkra6-UNvH9J6urn2Fc$$QXmH2k-5X1nagOYRWHwce##Group_1", "ZzO7QCWMthdLt77GKnra3$$aHWcICywf3TooFnK7t44g##Group_1", "xCQkra6-UNvH9J6urn2Fc$$QXmH2k-5X1nagOYRWHwce##Series_title_1", "ZzO7QCWMthdLt77GKnra3$$aHWcICywf3TooFnK7t44g##Series_title_1", "xCQkra6-UNvH9J6urn2Fc$$QXmH2k-5X1nagOYRWHwce##Series_title_2", "ZzO7QCWMthdLt77GKnra3$$aHWcICywf3TooFnK7t44g##Series_title_2", "xCQkra6-UNvH9J6urn2Fc$$QXmH2k-5X1nagOYRWHwce##Series_title_3", "ZzO7QCWMthdLt77GKnra3$$aHWcICywf3TooFnK7t44g##Series_title_3", "xCQkra6-UNvH9J6urn2Fc$$QXmH2k-5X1nagOYRWHwce##Series_title_4", "ZzO7QCWMthdLt77GKnra3$$aHWcICywf3TooFnK7t44g##Series_title_4", "xCQkra6-UNvH9J6urn2Fc$$QXmH2k-5X1nagOYRWHwce##Series_title_5", "ZzO7QCWMthdLt77GKnra3$$aHWcICywf3TooFnK7t44g##Series_title_5", "ZzO7QCWMthdLt77GKnra3$$aHWcICywf3TooFnK7t44g##Data_value_1", "xCQkra6-UNvH9J6urn2Fc$$QXmH2k-5X1nagOYRWHwce##STATUS_1", "xCQkra6-UNvH9J6urn2Fc$$QXmH2k-5X1nagOYRWHwce##UNITS_1", "xCQkra6-UNvH9J6urn2Fc$$QXmH2k-5X1nagOYRWHwce##Series_reference", "xCQkra6-UNvH9J6urn2Fc$$QXmH2k-5X1nagOYRWHwce##Series_title_2", "xCQkra6-UNvH9J6urn2Fc$$QXmH2k-5X1nagOYRWHwce##Magnitude_1", "xCQkra6-UNvH9J6urn2Fc$$QXmH2k-5X1nagOYRWHwce##Series_title_5", "xCQkra6-UNvH9J6urn2Fc$$QXmH2k-5X1nagOYRWHwce##Period_1", "xCQkra6-UNvH9J6urn2Fc$$QXmH2k-5X1nagOYRWHwce##Series_title_1", "xCQkra6-UNvH9J6urn2Fc$$QXmH2k-5X1nagOYRWHwce##Suppressed_1", "xCQkra6-UNvH9J6urn2Fc$$QXmH2k-5X1nagOYRWHwce##Subject_1", "xCQkra6-UNvH9J6urn2Fc$$QXmH2k-5X1nagOYRWHwce##Series_title_4", "xCQkra6-UNvH9J6urn2Fc$$QXmH2k-5X1nagOYRWHwce##Data_value", "xCQkra6-UNvH9J6urn2Fc$$QXmH2k-5X1nagOYRWHwce##Series_title_3", "xCQkra6-UNvH9J6urn2Fc$$QXmH2k-5X1nagOYRWHwce##Group_1" ],
+        "headAlias" : "economic_survey_perf"
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "xCQkra6-UNvH9J6urn2Fc$$QXmH2k-5X1nagOYRWHwce",
+          "schema" : {
+            "providerType" : "Databricks",
+            "fields" : [ {
+              "name" : "Series_reference",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Period_1",
+              "dataType" : {
+                "type" : "Float"
+              }
+            }, {
+              "name" : "Data_value",
+              "dataType" : {
+                "type" : "Float"
+              }
+            }, {
+              "name" : "Suppressed_1",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "STATUS_1",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "UNITS_1",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Magnitude_1",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "Subject_1",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Group_1",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Series_title_1",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Series_title_2",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Series_title_3",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Series_title_4",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Series_title_5",
+              "dataType" : {
+                "type" : "String"
+              }
+            } ]
+          },
+          "slug" : "economic_survey_perf"
+        }, {
+          "id" : "ZzO7QCWMthdLt77GKnra3$$aHWcICywf3TooFnK7t44g",
+          "schema" : {
+            "providerType" : "Databricks",
+            "fields" : [ {
+              "name" : "Series_reference",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Period_1",
+              "dataType" : {
+                "type" : "Float"
+              }
+            }, {
+              "name" : "Data_value_1",
+              "dataType" : {
+                "type" : "Float"
+              }
+            }, {
+              "name" : "Suppressed_1",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "STATUS_1",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "UNITS_1",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Magnitude_1",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "Subject_1",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Group_1",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Series_title_1",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Series_title_2",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Series_title_3",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Series_title_4",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Series_title_5",
+              "dataType" : {
+                "type" : "String"
+              }
+            } ]
+          },
+          "slug" : "ecards_transactions_perf_1"
+        } ],
+        "outputs" : [ {
+          "id" : "Tn9gl3pdxa4HwHABaHroL$$c5ZVg2fD2Oej4Na17F1wX",
+          "schema" : {
+            "providerType" : "Databricks",
+            "fields" : [ {
+              "name" : "Data_value_1",
+              "dataType" : {
+                "type" : "Float"
+              }
+            }, {
+              "name" : "STATUS_1",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "UNITS_1",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Series_reference",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Series_title_2",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Magnitude_1",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "Series_title_5",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Period_1",
+              "dataType" : {
+                "type" : "Float"
+              }
+            }, {
+              "name" : "Series_title_1",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Suppressed_1",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Subject_1",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Series_title_4",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Data_value",
+              "dataType" : {
+                "type" : "Float"
+              }
+            }, {
+              "name" : "Series_title_3",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Group_1",
+              "dataType" : {
+                "type" : "String"
+              }
+            } ]
+          },
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
+    "rAO2ePuL3cwsSjHTuMSs2" : {
+      "id" : "rAO2ePuL3cwsSjHTuMSs2",
+      "component" : "Seed",
+      "metadata" : {
+        "label" : "ecards_transactions_perf",
+        "slug" : "ecards_transactions_perf",
+        "x" : -660,
+        "y" : 700,
+        "phase" : 0
+      },
+      "properties" : {
+        "table" : {
+          "name" : "ecards_transactions_perf",
+          "sourceType" : "Seed",
+          "alias" : ""
+        }
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "f2U53onK4QHUA853R8haD",
+          "schema" : {
+            "providerType" : "Databricks",
+            "fields" : [ {
+              "name" : "Series_reference",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Period_1",
+              "dataType" : {
+                "type" : "Float"
+              }
+            }, {
+              "name" : "Data_value_1",
+              "dataType" : {
+                "type" : "Float"
+              }
+            }, {
+              "name" : "Suppressed_1",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "STATUS_1",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "UNITS_1",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Magnitude_1",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "Subject_1",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Group_1",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Series_title_1",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Series_title_2",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Series_title_3",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Series_title_4",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Series_title_5",
+              "dataType" : {
+                "type" : "String"
+              }
+            } ]
+          },
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
+    "euo-FiISXtHHRnEra-iXF" : {
+      "id" : "euo-FiISXtHHRnEra-iXF",
+      "component" : "Seed",
+      "metadata" : {
+        "label" : "ecards_transactions_perf_1",
+        "slug" : "ecards_transactions_perf_1",
+        "x" : -560,
+        "y" : 1020,
+        "phase" : 0
+      },
+      "properties" : {
+        "table" : {
+          "name" : "ecards_transactions_perf",
+          "sourceType" : "Seed",
+          "alias" : ""
+        }
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "ry9NnpqgCbK0tpLbjq1aM",
+          "schema" : {
+            "providerType" : "Databricks",
+            "fields" : [ {
+              "name" : "Series_reference",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Period_1",
+              "dataType" : {
+                "type" : "Float"
+              }
+            }, {
+              "name" : "Data_value_1",
+              "dataType" : {
+                "type" : "Float"
+              }
+            }, {
+              "name" : "Suppressed_1",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "STATUS_1",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "UNITS_1",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Magnitude_1",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "Subject_1",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Group_1",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Series_title_1",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Series_title_2",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Series_title_3",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Series_title_4",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Series_title_5",
+              "dataType" : {
+                "type" : "String"
+              }
+            } ]
+          },
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
+    "400ihfe4YWXZP7BTIFDFy$$1poC-tYTpxaCE-pVvNv-Y" : {
+      "id" : "400ihfe4YWXZP7BTIFDFy$$1poC-tYTpxaCE-pVvNv-Y",
+      "component" : "Join",
+      "metadata" : {
+        "label" : "Join_1",
+        "slug" : "Join_1",
+        "x" : -460,
+        "y" : 600,
+        "phase" : 0,
+        "macroDependencies" : [ ]
+      },
+      "properties" : {
+        "conditions" : [ {
+          "alias" : "annual_enterprise_perf",
+          "expression" : {
+            "expression" : "annual_enterprise_perf.Units_1 = ecards_transactions_perf.Units_1"
+          },
+          "joinType" : "inner"
+        } ],
+        "expressions" : [ {
+          "expression" : {
+            "expression" : "ecards_transactions_perf.Series_reference"
+          },
+          "alias" : "Series_reference"
+        }, {
+          "expression" : {
+            "expression" : "ecards_transactions_perf.Period_1"
+          },
+          "alias" : "Period_1"
+        }, {
+          "expression" : {
+            "expression" : "ecards_transactions_perf.Data_value_1"
+          },
+          "alias" : "Data_value_1"
+        }, {
+          "expression" : {
+            "expression" : "ecards_transactions_perf.Suppressed_1"
+          },
+          "alias" : "Suppressed_1"
+        }, {
+          "expression" : {
+            "expression" : "ecards_transactions_perf.STATUS_1"
+          },
+          "alias" : "STATUS_1"
+        }, {
+          "expression" : {
+            "expression" : "ecards_transactions_perf.UNITS_1"
+          },
+          "alias" : "UNITS_1"
+        }, {
+          "expression" : {
+            "expression" : "ecards_transactions_perf.Magnitude_1"
+          },
+          "alias" : "Magnitude_1"
+        }, {
+          "expression" : {
+            "expression" : "ecards_transactions_perf.Subject_1"
+          },
+          "alias" : "Subject_1"
+        }, {
+          "expression" : {
+            "expression" : "ecards_transactions_perf.Group_1"
+          },
+          "alias" : "Group_1"
+        }, {
+          "expression" : {
+            "expression" : "ecards_transactions_perf.Series_title_1"
+          },
+          "alias" : "Series_title_1"
+        }, {
+          "expression" : {
+            "expression" : "ecards_transactions_perf.Series_title_2"
+          },
+          "alias" : "Series_title_2"
+        }, {
+          "expression" : {
+            "expression" : "ecards_transactions_perf.Series_title_3"
+          },
+          "alias" : "Series_title_3"
+        }, {
+          "expression" : {
+            "expression" : "ecards_transactions_perf.Series_title_4"
+          },
+          "alias" : "Series_title_4"
+        }, {
+          "expression" : {
+            "expression" : "ecards_transactions_perf.Series_title_5"
+          },
+          "alias" : "Series_title_5"
+        }, {
+          "expression" : {
+            "expression" : "annual_enterprise_perf.Variable_category_1"
+          },
+          "alias" : "Variable_category_1"
+        }, {
+          "expression" : {
+            "expression" : "annual_enterprise_perf.Industry_code_NZSIOC"
+          },
+          "alias" : "Industry_code_NZSIOC"
+        }, {
+          "expression" : {
+            "expression" : "annual_enterprise_perf.Year_1"
+          },
+          "alias" : "Year_1"
+        }, {
+          "expression" : {
+            "expression" : "annual_enterprise_perf.Industry_code_ANZSIC06"
+          },
+          "alias" : "Industry_code_ANZSIC06"
+        }, {
+          "expression" : {
+            "expression" : "annual_enterprise_perf.Variable_name_1"
+          },
+          "alias" : "Variable_name_1"
+        }, {
+          "expression" : {
+            "expression" : "annual_enterprise_perf.Industry_aggregation_NZSIOC"
+          },
+          "alias" : "Industry_aggregation_NZSIOC"
+        }, {
+          "expression" : {
+            "expression" : "annual_enterprise_perf.Variable_code_1"
+          },
+          "alias" : "Variable_code_1"
+        }, {
+          "expression" : {
+            "expression" : "annual_enterprise_perf.Value_1"
+          },
+          "alias" : "Value_1"
+        }, {
+          "expression" : {
+            "expression" : "annual_enterprise_perf.Industry_name_NZSIOC"
+          },
+          "alias" : "Industry_name_NZSIOC"
+        } ],
+        "activeTab" : "expressions",
+        "columnsSelector" : [ "9chAeifhRfN65N8BHkyLF$$GJHJg3mK7Ft4FVXnqjvJy##Units_1", "2jlJd27lg3VmYa639Na9L$$yotwLvWO-lcS6G07yuCTn##Units_1", "2jlJd27lg3VmYa639Na9L$$yotwLvWO-lcS6G07yuCTn##Series_reference", "2jlJd27lg3VmYa639Na9L$$yotwLvWO-lcS6G07yuCTn##Period_1", "2jlJd27lg3VmYa639Na9L$$yotwLvWO-lcS6G07yuCTn##Data_value_1", "2jlJd27lg3VmYa639Na9L$$yotwLvWO-lcS6G07yuCTn##Suppressed_1", "2jlJd27lg3VmYa639Na9L$$yotwLvWO-lcS6G07yuCTn##STATUS_1", "2jlJd27lg3VmYa639Na9L$$yotwLvWO-lcS6G07yuCTn##UNITS_1", "2jlJd27lg3VmYa639Na9L$$yotwLvWO-lcS6G07yuCTn##Magnitude_1", "2jlJd27lg3VmYa639Na9L$$yotwLvWO-lcS6G07yuCTn##Subject_1", "2jlJd27lg3VmYa639Na9L$$yotwLvWO-lcS6G07yuCTn##Group_1", "2jlJd27lg3VmYa639Na9L$$yotwLvWO-lcS6G07yuCTn##Series_title_1", "2jlJd27lg3VmYa639Na9L$$yotwLvWO-lcS6G07yuCTn##Series_title_2", "2jlJd27lg3VmYa639Na9L$$yotwLvWO-lcS6G07yuCTn##Series_title_3", "2jlJd27lg3VmYa639Na9L$$yotwLvWO-lcS6G07yuCTn##Series_title_4", "2jlJd27lg3VmYa639Na9L$$yotwLvWO-lcS6G07yuCTn##Series_title_5", "9chAeifhRfN65N8BHkyLF$$GJHJg3mK7Ft4FVXnqjvJy##Variable_category_1", "9chAeifhRfN65N8BHkyLF$$GJHJg3mK7Ft4FVXnqjvJy##Industry_code_NZSIOC", "9chAeifhRfN65N8BHkyLF$$GJHJg3mK7Ft4FVXnqjvJy##Year_1", "9chAeifhRfN65N8BHkyLF$$GJHJg3mK7Ft4FVXnqjvJy##Industry_code_ANZSIC06", "9chAeifhRfN65N8BHkyLF$$GJHJg3mK7Ft4FVXnqjvJy##Variable_name_1", "9chAeifhRfN65N8BHkyLF$$GJHJg3mK7Ft4FVXnqjvJy##Industry_aggregation_NZSIOC", "9chAeifhRfN65N8BHkyLF$$GJHJg3mK7Ft4FVXnqjvJy##Variable_code_1", "9chAeifhRfN65N8BHkyLF$$GJHJg3mK7Ft4FVXnqjvJy##Value_1", "9chAeifhRfN65N8BHkyLF$$GJHJg3mK7Ft4FVXnqjvJy##Industry_name_NZSIOC" ],
+        "headAlias" : "annual_enterprise_perf"
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "9chAeifhRfN65N8BHkyLF$$GJHJg3mK7Ft4FVXnqjvJy",
+          "schema" : {
+            "providerType" : "Databricks",
+            "fields" : [ {
+              "name" : "Year_1",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "Industry_aggregation_NZSIOC",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Industry_code_NZSIOC",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "Industry_name_NZSIOC",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Units_1",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Variable_code_1",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Variable_name_1",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Variable_category_1",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Value_1",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Industry_code_ANZSIC06",
+              "dataType" : {
+                "type" : "String"
+              }
+            } ]
+          },
+          "slug" : "annual_enterprise_perf"
+        }, {
+          "id" : "2jlJd27lg3VmYa639Na9L$$yotwLvWO-lcS6G07yuCTn",
+          "schema" : {
+            "providerType" : "Databricks",
+            "fields" : [ {
+              "name" : "Series_reference",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Period_1",
+              "dataType" : {
+                "type" : "Float"
+              }
+            }, {
+              "name" : "Data_value_1",
+              "dataType" : {
+                "type" : "Float"
+              }
+            }, {
+              "name" : "Suppressed_1",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "STATUS_1",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "UNITS_1",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Magnitude_1",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "Subject_1",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Group_1",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Series_title_1",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Series_title_2",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Series_title_3",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Series_title_4",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Series_title_5",
+              "dataType" : {
+                "type" : "String"
+              }
+            } ]
+          },
+          "slug" : "ecards_transactions_perf"
+        } ],
+        "outputs" : [ {
+          "id" : "emVdo9izvnQ3Nvi9VIRZP$$VoyJ87EBoQXodMSxmpT3H",
+          "schema" : {
+            "providerType" : "Databricks",
+            "fields" : [ {
+              "name" : "Series_reference",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Period_1",
+              "dataType" : {
+                "type" : "Float"
+              }
+            }, {
+              "name" : "Data_value_1",
+              "dataType" : {
+                "type" : "Float"
+              }
+            }, {
+              "name" : "Suppressed_1",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "STATUS_1",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "UNITS_1",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Magnitude_1",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "Subject_1",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Group_1",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Series_title_1",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Series_title_2",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Series_title_3",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Series_title_4",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Series_title_5",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Variable_category_1",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Industry_code_NZSIOC",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "Year_1",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "Industry_code_ANZSIC06",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Variable_name_1",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Industry_aggregation_NZSIOC",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Variable_code_1",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Value_1",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Industry_name_NZSIOC",
+              "dataType" : {
+                "type" : "String"
+              }
+            } ]
+          },
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
+    "stEftxhj_dwrse2S5DEa4" : {
+      "id" : "stEftxhj_dwrse2S5DEa4",
+      "component" : "Seed",
+      "metadata" : {
+        "label" : "country_classification_perf",
+        "slug" : "country_classification_perf",
+        "x" : -320,
+        "y" : 460,
+        "phase" : 0
+      },
+      "properties" : {
+        "table" : {
+          "name" : "country_classification_perf",
+          "sourceType" : "Seed",
+          "alias" : ""
+        }
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "t4320KVpVpvDjdiB2zXtl",
+          "schema" : {
+            "providerType" : "Databricks",
+            "fields" : [ {
+              "name" : "country_code",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "country_label",
+              "dataType" : {
+                "type" : "String"
+              }
+            } ]
+          },
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
+    "hEi7ZHrr3XdYuVpYJRBfD$$nql6S7Ey_tVr6axZFrsrB" : {
+      "id" : "hEi7ZHrr3XdYuVpYJRBfD$$nql6S7Ey_tVr6axZFrsrB",
+      "component" : "Join",
+      "metadata" : {
+        "label" : "Join_4",
+        "slug" : "Join_4",
+        "x" : 280,
+        "y" : 300,
+        "phase" : 0,
+        "macroDependencies" : [ ]
+      },
+      "properties" : {
+        "conditions" : [ {
+          "alias" : "in1",
+          "expression" : {
+            "expression" : "in0.code_1!=in1.series_reference"
+          },
+          "joinType" : "inner"
+        }, {
+          "alias" : "in2",
+          "expression" : {
+            "expression" : "in1.series_reference!=in2.STATUS_1"
+          },
+          "joinType" : "inner"
+        } ],
+        "expressions" : [ {
+          "expression" : {
+            "expression" : "in1.Series_reference"
+          },
+          "alias" : "Series_reference"
+        }, {
+          "expression" : {
+            "expression" : "in1.Period_1"
+          },
+          "alias" : "Period_1"
+        }, {
+          "expression" : {
+            "expression" : "in1.Data_value_1"
+          },
+          "alias" : "Data_value_1"
+        }, {
+          "expression" : {
+            "expression" : "in1.Suppressed_1"
+          },
+          "alias" : "Suppressed_1"
+        }, {
+          "expression" : {
+            "expression" : "in1.STATUS_1"
+          },
+          "alias" : "STATUS_1"
+        }, {
+          "expression" : {
+            "expression" : "in1.UNITS_1"
+          },
+          "alias" : "UNITS_1"
+        }, {
+          "expression" : {
+            "expression" : "in1.Magnitude_1"
+          },
+          "alias" : "Magnitude_1"
+        }, {
+          "expression" : {
+            "expression" : "in1.Subject_1"
+          },
+          "alias" : "Subject_1"
+        }, {
+          "expression" : {
+            "expression" : "in1.Group_1"
+          },
+          "alias" : "Group_1"
+        }, {
+          "expression" : {
+            "expression" : "in1.Series_title_1"
+          },
+          "alias" : "Series_title_1"
+        }, {
+          "expression" : {
+            "expression" : "in1.Series_title_2"
+          },
+          "alias" : "Series_title_2"
+        }, {
+          "expression" : {
+            "expression" : "in1.Series_title_3"
+          },
+          "alias" : "Series_title_3"
+        }, {
+          "expression" : {
+            "expression" : "in1.Series_title_4"
+          },
+          "alias" : "Series_title_4"
+        }, {
+          "expression" : {
+            "expression" : "in1.Series_title_5"
+          },
+          "alias" : "Series_title_5"
+        }, {
+          "expression" : {
+            "expression" : "in1.Variable_category_1"
+          },
+          "alias" : "Variable_category_1"
+        }, {
+          "expression" : {
+            "expression" : "in1.Industry_code_NZSIOC"
+          },
+          "alias" : "Industry_code_NZSIOC"
+        }, {
+          "expression" : {
+            "expression" : "in1.Year_1"
+          },
+          "alias" : "Year_1"
+        }, {
+          "expression" : {
+            "expression" : "in1.Industry_code_ANZSIC06"
+          },
+          "alias" : "Industry_code_ANZSIC06"
+        }, {
+          "expression" : {
+            "expression" : "in1.Variable_name_1"
+          },
+          "alias" : "Variable_name_1"
+        }, {
+          "expression" : {
+            "expression" : "in1.Industry_aggregation_NZSIOC"
+          },
+          "alias" : "Industry_aggregation_NZSIOC"
+        }, {
+          "expression" : {
+            "expression" : "in1.Variable_code_1"
+          },
+          "alias" : "Variable_code_1"
+        }, {
+          "expression" : {
+            "expression" : "in1.Value_1"
+          },
+          "alias" : "Value_1"
+        }, {
+          "expression" : {
+            "expression" : "in1.Industry_name_NZSIOC"
+          },
+          "alias" : "Industry_name_NZSIOC"
+        }, {
+          "expression" : {
+            "expression" : "in0.code_1"
+          },
+          "alias" : "code_1"
+        }, {
+          "expression" : {
+            "expression" : "in0.service_label_1"
+          },
+          "alias" : "service_label_1"
+        }, {
+          "expression" : {
+            "expression" : "in0.country_code"
+          },
+          "alias" : "country_code"
+        }, {
+          "expression" : {
+            "expression" : "in0.country_label"
+          },
+          "alias" : "country_label"
+        } ],
+        "activeTab" : "expressions",
+        "columnsSelector" : [ "DExYFaQvaNz4Z2kzZp9yx$$PXOb3wJWmHoVfLplV8UlY##code_1", "9HCtq4E23qx4tQ9eghfmV$$iuL5nao1xCK_yU9BW_KFI##series_reference", "6OszaErLsb_rtNM43QUVM$$nZEycf7vTPEAIm3KwX_0s##STATUS_1", "9HCtq4E23qx4tQ9eghfmV$$iuL5nao1xCK_yU9BW_KFI##Series_reference", "9HCtq4E23qx4tQ9eghfmV$$iuL5nao1xCK_yU9BW_KFI##Period_1", "9HCtq4E23qx4tQ9eghfmV$$iuL5nao1xCK_yU9BW_KFI##Data_value_1", "9HCtq4E23qx4tQ9eghfmV$$iuL5nao1xCK_yU9BW_KFI##Suppressed_1", "9HCtq4E23qx4tQ9eghfmV$$iuL5nao1xCK_yU9BW_KFI##STATUS_1", "9HCtq4E23qx4tQ9eghfmV$$iuL5nao1xCK_yU9BW_KFI##UNITS_1", "9HCtq4E23qx4tQ9eghfmV$$iuL5nao1xCK_yU9BW_KFI##Magnitude_1", "9HCtq4E23qx4tQ9eghfmV$$iuL5nao1xCK_yU9BW_KFI##Subject_1", "9HCtq4E23qx4tQ9eghfmV$$iuL5nao1xCK_yU9BW_KFI##Group_1", "9HCtq4E23qx4tQ9eghfmV$$iuL5nao1xCK_yU9BW_KFI##Series_title_1", "9HCtq4E23qx4tQ9eghfmV$$iuL5nao1xCK_yU9BW_KFI##Series_title_2", "9HCtq4E23qx4tQ9eghfmV$$iuL5nao1xCK_yU9BW_KFI##Series_title_3", "9HCtq4E23qx4tQ9eghfmV$$iuL5nao1xCK_yU9BW_KFI##Series_title_4", "9HCtq4E23qx4tQ9eghfmV$$iuL5nao1xCK_yU9BW_KFI##Series_title_5", "9HCtq4E23qx4tQ9eghfmV$$iuL5nao1xCK_yU9BW_KFI##Variable_category_1", "9HCtq4E23qx4tQ9eghfmV$$iuL5nao1xCK_yU9BW_KFI##Industry_code_NZSIOC", "9HCtq4E23qx4tQ9eghfmV$$iuL5nao1xCK_yU9BW_KFI##Year_1", "9HCtq4E23qx4tQ9eghfmV$$iuL5nao1xCK_yU9BW_KFI##Industry_code_ANZSIC06", "9HCtq4E23qx4tQ9eghfmV$$iuL5nao1xCK_yU9BW_KFI##Variable_name_1", "9HCtq4E23qx4tQ9eghfmV$$iuL5nao1xCK_yU9BW_KFI##Industry_aggregation_NZSIOC", "9HCtq4E23qx4tQ9eghfmV$$iuL5nao1xCK_yU9BW_KFI##Variable_code_1", "9HCtq4E23qx4tQ9eghfmV$$iuL5nao1xCK_yU9BW_KFI##Value_1", "9HCtq4E23qx4tQ9eghfmV$$iuL5nao1xCK_yU9BW_KFI##Industry_name_NZSIOC", "DExYFaQvaNz4Z2kzZp9yx$$PXOb3wJWmHoVfLplV8UlY##code_1", "DExYFaQvaNz4Z2kzZp9yx$$PXOb3wJWmHoVfLplV8UlY##service_label_1", "DExYFaQvaNz4Z2kzZp9yx$$PXOb3wJWmHoVfLplV8UlY##country_code", "DExYFaQvaNz4Z2kzZp9yx$$PXOb3wJWmHoVfLplV8UlY##country_label" ],
+        "headAlias" : "in0"
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "DExYFaQvaNz4Z2kzZp9yx$$PXOb3wJWmHoVfLplV8UlY",
+          "schema" : {
+            "providerType" : "Databricks",
+            "fields" : [ {
+              "name" : "code_1",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "service_label_1",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "country_code",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "country_label",
+              "dataType" : {
+                "type" : "String"
+              }
+            } ]
+          },
+          "slug" : "in0"
+        }, {
+          "id" : "9HCtq4E23qx4tQ9eghfmV$$iuL5nao1xCK_yU9BW_KFI",
+          "schema" : {
+            "providerType" : "Databricks",
+            "fields" : [ {
+              "name" : "Series_reference",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Period_1",
+              "dataType" : {
+                "type" : "Float"
+              }
+            }, {
+              "name" : "Data_value_1",
+              "dataType" : {
+                "type" : "Float"
+              }
+            }, {
+              "name" : "Suppressed_1",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "STATUS_1",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "UNITS_1",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Magnitude_1",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "Subject_1",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Group_1",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Series_title_1",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Series_title_2",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Series_title_3",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Series_title_4",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Series_title_5",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Variable_category_1",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Industry_code_NZSIOC",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "Year_1",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "Industry_code_ANZSIC06",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Variable_name_1",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Industry_aggregation_NZSIOC",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Variable_code_1",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Value_1",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Industry_name_NZSIOC",
+              "dataType" : {
+                "type" : "String"
+              }
+            } ]
+          },
+          "slug" : "in1"
+        }, {
+          "id" : "6OszaErLsb_rtNM43QUVM$$nZEycf7vTPEAIm3KwX_0s",
+          "schema" : {
+            "providerType" : "Databricks",
+            "fields" : [ {
+              "name" : "Data_value_1",
+              "dataType" : {
+                "type" : "Float"
+              }
+            }, {
+              "name" : "STATUS_1",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "UNITS_1",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Series_reference",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Series_title_2",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Magnitude_1",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "Series_title_5",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Period_1",
+              "dataType" : {
+                "type" : "Float"
+              }
+            }, {
+              "name" : "Series_title_1",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Suppressed_1",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Subject_1",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Series_title_4",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Data_value",
+              "dataType" : {
+                "type" : "Float"
+              }
+            }, {
+              "name" : "Series_title_3",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Group_1",
+              "dataType" : {
+                "type" : "String"
+              }
+            } ]
+          },
+          "slug" : "in2"
+        } ],
+        "outputs" : [ {
+          "id" : "OxBYWhtfpTBwwVVY0cUbr$$g6YLeqtJro_aBgewHoK4l",
+          "schema" : {
+            "providerType" : "Databricks",
+            "fields" : [ {
+              "name" : "Series_reference",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Period_1",
+              "dataType" : {
+                "type" : "Float"
+              }
+            }, {
+              "name" : "Data_value_1",
+              "dataType" : {
+                "type" : "Float"
+              }
+            }, {
+              "name" : "Suppressed_1",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "STATUS_1",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "UNITS_1",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Magnitude_1",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "Subject_1",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Group_1",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Series_title_1",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Series_title_2",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Series_title_3",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Series_title_4",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Series_title_5",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Variable_category_1",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Industry_code_NZSIOC",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "Year_1",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "Industry_code_ANZSIC06",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Variable_name_1",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Industry_aggregation_NZSIOC",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Variable_code_1",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Value_1",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Industry_name_NZSIOC",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "code_1",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "service_label_1",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "country_code",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "country_label",
+              "dataType" : {
+                "type" : "String"
+              }
+            } ]
+          },
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
+    "QHYRfZaIe-u25ypiZnxDI" : {
+      "id" : "QHYRfZaIe-u25ypiZnxDI",
+      "component" : "Seed",
+      "metadata" : {
+        "label" : "service_classification_perf",
+        "slug" : "service_classification_perf",
+        "x" : -340,
+        "y" : 300,
+        "phase" : 0
+      },
+      "properties" : {
+        "table" : {
+          "name" : "service_classification_perf",
+          "sourceType" : "Seed",
+          "alias" : ""
+        }
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "4pZJF41GRHHyEkyvaozJA",
+          "schema" : {
+            "providerType" : "Databricks",
+            "fields" : [ {
+              "name" : "code_1",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "service_label_1",
+              "dataType" : {
+                "type" : "String"
+              }
+            } ]
+          },
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    }
+  },
+  "connections" : [ {
+    "id" : "VRVNoYUYo6OjMrNTIo-ra$$eGo8luox9rWDaIc8osmgf",
+    "source" : "xRkCcC0IvyOBv_46HOK1g",
+    "sourcePort" : "Hl03aRImrEL6-70Cqwuel",
+    "target" : "400ihfe4YWXZP7BTIFDFy$$1poC-tYTpxaCE-pVvNv-Y",
+    "targetPort" : "9chAeifhRfN65N8BHkyLF$$GJHJg3mK7Ft4FVXnqjvJy"
+  }, {
+    "id" : "FlZj_xBemBoL8OYvqRUhH$$MM_Cf05JJIVaAjxGE3WsN",
+    "source" : "rAO2ePuL3cwsSjHTuMSs2",
+    "sourcePort" : "f2U53onK4QHUA853R8haD",
+    "target" : "400ihfe4YWXZP7BTIFDFy$$1poC-tYTpxaCE-pVvNv-Y",
+    "targetPort" : "2jlJd27lg3VmYa639Na9L$$yotwLvWO-lcS6G07yuCTn"
+  }, {
+    "id" : "EyvXIgj4PUY1hSPV_OTwE$$2Ry7tgP7u8AA7hr070ZED",
+    "source" : "JP-32GCyLo2QgCK6xUA4a",
+    "sourcePort" : "9u64hoLEFr9ghTZVJ8G7i",
+    "target" : "De6D_CTGALdtkDOsqFWTH$$rbYQwPhR7qY6hX0cdRmOb",
+    "targetPort" : "xCQkra6-UNvH9J6urn2Fc$$QXmH2k-5X1nagOYRWHwce"
+  }, {
+    "id" : "eYB92vfcbQlwfS-Nu9mlj$$jdVXN6aqHFEZ6CxGLBWWV",
+    "source" : "euo-FiISXtHHRnEra-iXF",
+    "sourcePort" : "ry9NnpqgCbK0tpLbjq1aM",
+    "target" : "De6D_CTGALdtkDOsqFWTH$$rbYQwPhR7qY6hX0cdRmOb",
+    "targetPort" : "ZzO7QCWMthdLt77GKnra3$$aHWcICywf3TooFnK7t44g"
+  }, {
+    "id" : "YYbTlQfhvuX6q8pV98hHB$$xseGarOTbtWucEB2wYPkn",
+    "source" : "QHYRfZaIe-u25ypiZnxDI",
+    "sourcePort" : "4pZJF41GRHHyEkyvaozJA",
+    "target" : "Vt4RGueuAz6_IAvpycPJt$$XnKeMlQbB5djUY-l7w0MP",
+    "targetPort" : "vzTon9GmnyKbW2_z_csa_$$xAWND3KruRipzl84B61mj"
+  }, {
+    "id" : "dyDWp_guxBpGmFz2enrjc",
+    "source" : "stEftxhj_dwrse2S5DEa4",
+    "sourcePort" : "t4320KVpVpvDjdiB2zXtl",
+    "target" : "Vt4RGueuAz6_IAvpycPJt$$XnKeMlQbB5djUY-l7w0MP",
+    "targetPort" : "nFsuilH5FofqQuJcLA8Di$$h2A_skJNiRhdUvMPmU2bH"
+  }, {
+    "id" : "iiV_-qqdcbPv44g3aW4JK",
+    "source" : "Vt4RGueuAz6_IAvpycPJt$$XnKeMlQbB5djUY-l7w0MP",
+    "sourcePort" : "3OmiUAU0zuwcP2L8pIh5X$$tNd5buVJiJ06_SKD26glA",
+    "target" : "hEi7ZHrr3XdYuVpYJRBfD$$nql6S7Ey_tVr6axZFrsrB",
+    "targetPort" : "DExYFaQvaNz4Z2kzZp9yx$$PXOb3wJWmHoVfLplV8UlY"
+  }, {
+    "id" : "1ikkTdB4aO-5ieLAtTKed",
+    "source" : "400ihfe4YWXZP7BTIFDFy$$1poC-tYTpxaCE-pVvNv-Y",
+    "sourcePort" : "emVdo9izvnQ3Nvi9VIRZP$$VoyJ87EBoQXodMSxmpT3H",
+    "target" : "hEi7ZHrr3XdYuVpYJRBfD$$nql6S7Ey_tVr6axZFrsrB",
+    "targetPort" : "9HCtq4E23qx4tQ9eghfmV$$iuL5nao1xCK_yU9BW_KFI"
+  }, {
+    "id" : "SmxS3o2DRCXLtSW01QswY",
+    "source" : "De6D_CTGALdtkDOsqFWTH$$rbYQwPhR7qY6hX0cdRmOb",
+    "sourcePort" : "Tn9gl3pdxa4HwHABaHroL$$c5ZVg2fD2Oej4Na17F1wX",
+    "target" : "hEi7ZHrr3XdYuVpYJRBfD$$nql6S7Ey_tVr6axZFrsrB",
+    "targetPort" : "6OszaErLsb_rtNM43QUVM$$nZEycf7vTPEAIm3KwX_0s"
+  }, {
+    "id" : "3pwpfm0MKc4SH2T6H8RNP",
+    "source" : "hEi7ZHrr3XdYuVpYJRBfD$$nql6S7Ey_tVr6axZFrsrB",
+    "sourcePort" : "OxBYWhtfpTBwwVVY0cUbr$$g6YLeqtJro_aBgewHoK4l",
+    "target" : "test_perf_model_2##sGKJEuiL",
+    "targetPort" : "SZ8eR47S"
+  } ],
+  "component" : "Model"
+}

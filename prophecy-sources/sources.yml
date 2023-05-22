@@ -101,3 +101,491 @@ sources:
     - name: "p_string"
       dataType:
         type: "String"
+  - name: "item"
+    columns:
+    - name: "I_ITEM_SK"
+      dataType:
+        type: "Decimal"
+    - name: "I_ITEM_ID"
+      dataType:
+        type: "String"
+    - name: "I_REC_START_DATE"
+      dataType:
+        type: "Date"
+    - name: "I_REC_END_DATE"
+      dataType:
+        type: "Date"
+    - name: "I_ITEM_DESC"
+      dataType:
+        type: "String"
+    - name: "I_CURRENT_PRICE"
+      dataType:
+        type: "Decimal"
+    - name: "I_WHOLESALE_COST"
+      dataType:
+        type: "Decimal"
+    - name: "I_BRAND_ID"
+      dataType:
+        type: "Decimal"
+    - name: "I_BRAND"
+      dataType:
+        type: "String"
+    - name: "I_CLASS_ID"
+      dataType:
+        type: "Decimal"
+    - name: "I_CLASS"
+      dataType:
+        type: "String"
+    - name: "I_CATEGORY_ID"
+      dataType:
+        type: "Decimal"
+    - name: "I_CATEGORY"
+      dataType:
+        type: "String"
+    - name: "I_MANUFACT_ID"
+      dataType:
+        type: "Decimal"
+    - name: "I_MANUFACT"
+      dataType:
+        type: "String"
+    - name: "I_SIZE"
+      dataType:
+        type: "String"
+    - name: "I_FORMULATION"
+      dataType:
+        type: "String"
+    - name: "I_COLOR"
+      dataType:
+        type: "String"
+    - name: "I_UNITS"
+      dataType:
+        type: "String"
+    - name: "I_CONTAINER"
+      dataType:
+        type: "String"
+    - name: "I_MANAGER_ID"
+      dataType:
+        type: "Decimal"
+    - name: "I_PRODUCT_NAME"
+      dataType:
+        type: "String"
+  - name: "store_sales"
+    columns:
+    - name: "SS_SOLD_DATE_SK"
+      dataType:
+        type: "Decimal"
+    - name: "SS_SOLD_TIME_SK"
+      dataType:
+        type: "Decimal"
+    - name: "SS_ITEM_SK"
+      dataType:
+        type: "Decimal"
+    - name: "SS_CUSTOMER_SK"
+      dataType:
+        type: "Decimal"
+    - name: "SS_CDEMO_SK"
+      dataType:
+        type: "Decimal"
+    - name: "SS_HDEMO_SK"
+      dataType:
+        type: "Decimal"
+    - name: "SS_ADDR_SK"
+      dataType:
+        type: "Decimal"
+    - name: "SS_STORE_SK"
+      dataType:
+        type: "Decimal"
+    - name: "SS_PROMO_SK"
+      dataType:
+        type: "Decimal"
+    - name: "SS_TICKET_NUMBER"
+      dataType:
+        type: "Decimal"
+    - name: "SS_QUANTITY"
+      dataType:
+        type: "Decimal"
+    - name: "SS_WHOLESALE_COST"
+      dataType:
+        type: "Decimal"
+    - name: "SS_LIST_PRICE"
+      dataType:
+        type: "Decimal"
+    - name: "SS_SALES_PRICE"
+      dataType:
+        type: "Decimal"
+    - name: "SS_EXT_DISCOUNT_AMT"
+      dataType:
+        type: "Decimal"
+    - name: "SS_EXT_SALES_PRICE"
+      dataType:
+        type: "Decimal"
+    - name: "SS_EXT_WHOLESALE_COST"
+      dataType:
+        type: "Decimal"
+    - name: "SS_EXT_LIST_PRICE"
+      dataType:
+        type: "Decimal"
+    - name: "SS_EXT_TAX"
+      dataType:
+        type: "Decimal"
+    - name: "SS_COUPON_AMT"
+      dataType:
+        type: "Decimal"
+    - name: "SS_NET_PAID"
+      dataType:
+        type: "Decimal"
+    - name: "SS_NET_PAID_INC_TAX"
+      dataType:
+        type: "Decimal"
+    - name: "SS_NET_PROFIT"
+      dataType:
+        type: "Decimal"
+  - name: "date_dim"
+    columns:
+    - name: "D_DATE_SK"
+      dataType:
+        type: "Decimal"
+    - name: "D_DATE_ID"
+      dataType:
+        type: "String"
+    - name: "D_DATE"
+      dataType:
+        type: "Date"
+    - name: "D_MONTH_SEQ"
+      dataType:
+        type: "Decimal"
+    - name: "D_WEEK_SEQ"
+      dataType:
+        type: "Decimal"
+    - name: "D_QUARTER_SEQ"
+      dataType:
+        type: "Decimal"
+    - name: "D_YEAR"
+      dataType:
+        type: "Decimal"
+    - name: "D_DOW"
+      dataType:
+        type: "Decimal"
+    - name: "D_MOY"
+      dataType:
+        type: "Decimal"
+    - name: "D_DOM"
+      dataType:
+        type: "Decimal"
+    - name: "D_QOY"
+      dataType:
+        type: "Decimal"
+    - name: "D_FY_YEAR"
+      dataType:
+        type: "Decimal"
+    - name: "D_FY_QUARTER_SEQ"
+      dataType:
+        type: "Decimal"
+    - name: "D_FY_WEEK_SEQ"
+      dataType:
+        type: "Decimal"
+    - name: "D_DAY_NAME"
+      dataType:
+        type: "String"
+    - name: "D_QUARTER_NAME"
+      dataType:
+        type: "String"
+    - name: "D_HOLIDAY"
+      dataType:
+        type: "String"
+    - name: "D_WEEKEND"
+      dataType:
+        type: "String"
+    - name: "D_FOLLOWING_HOLIDAY"
+      dataType:
+        type: "String"
+    - name: "D_FIRST_DOM"
+      dataType:
+        type: "Decimal"
+    - name: "D_LAST_DOM"
+      dataType:
+        type: "Decimal"
+    - name: "D_SAME_DAY_LY"
+      dataType:
+        type: "Decimal"
+    - name: "D_SAME_DAY_LQ"
+      dataType:
+        type: "Decimal"
+    - name: "D_CURRENT_DAY"
+      dataType:
+        type: "String"
+    - name: "D_CURRENT_WEEK"
+      dataType:
+        type: "String"
+    - name: "D_CURRENT_MONTH"
+      dataType:
+        type: "String"
+    - name: "D_CURRENT_QUARTER"
+      dataType:
+        type: "String"
+    - name: "D_CURRENT_YEAR"
+      dataType:
+        type: "String"
+  - name: "catalog_sales"
+    columns:
+    - name: "CS_SOLD_DATE_SK"
+      dataType:
+        type: "Decimal"
+    - name: "CS_SOLD_TIME_SK"
+      dataType:
+        type: "Decimal"
+    - name: "CS_SHIP_DATE_SK"
+      dataType:
+        type: "Decimal"
+    - name: "CS_BILL_CUSTOMER_SK"
+      dataType:
+        type: "Decimal"
+    - name: "CS_BILL_CDEMO_SK"
+      dataType:
+        type: "Decimal"
+    - name: "CS_BILL_HDEMO_SK"
+      dataType:
+        type: "Decimal"
+    - name: "CS_BILL_ADDR_SK"
+      dataType:
+        type: "Decimal"
+    - name: "CS_SHIP_CUSTOMER_SK"
+      dataType:
+        type: "Decimal"
+    - name: "CS_SHIP_CDEMO_SK"
+      dataType:
+        type: "Decimal"
+    - name: "CS_SHIP_HDEMO_SK"
+      dataType:
+        type: "Decimal"
+    - name: "CS_SHIP_ADDR_SK"
+      dataType:
+        type: "Decimal"
+    - name: "CS_CALL_CENTER_SK"
+      dataType:
+        type: "Decimal"
+    - name: "CS_CATALOG_PAGE_SK"
+      dataType:
+        type: "Decimal"
+    - name: "CS_SHIP_MODE_SK"
+      dataType:
+        type: "Decimal"
+    - name: "CS_WAREHOUSE_SK"
+      dataType:
+        type: "Decimal"
+    - name: "CS_ITEM_SK"
+      dataType:
+        type: "Decimal"
+    - name: "CS_PROMO_SK"
+      dataType:
+        type: "Decimal"
+    - name: "CS_ORDER_NUMBER"
+      dataType:
+        type: "Decimal"
+    - name: "CS_QUANTITY"
+      dataType:
+        type: "Decimal"
+    - name: "CS_WHOLESALE_COST"
+      dataType:
+        type: "Decimal"
+    - name: "CS_LIST_PRICE"
+      dataType:
+        type: "Decimal"
+    - name: "CS_SALES_PRICE"
+      dataType:
+        type: "Decimal"
+    - name: "CS_EXT_DISCOUNT_AMT"
+      dataType:
+        type: "Decimal"
+    - name: "CS_EXT_SALES_PRICE"
+      dataType:
+        type: "Decimal"
+    - name: "CS_EXT_WHOLESALE_COST"
+      dataType:
+        type: "Decimal"
+    - name: "CS_EXT_LIST_PRICE"
+      dataType:
+        type: "Decimal"
+    - name: "CS_EXT_TAX"
+      dataType:
+        type: "Decimal"
+    - name: "CS_COUPON_AMT"
+      dataType:
+        type: "Decimal"
+    - name: "CS_EXT_SHIP_COST"
+      dataType:
+        type: "Decimal"
+    - name: "CS_NET_PAID"
+      dataType:
+        type: "Decimal"
+    - name: "CS_NET_PAID_INC_TAX"
+      dataType:
+        type: "Decimal"
+    - name: "CS_NET_PAID_INC_SHIP"
+      dataType:
+        type: "Decimal"
+    - name: "CS_NET_PAID_INC_SHIP_TAX"
+      dataType:
+        type: "Decimal"
+    - name: "CS_NET_PROFIT"
+      dataType:
+        type: "Decimal"
+  - name: "warehouse"
+    columns:
+    - name: "W_WAREHOUSE_SK"
+      dataType:
+        type: "Decimal"
+    - name: "W_WAREHOUSE_ID"
+      dataType:
+        type: "String"
+    - name: "W_WAREHOUSE_NAME"
+      dataType:
+        type: "String"
+    - name: "W_WAREHOUSE_SQ_FT"
+      dataType:
+        type: "Decimal"
+    - name: "W_STREET_NUMBER"
+      dataType:
+        type: "String"
+    - name: "W_STREET_NAME"
+      dataType:
+        type: "String"
+    - name: "W_STREET_TYPE"
+      dataType:
+        type: "String"
+    - name: "W_SUITE_NUMBER"
+      dataType:
+        type: "String"
+    - name: "W_CITY"
+      dataType:
+        type: "String"
+    - name: "W_COUNTY"
+      dataType:
+        type: "String"
+    - name: "W_STATE"
+      dataType:
+        type: "String"
+    - name: "W_ZIP"
+      dataType:
+        type: "String"
+    - name: "W_COUNTRY"
+      dataType:
+        type: "String"
+    - name: "W_GMT_OFFSET"
+      dataType:
+        type: "Decimal"
+  - name: "ship_mode"
+    columns:
+    - name: "SM_SHIP_MODE_SK"
+      dataType:
+        type: "Decimal"
+    - name: "SM_SHIP_MODE_ID"
+      dataType:
+        type: "String"
+    - name: "SM_TYPE"
+      dataType:
+        type: "String"
+    - name: "SM_CODE"
+      dataType:
+        type: "String"
+    - name: "SM_CARRIER"
+      dataType:
+        type: "String"
+    - name: "SM_CONTRACT"
+      dataType:
+        type: "String"
+  - name: "call_center"
+    columns:
+    - name: "CC_CALL_CENTER_SK"
+      dataType:
+        type: "Decimal"
+    - name: "CC_CALL_CENTER_ID"
+      dataType:
+        type: "String"
+    - name: "CC_REC_START_DATE"
+      dataType:
+        type: "Date"
+    - name: "CC_REC_END_DATE"
+      dataType:
+        type: "Date"
+    - name: "CC_CLOSED_DATE_SK"
+      dataType:
+        type: "Decimal"
+    - name: "CC_OPEN_DATE_SK"
+      dataType:
+        type: "Decimal"
+    - name: "CC_NAME"
+      dataType:
+        type: "String"
+    - name: "CC_CLASS"
+      dataType:
+        type: "String"
+    - name: "CC_EMPLOYEES"
+      dataType:
+        type: "Decimal"
+    - name: "CC_SQ_FT"
+      dataType:
+        type: "Decimal"
+    - name: "CC_HOURS"
+      dataType:
+        type: "String"
+    - name: "CC_MANAGER"
+      dataType:
+        type: "String"
+    - name: "CC_MKT_ID"
+      dataType:
+        type: "Decimal"
+    - name: "CC_MKT_CLASS"
+      dataType:
+        type: "String"
+    - name: "CC_MKT_DESC"
+      dataType:
+        type: "String"
+    - name: "CC_MARKET_MANAGER"
+      dataType:
+        type: "String"
+    - name: "CC_DIVISION"
+      dataType:
+        type: "Decimal"
+    - name: "CC_DIVISION_NAME"
+      dataType:
+        type: "String"
+    - name: "CC_COMPANY"
+      dataType:
+        type: "Decimal"
+    - name: "CC_COMPANY_NAME"
+      dataType:
+        type: "String"
+    - name: "CC_STREET_NUMBER"
+      dataType:
+        type: "String"
+    - name: "CC_STREET_NAME"
+      dataType:
+        type: "String"
+    - name: "CC_STREET_TYPE"
+      dataType:
+        type: "String"
+    - name: "CC_SUITE_NUMBER"
+      dataType:
+        type: "String"
+    - name: "CC_CITY"
+      dataType:
+        type: "String"
+    - name: "CC_COUNTY"
+      dataType:
+        type: "String"
+    - name: "CC_STATE"
+      dataType:
+        type: "String"
+    - name: "CC_ZIP"
+      dataType:
+        type: "String"
+    - name: "CC_COUNTRY"
+      dataType:
+        type: "String"
+    - name: "CC_GMT_OFFSET"
+      dataType:
+        type: "Decimal"
+    - name: "CC_TAX_PERCENTAGE"
+      dataType:
+        type: "Decimal"

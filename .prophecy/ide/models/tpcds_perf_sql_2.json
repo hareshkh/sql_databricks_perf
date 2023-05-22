@@ -1,0 +1,2391 @@
+{
+  "id" : "tpcds_perf_sql_2",
+  "metainfo" : {
+    "label" : "tpcds_perf_sql_2",
+    "autoLayout" : false,
+    "staleState" : "none",
+    "sourceSuggestions" : {
+      "sources" : [ ]
+    }
+  },
+  "processes" : {
+    "UjIYXAPLzEzA0aA2oeR92$$1Djjvoc9qU9JnlzoPXL58" : {
+      "id" : "UjIYXAPLzEzA0aA2oeR92$$1Djjvoc9qU9JnlzoPXL58",
+      "component" : "SQLStatement",
+      "metadata" : {
+        "label" : "SQLStatement_2",
+        "slug" : "SQLStatement_2",
+        "x" : -360,
+        "y" : 200,
+        "phase" : 0,
+        "macroDependencies" : [ ]
+      },
+      "properties" : {
+        "fileTabs" : [ {
+          "path" : "out",
+          "id" : "out",
+          "language" : "sql",
+          "content" : "select i_item_id\n      ,i_item_desc \n      ,i_category \n      ,i_class \n      ,i_current_price\n      ,sum(ss_ext_sales_price) as itemrevenue \n      ,sum(ss_ext_sales_price)*100/sum(sum(ss_ext_sales_price)) over\n          (partition by i_class) as revenueratio\nfrom\t\n\tspark_catalog.qa_performance_database.store_sales\n    \t,item \n    \t,date_dim\nwhere \n\tss_item_sk = i_item_sk \n  \tand i_category in ('Women', 'Electronics', 'Shoes')\n  \tand ss_sold_date_sk = d_date_sk\n\tand d_date between cast('2002-05-27' as date) \n                                and DATE_ADD(DATE '2002-05-27', 10)\ngroup by \n\ti_item_id\n        ,i_item_desc \n        ,i_category\n        ,i_class\n        ,i_current_price\norder by \n\ti_category\n        ,i_class\n        ,i_item_id\n        ,i_item_desc\n        ,revenueratio"
+        } ]
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "hUb54f_3d-GPDRbJhUw8X$$GgO_2K1X_fazi86zmlC9o",
+          "schema" : {
+            "providerType" : "databricks",
+            "fields" : [ {
+              "name" : "D_DATE_SK",
+              "dataType" : {
+                "type" : "Decimal"
+              }
+            }, {
+              "name" : "D_DATE_ID",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "D_DATE",
+              "dataType" : {
+                "type" : "Date"
+              }
+            }, {
+              "name" : "D_MONTH_SEQ",
+              "dataType" : {
+                "type" : "Decimal"
+              }
+            }, {
+              "name" : "D_WEEK_SEQ",
+              "dataType" : {
+                "type" : "Decimal"
+              }
+            }, {
+              "name" : "D_QUARTER_SEQ",
+              "dataType" : {
+                "type" : "Decimal"
+              }
+            }, {
+              "name" : "D_YEAR",
+              "dataType" : {
+                "type" : "Decimal"
+              }
+            }, {
+              "name" : "D_DOW",
+              "dataType" : {
+                "type" : "Decimal"
+              }
+            }, {
+              "name" : "D_MOY",
+              "dataType" : {
+                "type" : "Decimal"
+              }
+            }, {
+              "name" : "D_DOM",
+              "dataType" : {
+                "type" : "Decimal"
+              }
+            }, {
+              "name" : "D_QOY",
+              "dataType" : {
+                "type" : "Decimal"
+              }
+            }, {
+              "name" : "D_FY_YEAR",
+              "dataType" : {
+                "type" : "Decimal"
+              }
+            }, {
+              "name" : "D_FY_QUARTER_SEQ",
+              "dataType" : {
+                "type" : "Decimal"
+              }
+            }, {
+              "name" : "D_FY_WEEK_SEQ",
+              "dataType" : {
+                "type" : "Decimal"
+              }
+            }, {
+              "name" : "D_DAY_NAME",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "D_QUARTER_NAME",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "D_HOLIDAY",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "D_WEEKEND",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "D_FOLLOWING_HOLIDAY",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "D_FIRST_DOM",
+              "dataType" : {
+                "type" : "Decimal"
+              }
+            }, {
+              "name" : "D_LAST_DOM",
+              "dataType" : {
+                "type" : "Decimal"
+              }
+            }, {
+              "name" : "D_SAME_DAY_LY",
+              "dataType" : {
+                "type" : "Decimal"
+              }
+            }, {
+              "name" : "D_SAME_DAY_LQ",
+              "dataType" : {
+                "type" : "Decimal"
+              }
+            }, {
+              "name" : "D_CURRENT_DAY",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "D_CURRENT_WEEK",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "D_CURRENT_MONTH",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "D_CURRENT_QUARTER",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "D_CURRENT_YEAR",
+              "dataType" : {
+                "type" : "String"
+              }
+            } ]
+          },
+          "slug" : "date_dim"
+        }, {
+          "id" : "zCL87W9_YYAFlqyhSAHa-$$G34WPSpln977JF6dvsZEC",
+          "schema" : {
+            "providerType" : "databricks",
+            "fields" : [ {
+              "name" : "I_ITEM_SK",
+              "dataType" : {
+                "type" : "Decimal"
+              }
+            }, {
+              "name" : "I_ITEM_ID",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "I_REC_START_DATE",
+              "dataType" : {
+                "type" : "Date"
+              }
+            }, {
+              "name" : "I_REC_END_DATE",
+              "dataType" : {
+                "type" : "Date"
+              }
+            }, {
+              "name" : "I_ITEM_DESC",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "I_CURRENT_PRICE",
+              "dataType" : {
+                "type" : "Decimal"
+              }
+            }, {
+              "name" : "I_WHOLESALE_COST",
+              "dataType" : {
+                "type" : "Decimal"
+              }
+            }, {
+              "name" : "I_BRAND_ID",
+              "dataType" : {
+                "type" : "Decimal"
+              }
+            }, {
+              "name" : "I_BRAND",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "I_CLASS_ID",
+              "dataType" : {
+                "type" : "Decimal"
+              }
+            }, {
+              "name" : "I_CLASS",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "I_CATEGORY_ID",
+              "dataType" : {
+                "type" : "Decimal"
+              }
+            }, {
+              "name" : "I_CATEGORY",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "I_MANUFACT_ID",
+              "dataType" : {
+                "type" : "Decimal"
+              }
+            }, {
+              "name" : "I_MANUFACT",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "I_SIZE",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "I_FORMULATION",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "I_COLOR",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "I_UNITS",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "I_CONTAINER",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "I_MANAGER_ID",
+              "dataType" : {
+                "type" : "Decimal"
+              }
+            }, {
+              "name" : "I_PRODUCT_NAME",
+              "dataType" : {
+                "type" : "String"
+              }
+            } ]
+          },
+          "slug" : "item"
+        } ],
+        "outputs" : [ {
+          "id" : "nYZ_8HZwRi0MAiS53OXy2$$hxX8Jt7MpG1DRyhuJhcD_",
+          "schema" : {
+            "providerType" : "Databricks",
+            "fields" : [ {
+              "name" : "i_item_id",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "i_item_desc",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "i_category",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "i_class",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "i_current_price",
+              "dataType" : {
+                "type" : "Decimal"
+              }
+            }, {
+              "name" : "itemrevenue",
+              "dataType" : {
+                "type" : "Decimal"
+              }
+            }, {
+              "name" : "revenueratio",
+              "dataType" : {
+                "type" : "Decimal"
+              }
+            } ]
+          },
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
+    "vTjUwxt38nLVSyKwb-3E6" : {
+      "id" : "vTjUwxt38nLVSyKwb-3E6",
+      "component" : "Source",
+      "metadata" : {
+        "label" : "date_dim",
+        "slug" : "date_dim",
+        "x" : -640,
+        "y" : 280,
+        "phase" : 0
+      },
+      "properties" : {
+        "table" : {
+          "name" : "date_dim",
+          "sourceType" : "Source",
+          "sourceName" : "spark_catalog.qa_performance_database",
+          "alias" : "",
+          "additionalProperties" : null
+        }
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "PHq_NG9wlZzAYNJuuQRc0",
+          "schema" : {
+            "providerType" : "databricks",
+            "fields" : [ {
+              "name" : "D_DATE_SK",
+              "dataType" : {
+                "type" : "Decimal"
+              }
+            }, {
+              "name" : "D_DATE_ID",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "D_DATE",
+              "dataType" : {
+                "type" : "Date"
+              }
+            }, {
+              "name" : "D_MONTH_SEQ",
+              "dataType" : {
+                "type" : "Decimal"
+              }
+            }, {
+              "name" : "D_WEEK_SEQ",
+              "dataType" : {
+                "type" : "Decimal"
+              }
+            }, {
+              "name" : "D_QUARTER_SEQ",
+              "dataType" : {
+                "type" : "Decimal"
+              }
+            }, {
+              "name" : "D_YEAR",
+              "dataType" : {
+                "type" : "Decimal"
+              }
+            }, {
+              "name" : "D_DOW",
+              "dataType" : {
+                "type" : "Decimal"
+              }
+            }, {
+              "name" : "D_MOY",
+              "dataType" : {
+                "type" : "Decimal"
+              }
+            }, {
+              "name" : "D_DOM",
+              "dataType" : {
+                "type" : "Decimal"
+              }
+            }, {
+              "name" : "D_QOY",
+              "dataType" : {
+                "type" : "Decimal"
+              }
+            }, {
+              "name" : "D_FY_YEAR",
+              "dataType" : {
+                "type" : "Decimal"
+              }
+            }, {
+              "name" : "D_FY_QUARTER_SEQ",
+              "dataType" : {
+                "type" : "Decimal"
+              }
+            }, {
+              "name" : "D_FY_WEEK_SEQ",
+              "dataType" : {
+                "type" : "Decimal"
+              }
+            }, {
+              "name" : "D_DAY_NAME",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "D_QUARTER_NAME",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "D_HOLIDAY",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "D_WEEKEND",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "D_FOLLOWING_HOLIDAY",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "D_FIRST_DOM",
+              "dataType" : {
+                "type" : "Decimal"
+              }
+            }, {
+              "name" : "D_LAST_DOM",
+              "dataType" : {
+                "type" : "Decimal"
+              }
+            }, {
+              "name" : "D_SAME_DAY_LY",
+              "dataType" : {
+                "type" : "Decimal"
+              }
+            }, {
+              "name" : "D_SAME_DAY_LQ",
+              "dataType" : {
+                "type" : "Decimal"
+              }
+            }, {
+              "name" : "D_CURRENT_DAY",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "D_CURRENT_WEEK",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "D_CURRENT_MONTH",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "D_CURRENT_QUARTER",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "D_CURRENT_YEAR",
+              "dataType" : {
+                "type" : "String"
+              }
+            } ]
+          },
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
+    "O95WqMAgeMnlW3gG7rWU5" : {
+      "id" : "O95WqMAgeMnlW3gG7rWU5",
+      "component" : "Source",
+      "metadata" : {
+        "label" : "ship_mode",
+        "slug" : "ship_mode",
+        "x" : -660,
+        "y" : -20,
+        "phase" : 0
+      },
+      "properties" : {
+        "table" : {
+          "name" : "ship_mode",
+          "sourceType" : "Source",
+          "sourceName" : "spark_catalog.qa_performance_database",
+          "alias" : "",
+          "additionalProperties" : null
+        }
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "IOcdiVFTwxgVBpi6IqLSi",
+          "schema" : {
+            "providerType" : "databricks",
+            "fields" : [ {
+              "name" : "SM_SHIP_MODE_SK",
+              "dataType" : {
+                "type" : "Decimal"
+              }
+            }, {
+              "name" : "SM_SHIP_MODE_ID",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "SM_TYPE",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "SM_CODE",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "SM_CARRIER",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "SM_CONTRACT",
+              "dataType" : {
+                "type" : "String"
+              }
+            } ]
+          },
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
+    "hDOCMuwlStj7ah3WEhkJe$$qZzBKvn-krcJqgWq5p459" : {
+      "id" : "hDOCMuwlStj7ah3WEhkJe$$qZzBKvn-krcJqgWq5p459",
+      "component" : "SQLStatement",
+      "metadata" : {
+        "label" : "SQLStatement_1",
+        "slug" : "SQLStatement_1",
+        "x" : -380,
+        "y" : -60,
+        "phase" : 0,
+        "macroDependencies" : [ ]
+      },
+      "properties" : {
+        "fileTabs" : [ {
+          "path" : "out",
+          "id" : "out",
+          "language" : "sql",
+          "content" : "select  \n   substr(w_warehouse_name,1,20)\n  ,sm_type\n  ,cc_name\n  ,sum(case when (cs_ship_date_sk - cs_sold_date_sk <= 30 ) then 1 else 0 end)  as a_30_days\n  ,sum(case when (cs_ship_date_sk - cs_sold_date_sk > 30) and \n                 (cs_ship_date_sk - cs_sold_date_sk <= 60) then 1 else 0 end )  as a_31_60_days\n  ,sum(case when (cs_ship_date_sk - cs_sold_date_sk > 60) and \n                 (cs_ship_date_sk - cs_sold_date_sk <= 90) then 1 else 0 end)  as a_61_90_days\n  ,sum(case when (cs_ship_date_sk - cs_sold_date_sk > 90) and\n                 (cs_ship_date_sk - cs_sold_date_sk <= 120) then 1 else 0 end)  as a_91_120_days\n  ,sum(case when (cs_ship_date_sk - cs_sold_date_sk  > 120) then 1 else 0 end)  as a_120_days_and_more\nfrom\n   catalog_sales\n  ,warehouse\n  ,ship_mode\n  ,call_center\n  ,date_dim\nwhere\n    d_month_seq between 1200 and 1200 + 11\nand cs_ship_date_sk   = d_date_sk\nand cs_warehouse_sk   = w_warehouse_sk\nand cs_ship_mode_sk   = sm_ship_mode_sk\nand cs_call_center_sk = cc_call_center_sk\ngroup by\n   substr(w_warehouse_name,1,20)\n  ,sm_type\n  ,cc_name\norder by sm_type\n        ,cc_name\nlimit 100"
+        } ]
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "_bPPtlO8FO6V4JKR6PQ_O$$KgmEtYCBpuZyvNQe5xQ06",
+          "schema" : {
+            "providerType" : "databricks",
+            "fields" : [ {
+              "name" : "CS_SOLD_DATE_SK",
+              "dataType" : {
+                "type" : "Decimal"
+              }
+            }, {
+              "name" : "CS_SOLD_TIME_SK",
+              "dataType" : {
+                "type" : "Decimal"
+              }
+            }, {
+              "name" : "CS_SHIP_DATE_SK",
+              "dataType" : {
+                "type" : "Decimal"
+              }
+            }, {
+              "name" : "CS_BILL_CUSTOMER_SK",
+              "dataType" : {
+                "type" : "Decimal"
+              }
+            }, {
+              "name" : "CS_BILL_CDEMO_SK",
+              "dataType" : {
+                "type" : "Decimal"
+              }
+            }, {
+              "name" : "CS_BILL_HDEMO_SK",
+              "dataType" : {
+                "type" : "Decimal"
+              }
+            }, {
+              "name" : "CS_BILL_ADDR_SK",
+              "dataType" : {
+                "type" : "Decimal"
+              }
+            }, {
+              "name" : "CS_SHIP_CUSTOMER_SK",
+              "dataType" : {
+                "type" : "Decimal"
+              }
+            }, {
+              "name" : "CS_SHIP_CDEMO_SK",
+              "dataType" : {
+                "type" : "Decimal"
+              }
+            }, {
+              "name" : "CS_SHIP_HDEMO_SK",
+              "dataType" : {
+                "type" : "Decimal"
+              }
+            }, {
+              "name" : "CS_SHIP_ADDR_SK",
+              "dataType" : {
+                "type" : "Decimal"
+              }
+            }, {
+              "name" : "CS_CALL_CENTER_SK",
+              "dataType" : {
+                "type" : "Decimal"
+              }
+            }, {
+              "name" : "CS_CATALOG_PAGE_SK",
+              "dataType" : {
+                "type" : "Decimal"
+              }
+            }, {
+              "name" : "CS_SHIP_MODE_SK",
+              "dataType" : {
+                "type" : "Decimal"
+              }
+            }, {
+              "name" : "CS_WAREHOUSE_SK",
+              "dataType" : {
+                "type" : "Decimal"
+              }
+            }, {
+              "name" : "CS_ITEM_SK",
+              "dataType" : {
+                "type" : "Decimal"
+              }
+            }, {
+              "name" : "CS_PROMO_SK",
+              "dataType" : {
+                "type" : "Decimal"
+              }
+            }, {
+              "name" : "CS_ORDER_NUMBER",
+              "dataType" : {
+                "type" : "Decimal"
+              }
+            }, {
+              "name" : "CS_QUANTITY",
+              "dataType" : {
+                "type" : "Decimal"
+              }
+            }, {
+              "name" : "CS_WHOLESALE_COST",
+              "dataType" : {
+                "type" : "Decimal"
+              }
+            }, {
+              "name" : "CS_LIST_PRICE",
+              "dataType" : {
+                "type" : "Decimal"
+              }
+            }, {
+              "name" : "CS_SALES_PRICE",
+              "dataType" : {
+                "type" : "Decimal"
+              }
+            }, {
+              "name" : "CS_EXT_DISCOUNT_AMT",
+              "dataType" : {
+                "type" : "Decimal"
+              }
+            }, {
+              "name" : "CS_EXT_SALES_PRICE",
+              "dataType" : {
+                "type" : "Decimal"
+              }
+            }, {
+              "name" : "CS_EXT_WHOLESALE_COST",
+              "dataType" : {
+                "type" : "Decimal"
+              }
+            }, {
+              "name" : "CS_EXT_LIST_PRICE",
+              "dataType" : {
+                "type" : "Decimal"
+              }
+            }, {
+              "name" : "CS_EXT_TAX",
+              "dataType" : {
+                "type" : "Decimal"
+              }
+            }, {
+              "name" : "CS_COUPON_AMT",
+              "dataType" : {
+                "type" : "Decimal"
+              }
+            }, {
+              "name" : "CS_EXT_SHIP_COST",
+              "dataType" : {
+                "type" : "Decimal"
+              }
+            }, {
+              "name" : "CS_NET_PAID",
+              "dataType" : {
+                "type" : "Decimal"
+              }
+            }, {
+              "name" : "CS_NET_PAID_INC_TAX",
+              "dataType" : {
+                "type" : "Decimal"
+              }
+            }, {
+              "name" : "CS_NET_PAID_INC_SHIP",
+              "dataType" : {
+                "type" : "Decimal"
+              }
+            }, {
+              "name" : "CS_NET_PAID_INC_SHIP_TAX",
+              "dataType" : {
+                "type" : "Decimal"
+              }
+            }, {
+              "name" : "CS_NET_PROFIT",
+              "dataType" : {
+                "type" : "Decimal"
+              }
+            } ]
+          },
+          "slug" : "catalog_sales"
+        }, {
+          "id" : "_Bn7FHhNNiR9ffL2YzqU8$$07LWqdl-alkFtfPqgwpYh",
+          "schema" : {
+            "providerType" : "databricks",
+            "fields" : [ {
+              "name" : "W_WAREHOUSE_SK",
+              "dataType" : {
+                "type" : "Decimal"
+              }
+            }, {
+              "name" : "W_WAREHOUSE_ID",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "W_WAREHOUSE_NAME",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "W_WAREHOUSE_SQ_FT",
+              "dataType" : {
+                "type" : "Decimal"
+              }
+            }, {
+              "name" : "W_STREET_NUMBER",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "W_STREET_NAME",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "W_STREET_TYPE",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "W_SUITE_NUMBER",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "W_CITY",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "W_COUNTY",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "W_STATE",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "W_ZIP",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "W_COUNTRY",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "W_GMT_OFFSET",
+              "dataType" : {
+                "type" : "Decimal"
+              }
+            } ]
+          },
+          "slug" : "warehouse"
+        }, {
+          "id" : "z1IzmnOndsefvOMbvtAgA$$lDLYTnKT9X4gD8askx8A1",
+          "schema" : {
+            "providerType" : "databricks",
+            "fields" : [ {
+              "name" : "SM_SHIP_MODE_SK",
+              "dataType" : {
+                "type" : "Decimal"
+              }
+            }, {
+              "name" : "SM_SHIP_MODE_ID",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "SM_TYPE",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "SM_CODE",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "SM_CARRIER",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "SM_CONTRACT",
+              "dataType" : {
+                "type" : "String"
+              }
+            } ]
+          },
+          "slug" : "ship_mode"
+        }, {
+          "id" : "_OY3YWJssWO34gbq0MxE-$$XjRHzTquxMre7mqOt7QZ_",
+          "schema" : {
+            "providerType" : "databricks",
+            "fields" : [ {
+              "name" : "CC_CALL_CENTER_SK",
+              "dataType" : {
+                "type" : "Decimal"
+              }
+            }, {
+              "name" : "CC_CALL_CENTER_ID",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "CC_REC_START_DATE",
+              "dataType" : {
+                "type" : "Date"
+              }
+            }, {
+              "name" : "CC_REC_END_DATE",
+              "dataType" : {
+                "type" : "Date"
+              }
+            }, {
+              "name" : "CC_CLOSED_DATE_SK",
+              "dataType" : {
+                "type" : "Decimal"
+              }
+            }, {
+              "name" : "CC_OPEN_DATE_SK",
+              "dataType" : {
+                "type" : "Decimal"
+              }
+            }, {
+              "name" : "CC_NAME",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "CC_CLASS",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "CC_EMPLOYEES",
+              "dataType" : {
+                "type" : "Decimal"
+              }
+            }, {
+              "name" : "CC_SQ_FT",
+              "dataType" : {
+                "type" : "Decimal"
+              }
+            }, {
+              "name" : "CC_HOURS",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "CC_MANAGER",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "CC_MKT_ID",
+              "dataType" : {
+                "type" : "Decimal"
+              }
+            }, {
+              "name" : "CC_MKT_CLASS",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "CC_MKT_DESC",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "CC_MARKET_MANAGER",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "CC_DIVISION",
+              "dataType" : {
+                "type" : "Decimal"
+              }
+            }, {
+              "name" : "CC_DIVISION_NAME",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "CC_COMPANY",
+              "dataType" : {
+                "type" : "Decimal"
+              }
+            }, {
+              "name" : "CC_COMPANY_NAME",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "CC_STREET_NUMBER",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "CC_STREET_NAME",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "CC_STREET_TYPE",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "CC_SUITE_NUMBER",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "CC_CITY",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "CC_COUNTY",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "CC_STATE",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "CC_ZIP",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "CC_COUNTRY",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "CC_GMT_OFFSET",
+              "dataType" : {
+                "type" : "Decimal"
+              }
+            }, {
+              "name" : "CC_TAX_PERCENTAGE",
+              "dataType" : {
+                "type" : "Decimal"
+              }
+            } ]
+          },
+          "slug" : "call_center"
+        }, {
+          "id" : "5yEOtDfwOzHw9s4pHgJtq$$UMiOptM0vwBPLceA5kw0u",
+          "schema" : {
+            "providerType" : "databricks",
+            "fields" : [ {
+              "name" : "D_DATE_SK",
+              "dataType" : {
+                "type" : "Decimal"
+              }
+            }, {
+              "name" : "D_DATE_ID",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "D_DATE",
+              "dataType" : {
+                "type" : "Date"
+              }
+            }, {
+              "name" : "D_MONTH_SEQ",
+              "dataType" : {
+                "type" : "Decimal"
+              }
+            }, {
+              "name" : "D_WEEK_SEQ",
+              "dataType" : {
+                "type" : "Decimal"
+              }
+            }, {
+              "name" : "D_QUARTER_SEQ",
+              "dataType" : {
+                "type" : "Decimal"
+              }
+            }, {
+              "name" : "D_YEAR",
+              "dataType" : {
+                "type" : "Decimal"
+              }
+            }, {
+              "name" : "D_DOW",
+              "dataType" : {
+                "type" : "Decimal"
+              }
+            }, {
+              "name" : "D_MOY",
+              "dataType" : {
+                "type" : "Decimal"
+              }
+            }, {
+              "name" : "D_DOM",
+              "dataType" : {
+                "type" : "Decimal"
+              }
+            }, {
+              "name" : "D_QOY",
+              "dataType" : {
+                "type" : "Decimal"
+              }
+            }, {
+              "name" : "D_FY_YEAR",
+              "dataType" : {
+                "type" : "Decimal"
+              }
+            }, {
+              "name" : "D_FY_QUARTER_SEQ",
+              "dataType" : {
+                "type" : "Decimal"
+              }
+            }, {
+              "name" : "D_FY_WEEK_SEQ",
+              "dataType" : {
+                "type" : "Decimal"
+              }
+            }, {
+              "name" : "D_DAY_NAME",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "D_QUARTER_NAME",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "D_HOLIDAY",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "D_WEEKEND",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "D_FOLLOWING_HOLIDAY",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "D_FIRST_DOM",
+              "dataType" : {
+                "type" : "Decimal"
+              }
+            }, {
+              "name" : "D_LAST_DOM",
+              "dataType" : {
+                "type" : "Decimal"
+              }
+            }, {
+              "name" : "D_SAME_DAY_LY",
+              "dataType" : {
+                "type" : "Decimal"
+              }
+            }, {
+              "name" : "D_SAME_DAY_LQ",
+              "dataType" : {
+                "type" : "Decimal"
+              }
+            }, {
+              "name" : "D_CURRENT_DAY",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "D_CURRENT_WEEK",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "D_CURRENT_MONTH",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "D_CURRENT_QUARTER",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "D_CURRENT_YEAR",
+              "dataType" : {
+                "type" : "String"
+              }
+            } ]
+          },
+          "slug" : "date_dim"
+        } ],
+        "outputs" : [ {
+          "id" : "6Zc6-FqFuxo-3E5oTQQsC$$dUQ35kZokqfEW-H2RG1Og",
+          "schema" : {
+            "providerType" : "Databricks",
+            "fields" : [ {
+              "name" : "substr(w_warehouse_name, 1, 20)",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "sm_type",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "cc_name",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "a_30_days",
+              "dataType" : {
+                "type" : "Bigint"
+              }
+            }, {
+              "name" : "a_31_60_days",
+              "dataType" : {
+                "type" : "Bigint"
+              }
+            }, {
+              "name" : "a_61_90_days",
+              "dataType" : {
+                "type" : "Bigint"
+              }
+            }, {
+              "name" : "a_91_120_days",
+              "dataType" : {
+                "type" : "Bigint"
+              }
+            }, {
+              "name" : "a_120_days_and_more",
+              "dataType" : {
+                "type" : "Bigint"
+              }
+            } ]
+          },
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
+    "PjzQgwFB2nD-rx4IJD287" : {
+      "id" : "PjzQgwFB2nD-rx4IJD287",
+      "component" : "Source",
+      "metadata" : {
+        "label" : "item",
+        "slug" : "item",
+        "x" : -620,
+        "y" : 440,
+        "phase" : 0
+      },
+      "properties" : {
+        "table" : {
+          "name" : "item",
+          "sourceType" : "Source",
+          "sourceName" : "spark_catalog.qa_performance_database",
+          "alias" : "",
+          "additionalProperties" : null
+        }
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "pe5R9MXkfGeU5-_cvD08x",
+          "schema" : {
+            "providerType" : "databricks",
+            "fields" : [ {
+              "name" : "I_ITEM_SK",
+              "dataType" : {
+                "type" : "Decimal"
+              }
+            }, {
+              "name" : "I_ITEM_ID",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "I_REC_START_DATE",
+              "dataType" : {
+                "type" : "Date"
+              }
+            }, {
+              "name" : "I_REC_END_DATE",
+              "dataType" : {
+                "type" : "Date"
+              }
+            }, {
+              "name" : "I_ITEM_DESC",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "I_CURRENT_PRICE",
+              "dataType" : {
+                "type" : "Decimal"
+              }
+            }, {
+              "name" : "I_WHOLESALE_COST",
+              "dataType" : {
+                "type" : "Decimal"
+              }
+            }, {
+              "name" : "I_BRAND_ID",
+              "dataType" : {
+                "type" : "Decimal"
+              }
+            }, {
+              "name" : "I_BRAND",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "I_CLASS_ID",
+              "dataType" : {
+                "type" : "Decimal"
+              }
+            }, {
+              "name" : "I_CLASS",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "I_CATEGORY_ID",
+              "dataType" : {
+                "type" : "Decimal"
+              }
+            }, {
+              "name" : "I_CATEGORY",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "I_MANUFACT_ID",
+              "dataType" : {
+                "type" : "Decimal"
+              }
+            }, {
+              "name" : "I_MANUFACT",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "I_SIZE",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "I_FORMULATION",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "I_COLOR",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "I_UNITS",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "I_CONTAINER",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "I_MANAGER_ID",
+              "dataType" : {
+                "type" : "Decimal"
+              }
+            }, {
+              "name" : "I_PRODUCT_NAME",
+              "dataType" : {
+                "type" : "String"
+              }
+            } ]
+          },
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
+    "tpcds_perf_sql_2##qeGq2NMH" : {
+      "id" : "tpcds_perf_sql_2##qeGq2NMH",
+      "component" : "TargetModel",
+      "metadata" : {
+        "label" : "tpcds_perf_sql_2",
+        "x" : 120,
+        "y" : 60,
+        "phase" : 0,
+        "macroDependencies" : [ ]
+      },
+      "properties" : {
+        "customQueryDisabled" : true,
+        "customQuery" : false,
+        "incrementalEditorDisabled" : true,
+        "query" : "SELECT * \n\nFROM Join_1\n",
+        "incrementalKey" : false,
+        "incremental" : {
+          "expression" : "true"
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "y1SRYNqD",
+          "schema" : {
+            "providerType" : "Databricks",
+            "fields" : [ {
+              "name" : "sm_type",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "cc_name",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "a_30_days",
+              "dataType" : {
+                "type" : "Bigint"
+              }
+            }, {
+              "name" : "a_31_60_days",
+              "dataType" : {
+                "type" : "Bigint"
+              }
+            }, {
+              "name" : "a_61_90_days",
+              "dataType" : {
+                "type" : "Bigint"
+              }
+            }, {
+              "name" : "a_91_120_days",
+              "dataType" : {
+                "type" : "Bigint"
+              }
+            }, {
+              "name" : "a_120_days_and_more",
+              "dataType" : {
+                "type" : "Bigint"
+              }
+            }, {
+              "name" : "i_item_id",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "i_item_desc",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "i_category",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "i_class",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "i_current_price",
+              "dataType" : {
+                "type" : "Decimal"
+              }
+            }, {
+              "name" : "itemrevenue",
+              "dataType" : {
+                "type" : "Decimal"
+              }
+            }, {
+              "name" : "revenueratio",
+              "dataType" : {
+                "type" : "Decimal"
+              }
+            } ]
+          },
+          "slug" : "Join_1"
+        } ],
+        "outputs" : [ {
+          "id" : "NSTQdIVa",
+          "schema" : {
+            "providerType" : "Databricks",
+            "fields" : [ {
+              "name" : "sm_type",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "cc_name",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "a_30_days",
+              "dataType" : {
+                "type" : "Bigint"
+              }
+            }, {
+              "name" : "a_31_60_days",
+              "dataType" : {
+                "type" : "Bigint"
+              }
+            }, {
+              "name" : "a_61_90_days",
+              "dataType" : {
+                "type" : "Bigint"
+              }
+            }, {
+              "name" : "a_91_120_days",
+              "dataType" : {
+                "type" : "Bigint"
+              }
+            }, {
+              "name" : "a_120_days_and_more",
+              "dataType" : {
+                "type" : "Bigint"
+              }
+            }, {
+              "name" : "i_item_id",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "i_item_desc",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "i_category",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "i_class",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "i_current_price",
+              "dataType" : {
+                "type" : "Decimal"
+              }
+            }, {
+              "name" : "itemrevenue",
+              "dataType" : {
+                "type" : "Decimal"
+              }
+            }, {
+              "name" : "revenueratio",
+              "dataType" : {
+                "type" : "Decimal"
+              }
+            } ]
+          },
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
+    "PnPeE4suPXz-YDK7hZH1d$$iiU5YGDleEFvyoAFBnjbf" : {
+      "id" : "PnPeE4suPXz-YDK7hZH1d$$iiU5YGDleEFvyoAFBnjbf",
+      "component" : "Join",
+      "metadata" : {
+        "label" : "Join_1",
+        "slug" : "Join_1",
+        "x" : -140,
+        "y" : 80,
+        "phase" : 0,
+        "macroDependencies" : [ ]
+      },
+      "properties" : {
+        "conditions" : [ {
+          "alias" : "in1",
+          "expression" : {
+            "expression" : "in0.SM_TYPE != in1.I_ITEM_DESC"
+          },
+          "joinType" : "inner"
+        } ],
+        "expressions" : [ {
+          "expression" : {
+            "expression" : "in0.sm_type"
+          },
+          "alias" : "sm_type"
+        }, {
+          "expression" : {
+            "expression" : "in0.cc_name"
+          },
+          "alias" : "cc_name"
+        }, {
+          "expression" : {
+            "expression" : "in0.a_30_days"
+          },
+          "alias" : "a_30_days"
+        }, {
+          "expression" : {
+            "expression" : "in0.a_31_60_days"
+          },
+          "alias" : "a_31_60_days"
+        }, {
+          "expression" : {
+            "expression" : "in0.a_61_90_days"
+          },
+          "alias" : "a_61_90_days"
+        }, {
+          "expression" : {
+            "expression" : "in0.a_91_120_days"
+          },
+          "alias" : "a_91_120_days"
+        }, {
+          "expression" : {
+            "expression" : "in0.a_120_days_and_more"
+          },
+          "alias" : "a_120_days_and_more"
+        }, {
+          "expression" : {
+            "expression" : "in1.i_item_id"
+          },
+          "alias" : "i_item_id"
+        }, {
+          "expression" : {
+            "expression" : "in1.i_item_desc"
+          },
+          "alias" : "i_item_desc"
+        }, {
+          "expression" : {
+            "expression" : "in1.i_category"
+          },
+          "alias" : "i_category"
+        }, {
+          "expression" : {
+            "expression" : "in1.i_class"
+          },
+          "alias" : "i_class"
+        }, {
+          "expression" : {
+            "expression" : "in1.i_current_price"
+          },
+          "alias" : "i_current_price"
+        }, {
+          "expression" : {
+            "expression" : "in1.itemrevenue"
+          },
+          "alias" : "itemrevenue"
+        }, {
+          "expression" : {
+            "expression" : "in1.revenueratio"
+          },
+          "alias" : "revenueratio"
+        } ],
+        "activeTab" : "expressions",
+        "columnsSelector" : [ "l7qEw1VKOPtjT6AQ9YP34$$mTMP-AcNaRQMxpvlxYbQa##SM_TYPE", "cXan1-0ynuWZzIC4I-ccC$$qIkhQ1WptS_8rmLtMGGbQ##I_ITEM_DESC", "l7qEw1VKOPtjT6AQ9YP34$$mTMP-AcNaRQMxpvlxYbQa##sm_type", "l7qEw1VKOPtjT6AQ9YP34$$mTMP-AcNaRQMxpvlxYbQa##cc_name", "l7qEw1VKOPtjT6AQ9YP34$$mTMP-AcNaRQMxpvlxYbQa##a_30_days", "l7qEw1VKOPtjT6AQ9YP34$$mTMP-AcNaRQMxpvlxYbQa##a_31_60_days", "l7qEw1VKOPtjT6AQ9YP34$$mTMP-AcNaRQMxpvlxYbQa##a_61_90_days", "l7qEw1VKOPtjT6AQ9YP34$$mTMP-AcNaRQMxpvlxYbQa##a_91_120_days", "l7qEw1VKOPtjT6AQ9YP34$$mTMP-AcNaRQMxpvlxYbQa##a_120_days_and_more", "cXan1-0ynuWZzIC4I-ccC$$qIkhQ1WptS_8rmLtMGGbQ##i_item_id", "cXan1-0ynuWZzIC4I-ccC$$qIkhQ1WptS_8rmLtMGGbQ##i_item_desc", "cXan1-0ynuWZzIC4I-ccC$$qIkhQ1WptS_8rmLtMGGbQ##i_category", "cXan1-0ynuWZzIC4I-ccC$$qIkhQ1WptS_8rmLtMGGbQ##i_class", "cXan1-0ynuWZzIC4I-ccC$$qIkhQ1WptS_8rmLtMGGbQ##i_current_price", "cXan1-0ynuWZzIC4I-ccC$$qIkhQ1WptS_8rmLtMGGbQ##itemrevenue", "cXan1-0ynuWZzIC4I-ccC$$qIkhQ1WptS_8rmLtMGGbQ##revenueratio" ],
+        "headAlias" : "in0"
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "l7qEw1VKOPtjT6AQ9YP34$$mTMP-AcNaRQMxpvlxYbQa",
+          "schema" : {
+            "providerType" : "Databricks",
+            "fields" : [ {
+              "name" : "substr(w_warehouse_name, 1, 20)",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "sm_type",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "cc_name",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "a_30_days",
+              "dataType" : {
+                "type" : "Bigint"
+              }
+            }, {
+              "name" : "a_31_60_days",
+              "dataType" : {
+                "type" : "Bigint"
+              }
+            }, {
+              "name" : "a_61_90_days",
+              "dataType" : {
+                "type" : "Bigint"
+              }
+            }, {
+              "name" : "a_91_120_days",
+              "dataType" : {
+                "type" : "Bigint"
+              }
+            }, {
+              "name" : "a_120_days_and_more",
+              "dataType" : {
+                "type" : "Bigint"
+              }
+            } ]
+          },
+          "slug" : "in0"
+        }, {
+          "id" : "cXan1-0ynuWZzIC4I-ccC$$qIkhQ1WptS_8rmLtMGGbQ",
+          "schema" : {
+            "providerType" : "Databricks",
+            "fields" : [ {
+              "name" : "i_item_id",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "i_item_desc",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "i_category",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "i_class",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "i_current_price",
+              "dataType" : {
+                "type" : "Decimal"
+              }
+            }, {
+              "name" : "itemrevenue",
+              "dataType" : {
+                "type" : "Decimal"
+              }
+            }, {
+              "name" : "revenueratio",
+              "dataType" : {
+                "type" : "Decimal"
+              }
+            } ]
+          },
+          "slug" : "in1"
+        } ],
+        "outputs" : [ {
+          "id" : "7X1Dm14Bcqancav1SfQmD$$urOATpOn6d5s-dgDlmOPW",
+          "schema" : {
+            "providerType" : "Databricks",
+            "fields" : [ {
+              "name" : "sm_type",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "cc_name",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "a_30_days",
+              "dataType" : {
+                "type" : "Bigint"
+              }
+            }, {
+              "name" : "a_31_60_days",
+              "dataType" : {
+                "type" : "Bigint"
+              }
+            }, {
+              "name" : "a_61_90_days",
+              "dataType" : {
+                "type" : "Bigint"
+              }
+            }, {
+              "name" : "a_91_120_days",
+              "dataType" : {
+                "type" : "Bigint"
+              }
+            }, {
+              "name" : "a_120_days_and_more",
+              "dataType" : {
+                "type" : "Bigint"
+              }
+            }, {
+              "name" : "i_item_id",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "i_item_desc",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "i_category",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "i_class",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "i_current_price",
+              "dataType" : {
+                "type" : "Decimal"
+              }
+            }, {
+              "name" : "itemrevenue",
+              "dataType" : {
+                "type" : "Decimal"
+              }
+            }, {
+              "name" : "revenueratio",
+              "dataType" : {
+                "type" : "Decimal"
+              }
+            } ]
+          },
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
+    "RC2TE_NoxwFc6o5Ueb_Ea" : {
+      "id" : "RC2TE_NoxwFc6o5Ueb_Ea",
+      "component" : "Source",
+      "metadata" : {
+        "label" : "catalog_sales",
+        "slug" : "catalog_sales",
+        "x" : -680,
+        "y" : -320,
+        "phase" : 0
+      },
+      "properties" : {
+        "table" : {
+          "name" : "catalog_sales",
+          "sourceType" : "Source",
+          "sourceName" : "spark_catalog.qa_performance_database",
+          "alias" : "",
+          "additionalProperties" : null
+        }
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "nW5jXNIgyn1SPJN8184FN",
+          "schema" : {
+            "providerType" : "databricks",
+            "fields" : [ {
+              "name" : "CS_SOLD_DATE_SK",
+              "dataType" : {
+                "type" : "Decimal"
+              }
+            }, {
+              "name" : "CS_SOLD_TIME_SK",
+              "dataType" : {
+                "type" : "Decimal"
+              }
+            }, {
+              "name" : "CS_SHIP_DATE_SK",
+              "dataType" : {
+                "type" : "Decimal"
+              }
+            }, {
+              "name" : "CS_BILL_CUSTOMER_SK",
+              "dataType" : {
+                "type" : "Decimal"
+              }
+            }, {
+              "name" : "CS_BILL_CDEMO_SK",
+              "dataType" : {
+                "type" : "Decimal"
+              }
+            }, {
+              "name" : "CS_BILL_HDEMO_SK",
+              "dataType" : {
+                "type" : "Decimal"
+              }
+            }, {
+              "name" : "CS_BILL_ADDR_SK",
+              "dataType" : {
+                "type" : "Decimal"
+              }
+            }, {
+              "name" : "CS_SHIP_CUSTOMER_SK",
+              "dataType" : {
+                "type" : "Decimal"
+              }
+            }, {
+              "name" : "CS_SHIP_CDEMO_SK",
+              "dataType" : {
+                "type" : "Decimal"
+              }
+            }, {
+              "name" : "CS_SHIP_HDEMO_SK",
+              "dataType" : {
+                "type" : "Decimal"
+              }
+            }, {
+              "name" : "CS_SHIP_ADDR_SK",
+              "dataType" : {
+                "type" : "Decimal"
+              }
+            }, {
+              "name" : "CS_CALL_CENTER_SK",
+              "dataType" : {
+                "type" : "Decimal"
+              }
+            }, {
+              "name" : "CS_CATALOG_PAGE_SK",
+              "dataType" : {
+                "type" : "Decimal"
+              }
+            }, {
+              "name" : "CS_SHIP_MODE_SK",
+              "dataType" : {
+                "type" : "Decimal"
+              }
+            }, {
+              "name" : "CS_WAREHOUSE_SK",
+              "dataType" : {
+                "type" : "Decimal"
+              }
+            }, {
+              "name" : "CS_ITEM_SK",
+              "dataType" : {
+                "type" : "Decimal"
+              }
+            }, {
+              "name" : "CS_PROMO_SK",
+              "dataType" : {
+                "type" : "Decimal"
+              }
+            }, {
+              "name" : "CS_ORDER_NUMBER",
+              "dataType" : {
+                "type" : "Decimal"
+              }
+            }, {
+              "name" : "CS_QUANTITY",
+              "dataType" : {
+                "type" : "Decimal"
+              }
+            }, {
+              "name" : "CS_WHOLESALE_COST",
+              "dataType" : {
+                "type" : "Decimal"
+              }
+            }, {
+              "name" : "CS_LIST_PRICE",
+              "dataType" : {
+                "type" : "Decimal"
+              }
+            }, {
+              "name" : "CS_SALES_PRICE",
+              "dataType" : {
+                "type" : "Decimal"
+              }
+            }, {
+              "name" : "CS_EXT_DISCOUNT_AMT",
+              "dataType" : {
+                "type" : "Decimal"
+              }
+            }, {
+              "name" : "CS_EXT_SALES_PRICE",
+              "dataType" : {
+                "type" : "Decimal"
+              }
+            }, {
+              "name" : "CS_EXT_WHOLESALE_COST",
+              "dataType" : {
+                "type" : "Decimal"
+              }
+            }, {
+              "name" : "CS_EXT_LIST_PRICE",
+              "dataType" : {
+                "type" : "Decimal"
+              }
+            }, {
+              "name" : "CS_EXT_TAX",
+              "dataType" : {
+                "type" : "Decimal"
+              }
+            }, {
+              "name" : "CS_COUPON_AMT",
+              "dataType" : {
+                "type" : "Decimal"
+              }
+            }, {
+              "name" : "CS_EXT_SHIP_COST",
+              "dataType" : {
+                "type" : "Decimal"
+              }
+            }, {
+              "name" : "CS_NET_PAID",
+              "dataType" : {
+                "type" : "Decimal"
+              }
+            }, {
+              "name" : "CS_NET_PAID_INC_TAX",
+              "dataType" : {
+                "type" : "Decimal"
+              }
+            }, {
+              "name" : "CS_NET_PAID_INC_SHIP",
+              "dataType" : {
+                "type" : "Decimal"
+              }
+            }, {
+              "name" : "CS_NET_PAID_INC_SHIP_TAX",
+              "dataType" : {
+                "type" : "Decimal"
+              }
+            }, {
+              "name" : "CS_NET_PROFIT",
+              "dataType" : {
+                "type" : "Decimal"
+              }
+            } ]
+          },
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
+    "H3UqQ2ACM653WoS7xwwjU" : {
+      "id" : "H3UqQ2ACM653WoS7xwwjU",
+      "component" : "Source",
+      "metadata" : {
+        "label" : "call_center",
+        "slug" : "call_center",
+        "x" : -660,
+        "y" : 140,
+        "phase" : 0
+      },
+      "properties" : {
+        "table" : {
+          "name" : "call_center",
+          "sourceType" : "Source",
+          "sourceName" : "spark_catalog.qa_performance_database",
+          "alias" : "",
+          "additionalProperties" : null
+        }
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "Yvbjgo3SlU6a7QbhzDP46",
+          "schema" : {
+            "providerType" : "databricks",
+            "fields" : [ {
+              "name" : "CC_CALL_CENTER_SK",
+              "dataType" : {
+                "type" : "Decimal"
+              }
+            }, {
+              "name" : "CC_CALL_CENTER_ID",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "CC_REC_START_DATE",
+              "dataType" : {
+                "type" : "Date"
+              }
+            }, {
+              "name" : "CC_REC_END_DATE",
+              "dataType" : {
+                "type" : "Date"
+              }
+            }, {
+              "name" : "CC_CLOSED_DATE_SK",
+              "dataType" : {
+                "type" : "Decimal"
+              }
+            }, {
+              "name" : "CC_OPEN_DATE_SK",
+              "dataType" : {
+                "type" : "Decimal"
+              }
+            }, {
+              "name" : "CC_NAME",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "CC_CLASS",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "CC_EMPLOYEES",
+              "dataType" : {
+                "type" : "Decimal"
+              }
+            }, {
+              "name" : "CC_SQ_FT",
+              "dataType" : {
+                "type" : "Decimal"
+              }
+            }, {
+              "name" : "CC_HOURS",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "CC_MANAGER",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "CC_MKT_ID",
+              "dataType" : {
+                "type" : "Decimal"
+              }
+            }, {
+              "name" : "CC_MKT_CLASS",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "CC_MKT_DESC",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "CC_MARKET_MANAGER",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "CC_DIVISION",
+              "dataType" : {
+                "type" : "Decimal"
+              }
+            }, {
+              "name" : "CC_DIVISION_NAME",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "CC_COMPANY",
+              "dataType" : {
+                "type" : "Decimal"
+              }
+            }, {
+              "name" : "CC_COMPANY_NAME",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "CC_STREET_NUMBER",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "CC_STREET_NAME",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "CC_STREET_TYPE",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "CC_SUITE_NUMBER",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "CC_CITY",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "CC_COUNTY",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "CC_STATE",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "CC_ZIP",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "CC_COUNTRY",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "CC_GMT_OFFSET",
+              "dataType" : {
+                "type" : "Decimal"
+              }
+            }, {
+              "name" : "CC_TAX_PERCENTAGE",
+              "dataType" : {
+                "type" : "Decimal"
+              }
+            } ]
+          },
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
+    "2m7Aciwl_EfJFJWlR8B-G" : {
+      "id" : "2m7Aciwl_EfJFJWlR8B-G",
+      "component" : "Source",
+      "metadata" : {
+        "label" : "warehouse",
+        "slug" : "warehouse",
+        "x" : -680,
+        "y" : -160,
+        "phase" : 0
+      },
+      "properties" : {
+        "table" : {
+          "name" : "warehouse",
+          "sourceType" : "Source",
+          "sourceName" : "spark_catalog.qa_performance_database",
+          "alias" : "",
+          "additionalProperties" : null
+        }
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "_VxTCh-j-7_Hw_TY7gPay",
+          "schema" : {
+            "providerType" : "databricks",
+            "fields" : [ {
+              "name" : "W_WAREHOUSE_SK",
+              "dataType" : {
+                "type" : "Decimal"
+              }
+            }, {
+              "name" : "W_WAREHOUSE_ID",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "W_WAREHOUSE_NAME",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "W_WAREHOUSE_SQ_FT",
+              "dataType" : {
+                "type" : "Decimal"
+              }
+            }, {
+              "name" : "W_STREET_NUMBER",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "W_STREET_NAME",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "W_STREET_TYPE",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "W_SUITE_NUMBER",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "W_CITY",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "W_COUNTY",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "W_STATE",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "W_ZIP",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "W_COUNTRY",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "W_GMT_OFFSET",
+              "dataType" : {
+                "type" : "Decimal"
+              }
+            } ]
+          },
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    }
+  },
+  "connections" : [ {
+    "id" : "ehuVpoYJTZJo3ncR09d9q",
+    "source" : "RC2TE_NoxwFc6o5Ueb_Ea",
+    "sourcePort" : "nW5jXNIgyn1SPJN8184FN",
+    "target" : "hDOCMuwlStj7ah3WEhkJe$$qZzBKvn-krcJqgWq5p459",
+    "targetPort" : "_bPPtlO8FO6V4JKR6PQ_O$$KgmEtYCBpuZyvNQe5xQ06"
+  }, {
+    "id" : "fuBdccCRN0kPtGsV1gIB9",
+    "source" : "2m7Aciwl_EfJFJWlR8B-G",
+    "sourcePort" : "_VxTCh-j-7_Hw_TY7gPay",
+    "target" : "hDOCMuwlStj7ah3WEhkJe$$qZzBKvn-krcJqgWq5p459",
+    "targetPort" : "_Bn7FHhNNiR9ffL2YzqU8$$07LWqdl-alkFtfPqgwpYh"
+  }, {
+    "id" : "gfWdX_QNXvYd0xcOeh8iK",
+    "source" : "O95WqMAgeMnlW3gG7rWU5",
+    "sourcePort" : "IOcdiVFTwxgVBpi6IqLSi",
+    "target" : "hDOCMuwlStj7ah3WEhkJe$$qZzBKvn-krcJqgWq5p459",
+    "targetPort" : "z1IzmnOndsefvOMbvtAgA$$lDLYTnKT9X4gD8askx8A1"
+  }, {
+    "id" : "Jo5P0tV6WNX-sueYoenVF",
+    "source" : "H3UqQ2ACM653WoS7xwwjU",
+    "sourcePort" : "Yvbjgo3SlU6a7QbhzDP46",
+    "target" : "hDOCMuwlStj7ah3WEhkJe$$qZzBKvn-krcJqgWq5p459",
+    "targetPort" : "_OY3YWJssWO34gbq0MxE-$$XjRHzTquxMre7mqOt7QZ_"
+  }, {
+    "id" : "892oSn2vNm7HK6LJwDmME",
+    "source" : "vTjUwxt38nLVSyKwb-3E6",
+    "sourcePort" : "PHq_NG9wlZzAYNJuuQRc0",
+    "target" : "hDOCMuwlStj7ah3WEhkJe$$qZzBKvn-krcJqgWq5p459",
+    "targetPort" : "5yEOtDfwOzHw9s4pHgJtq$$UMiOptM0vwBPLceA5kw0u"
+  }, {
+    "id" : "QkZ_00ebVhBdgv5M4EpPf",
+    "source" : "vTjUwxt38nLVSyKwb-3E6",
+    "sourcePort" : "PHq_NG9wlZzAYNJuuQRc0",
+    "target" : "UjIYXAPLzEzA0aA2oeR92$$1Djjvoc9qU9JnlzoPXL58",
+    "targetPort" : "hUb54f_3d-GPDRbJhUw8X$$GgO_2K1X_fazi86zmlC9o"
+  }, {
+    "id" : "iQ3MzyauAItTR57-N_raM",
+    "source" : "PjzQgwFB2nD-rx4IJD287",
+    "sourcePort" : "pe5R9MXkfGeU5-_cvD08x",
+    "target" : "UjIYXAPLzEzA0aA2oeR92$$1Djjvoc9qU9JnlzoPXL58",
+    "targetPort" : "zCL87W9_YYAFlqyhSAHa-$$G34WPSpln977JF6dvsZEC"
+  }, {
+    "id" : "klXJYldyFLak0fTPTGIDC$$ouvtuEB_Hgm-JbdD9FuLj",
+    "source" : "hDOCMuwlStj7ah3WEhkJe$$qZzBKvn-krcJqgWq5p459",
+    "sourcePort" : "6Zc6-FqFuxo-3E5oTQQsC$$dUQ35kZokqfEW-H2RG1Og",
+    "target" : "PnPeE4suPXz-YDK7hZH1d$$iiU5YGDleEFvyoAFBnjbf",
+    "targetPort" : "l7qEw1VKOPtjT6AQ9YP34$$mTMP-AcNaRQMxpvlxYbQa"
+  }, {
+    "id" : "3TzDwwFWuRmPO0NB4mGMF",
+    "source" : "UjIYXAPLzEzA0aA2oeR92$$1Djjvoc9qU9JnlzoPXL58",
+    "sourcePort" : "nYZ_8HZwRi0MAiS53OXy2$$hxX8Jt7MpG1DRyhuJhcD_",
+    "target" : "PnPeE4suPXz-YDK7hZH1d$$iiU5YGDleEFvyoAFBnjbf",
+    "targetPort" : "cXan1-0ynuWZzIC4I-ccC$$qIkhQ1WptS_8rmLtMGGbQ"
+  }, {
+    "id" : "mMVn9V_oh_EVgM1654rsr",
+    "source" : "PnPeE4suPXz-YDK7hZH1d$$iiU5YGDleEFvyoAFBnjbf",
+    "sourcePort" : "7X1Dm14Bcqancav1SfQmD$$urOATpOn6d5s-dgDlmOPW",
+    "target" : "tpcds_perf_sql_2##qeGq2NMH",
+    "targetPort" : "y1SRYNqD"
+  } ],
+  "component" : "Model"
+}

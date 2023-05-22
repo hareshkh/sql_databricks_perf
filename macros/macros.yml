@@ -1,0 +1,9 @@
+---
+version: 2
+macros:
+- name: "qa_concat_macro_base"
+  arguments:
+  - name: "param1_string_only"
+    default: "'hello'"
+    type: "value"
+  macroType: "expression"

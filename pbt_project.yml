@@ -19,6 +19,78 @@ functions:
   expressions: {}
 subgraphs: {}
 sqlModels:
+  .prophecy/metadata/sqlmodels/test_perf_model_2:
+    name: test_perf_model_2
+    description: null
+    author: abhisheks+e2etests@prophecy.io
+    files:
+    - models/test_perf_model_2.sql
+    - .prophecy/ide/models/test_perf_model_2.json
+    sqlDependencies:
+      models: []
+      datasets: []
+    createdAt: '2023-05-22 12:50:32'
+    modifiedAt: '2023-05-22 12:50:32'
+  .prophecy/metadata/sqlmodels/tpcds_perf_sql_2:
+    name: tpcds_perf_sql_2
+    description: null
+    author: abhisheks+e2etests@prophecy.io
+    files:
+    - models/tpcds_perf_sql_2.sql
+    - .prophecy/ide/models/tpcds_perf_sql_2.json
+    sqlDependencies:
+      models: []
+      datasets: []
+    createdAt: '2023-05-19 13:06:44'
+    modifiedAt: '2023-05-19 13:06:44'
+  .prophecy/metadata/sqlmodels/test_perf_model_3_use_all:
+    name: test_perf_model_3_use_all
+    description: null
+    author: abhisheks+e2etests@prophecy.io
+    files:
+    - models/test_perf_model_3_use_all.sql
+    - .prophecy/ide/models/test_perf_model_3_use_all.json
+    sqlDependencies:
+      models: []
+      datasets: []
+    createdAt: '2023-05-22 12:58:25'
+    modifiedAt: '2023-05-22 12:58:25'
+  .prophecy/metadata/sqlmodels/z_test_perf_only_seeds:
+    name: z_test_perf_only_seeds
+    description: null
+    author: abhisheks+e2etests@prophecy.io
+    files:
+    - models/z_test_perf_only_seeds.sql
+    - .prophecy/ide/models/z_test_perf_only_seeds.json
+    sqlDependencies:
+      models: []
+      datasets: []
+    createdAt: '2023-05-22 13:56:56'
+    modifiedAt: '2023-05-22 13:56:56'
+  .prophecy/metadata/sqlmodels/test_perf_model_0:
+    name: test_perf_model_0
+    description: null
+    author: abhisheks+e2etests@prophecy.io
+    files:
+    - models/test_perf_model_0.sql
+    - .prophecy/ide/models/test_perf_model_0.json
+    sqlDependencies:
+      models: []
+      datasets: []
+    createdAt: '2023-05-22 13:24:41'
+    modifiedAt: '2023-05-22 13:24:41'
+  .prophecy/metadata/sqlmodels/tpcds_perf_sql_1:
+    name: tpcds_perf_sql_1
+    description: null
+    author: abhisheks+e2etests@prophecy.io
+    files:
+    - models/tpcds_perf_sql_1.sql
+    - .prophecy/ide/models/tpcds_perf_sql_1.json
+    sqlDependencies:
+      models: []
+      datasets: []
+    createdAt: '2023-05-19 13:06:39'
+    modifiedAt: '2023-05-19 13:06:39'
   .prophecy/metadata/sqlmodels/test_perf_model_1:
     name: test_perf_model_1
     description: null
@@ -31,8 +103,335 @@ sqlModels:
       datasets: []
     createdAt: '2023-05-19 12:50:42'
     modifiedAt: '2023-05-19 12:50:42'
-sqlMacros: {}
-sqlSeeds: {}
+  .prophecy/metadata/sqlmodels/tpcds_perf_sql_3_useall_tpcds:
+    name: tpcds_perf_sql_3_useall_tpcds
+    description: null
+    author: abhisheks+e2etests@prophecy.io
+    files:
+    - models/tpcds_perf_sql_3_useall_tpcds.sql
+    - .prophecy/ide/models/tpcds_perf_sql_3_useall_tpcds.json
+    sqlDependencies:
+      models: []
+      datasets: []
+    createdAt: '2023-05-22 12:28:51'
+    modifiedAt: '2023-05-22 12:28:51'
+  .prophecy/metadata/sqlmodels/z_test_perf_only_project_models:
+    name: z_test_perf_only_project_models
+    description: null
+    author: abhisheks+e2etests@prophecy.io
+    files:
+    - models/z_test_perf_only_project_models.sql
+    - .prophecy/ide/models/z_test_perf_only_project_models.json
+    sqlDependencies:
+      models: []
+      datasets: []
+    createdAt: '2023-05-22 13:24:12'
+    modifiedAt: '2023-05-22 13:24:12'
+  .prophecy/metadata/sqlmodels/tpcds_perf_sql_0:
+    name: tpcds_perf_sql_0
+    description: null
+    author: abhisheks+e2etests@prophecy.io
+    files:
+    - models/tpcds_perf_sql_0.sql
+    - .prophecy/ide/models/tpcds_perf_sql_0.json
+    sqlDependencies:
+      models: []
+      datasets: []
+    createdAt: '2023-05-22 13:26:20'
+    modifiedAt: '2023-05-22 13:26:20'
+sqlMacros:
+  .prophecy/metadata/sqlmacros/bigquery__language_specific_concat_base:
+    name: bigquery__language_specific_concat_base
+    macroType: expression
+    description: null
+    author: abhisheks+e2etests@prophecy.io
+    files:
+    - macros/language_specific_concat_base.sql
+    createdAt: '2023-05-22 12:06:27'
+    modifiedAt: '2023-05-22 12:06:27'
+  .prophecy/metadata/sqlmacros/_qa_concat_string_cols:
+    name: _qa_concat_string_cols
+    macroType: expression
+    description: null
+    author: abhisheks+e2etests@prophecy.io
+    files:
+    - macros/qa_concat_macro_base.sql
+    createdAt: '2023-05-22 12:04:44'
+    modifiedAt: '2023-05-22 12:04:44'
+  .prophecy/metadata/sqlmacros/qa_all_not_null_base:
+    name: qa_all_not_null_base
+    macroType: query
+    description: null
+    author: abhisheks+e2etests@prophecy.io
+    files:
+    - macros/qa_epl_data_macro_base.sql
+    createdAt: '2023-05-22 12:06:55'
+    modifiedAt: '2023-05-22 12:06:55'
+  .prophecy/metadata/sqlmacros/qa_all_null_base:
+    name: qa_all_null_base
+    macroType: query
+    description: null
+    author: abhisheks+e2etests@prophecy.io
+    files:
+    - macros/qa_epl_data_macro_base.sql
+    createdAt: '2023-05-22 12:06:55'
+    modifiedAt: '2023-05-22 12:06:55'
+  .prophecy/metadata/sqlmacros/default__language_specific_concat_base:
+    name: default__language_specific_concat_base
+    macroType: expression
+    description: null
+    author: abhisheks+e2etests@prophecy.io
+    files:
+    - macros/language_specific_concat_base.sql
+    createdAt: '2023-05-22 12:06:27'
+    modifiedAt: '2023-05-22 12:06:27'
+  .prophecy/metadata/sqlmacros/multi_macro_expressions_base:
+    name: multi_macro_expressions_base
+    macroType: expression
+    description: null
+    author: abhisheks+e2etests@prophecy.io
+    files:
+    - macros/qa_concat_macro_base.sql
+    createdAt: '2023-05-22 12:04:44'
+    modifiedAt: '2023-05-22 12:04:44'
+  .prophecy/metadata/sqlmacros/qa_test_relationship_base:
+    name: qa_test_relationship_base
+    macroType: query
+    description: null
+    author: abhisheks+e2etests@prophecy.io
+    files:
+    - macros/qa_epl_data_macro_base.sql
+    createdAt: '2023-05-22 12:06:55'
+    modifiedAt: '2023-05-22 12:06:55'
+  .prophecy/metadata/sqlmacros/qa_concat_macro_base_column:
+    name: qa_concat_macro_base_column
+    macroType: expression
+    description: null
+    author: abhisheks+e2etests@prophecy.io
+    files:
+    - macros/qa_concat_macro_base.sql
+    createdAt: '2023-05-22 12:04:44'
+    modifiedAt: '2023-05-22 12:04:44'
+  .prophecy/metadata/sqlmacros/qa_complex_macro_base:
+    name: qa_complex_macro_base
+    macroType: query
+    description: null
+    author: abhisheks+e2etests@prophecy.io
+    files:
+    - macros/qa_epl_data_macro_base.sql
+    createdAt: '2023-05-22 12:06:55'
+    modifiedAt: '2023-05-22 12:06:55'
+  .prophecy/metadata/sqlmacros/qa_macro_call_another_macro_base_column:
+    name: qa_macro_call_another_macro_base_column
+    macroType: expression
+    description: null
+    author: abhisheks+e2etests@prophecy.io
+    files:
+    - macros/qa_concat_macro_base.sql
+    createdAt: '2023-05-22 12:04:44'
+    modifiedAt: '2023-05-22 12:04:44'
+  .prophecy/metadata/sqlmacros/qa_multi_models_base:
+    name: qa_multi_models_base
+    macroType: query
+    description: null
+    author: abhisheks+e2etests@prophecy.io
+    files:
+    - macros/qa_epl_data_macro_base.sql
+    createdAt: '2023-05-22 12:06:55'
+    modifiedAt: '2023-05-22 12:06:55'
+  .prophecy/metadata/sqlmacros/snowflake__language_specific_concat_base:
+    name: snowflake__language_specific_concat_base
+    macroType: expression
+    description: null
+    author: abhisheks+e2etests@prophecy.io
+    files:
+    - macros/language_specific_concat_base.sql
+    createdAt: '2023-05-22 12:06:27'
+    modifiedAt: '2023-05-22 12:06:27'
+  .prophecy/metadata/sqlmacros/_qa_all_null_base:
+    name: _qa_all_null_base
+    macroType: query
+    description: null
+    author: abhisheks+e2etests@prophecy.io
+    files:
+    - macros/qa_epl_data_macro_base.sql
+    createdAt: '2023-05-22 12:06:55'
+    modifiedAt: '2023-05-22 12:06:55'
+  .prophecy/metadata/sqlmacros/qa_macro_call_another_macro_base:
+    name: qa_macro_call_another_macro_base
+    macroType: expression
+    description: null
+    author: abhisheks+e2etests@prophecy.io
+    files:
+    - macros/qa_concat_macro_base.sql
+    createdAt: '2023-05-22 12:04:44'
+    modifiedAt: '2023-05-22 12:04:44'
+  .prophecy/metadata/sqlmacros/qa_epl_data_macro_base:
+    name: qa_epl_data_macro_base
+    macroType: query
+    description: null
+    author: abhisheks+e2etests@prophecy.io
+    files:
+    - macros/qa_epl_data_macro_base.sql
+    - .prophecy/ide/macros/qa_epl_data_macro_base.json
+    createdAt: '2023-05-22 12:06:48'
+    modifiedAt: '2023-05-22 12:06:48'
+  .prophecy/metadata/sqlmacros/_round_function_base:
+    name: _round_function_base
+    macroType: expression
+    description: null
+    author: abhisheks+e2etests@prophecy.io
+    files:
+    - macros/qa_concat_macro_base.sql
+    createdAt: '2023-05-22 12:04:44'
+    modifiedAt: '2023-05-22 12:04:44'
+  .prophecy/metadata/sqlmacros/language_specific_concat_base:
+    name: language_specific_concat_base
+    macroType: query
+    description: null
+    author: abhisheks+e2etests@prophecy.io
+    files:
+    - macros/language_specific_concat_base.sql
+    - .prophecy/ide/macros/language_specific_concat_base.json
+    createdAt: '2023-05-22 12:06:18'
+    modifiedAt: '2023-05-22 12:06:18'
+  .prophecy/metadata/sqlmacros/databricks__language_specific_concat_base:
+    name: databricks__language_specific_concat_base
+    macroType: expression
+    description: null
+    author: abhisheks+e2etests@prophecy.io
+    files:
+    - macros/language_specific_concat_base.sql
+    createdAt: '2023-05-22 12:06:27'
+    modifiedAt: '2023-05-22 12:06:27'
+  .prophecy/metadata/sqlmacros/round_function_base:
+    name: round_function_base
+    macroType: expression
+    description: null
+    author: abhisheks+e2etests@prophecy.io
+    files:
+    - macros/qa_concat_macro_base.sql
+    createdAt: '2023-05-22 12:04:44'
+    modifiedAt: '2023-05-22 12:04:44'
+  .prophecy/metadata/sqlmacros/qa_get_unique_count_base:
+    name: qa_get_unique_count_base
+    macroType: query
+    description: null
+    author: abhisheks+e2etests@prophecy.io
+    files:
+    - macros/qa_epl_data_macro_base.sql
+    createdAt: '2023-05-22 12:06:55'
+    modifiedAt: '2023-05-22 12:06:55'
+  .prophecy/metadata/sqlmacros/qa_model_all_above_given_id_base:
+    name: qa_model_all_above_given_id_base
+    macroType: query
+    description: null
+    author: abhisheks+e2etests@prophecy.io
+    files:
+    - macros/qa_epl_data_macro_base.sql
+    createdAt: '2023-05-22 12:06:55'
+    modifiedAt: '2023-05-22 12:06:55'
+  .prophecy/metadata/sqlmacros/qa_concat_macro_base:
+    name: qa_concat_macro_base
+    macroType: expression
+    description: null
+    author: abhisheks+e2etests@prophecy.io
+    files:
+    - macros/qa_concat_macro_base.sql
+    - .prophecy/ide/macros/qa_concat_macro_base.json
+    - macros/macros.yml
+    createdAt: '2023-05-22 12:04:37'
+    modifiedAt: '2023-05-22 12:04:37'
+  .prophecy/metadata/sqlmacros/_qa_concat_param_type_base:
+    name: _qa_concat_param_type_base
+    macroType: expression
+    description: null
+    author: abhisheks+e2etests@prophecy.io
+    files:
+    - macros/qa_concat_macro_base.sql
+    createdAt: '2023-05-22 12:04:44'
+    modifiedAt: '2023-05-22 12:04:44'
+sqlSeeds:
+  .prophecy/metadata/sqlseeds/economic_survey_perf:
+    name: economic_survey_perf
+    description: null
+    author: abhisheks+e2etests@prophecy.io
+    files:
+    - seeds/economic_survey_perf.csv
+    createdAt: '2023-05-22 12:09:54'
+    modifiedAt: '2023-05-22 12:09:54'
+  .prophecy/metadata/sqlseeds/country_classification_perf:
+    name: country_classification_perf
+    description: null
+    author: abhisheks+e2etests@prophecy.io
+    files:
+    - seeds/country_classification_perf.csv
+    createdAt: '2023-05-22 12:09:07'
+    modifiedAt: '2023-05-22 12:09:07'
+  .prophecy/metadata/sqlseeds/revised_perf:
+    name: revised_perf
+    description: null
+    author: abhisheks+e2etests@prophecy.io
+    files:
+    - seeds/revised_perf.csv
+    createdAt: '2023-05-22 13:55:03'
+    modifiedAt: '2023-05-22 13:55:03'
+  .prophecy/metadata/sqlseeds/business_financial_data_perf:
+    name: business_financial_data_perf
+    description: null
+    author: abhisheks+e2etests@prophecy.io
+    files:
+    - seeds/business_financial_data_perf.csv
+    createdAt: '2023-05-22 12:09:23'
+    modifiedAt: '2023-05-22 12:09:23'
+  .prophecy/metadata/sqlseeds/ecards_transactions_perf:
+    name: ecards_transactions_perf
+    description: null
+    author: abhisheks+e2etests@prophecy.io
+    files:
+    - seeds/ecards_transactions_perf.csv
+    createdAt: '2023-05-22 12:09:38'
+    modifiedAt: '2023-05-22 12:09:38'
+  .prophecy/metadata/sqlseeds/epl_data_perf:
+    name: epl_data_perf
+    description: null
+    author: abhisheks+e2etests@prophecy.io
+    files:
+    - seeds/epl_data_perf.csv
+    createdAt: '2023-05-22 12:10:24'
+    modifiedAt: '2023-05-22 12:10:24'
+  .prophecy/metadata/sqlseeds/bos2021model_perf:
+    name: bos2021model_perf
+    description: null
+    author: abhisheks+e2etests@prophecy.io
+    files:
+    - seeds/bos2021model_perf.csv
+    createdAt: '2023-05-22 13:55:58'
+    modifiedAt: '2023-05-22 13:55:58'
+  .prophecy/metadata/sqlseeds/annual_enterprise_perf:
+    name: annual_enterprise_perf
+    description: null
+    author: abhisheks+e2etests@prophecy.io
+    files:
+    - seeds/annual_enterprise_perf.csv
+    createdAt: '2023-05-22 12:08:46'
+    modifiedAt: '2023-05-22 12:08:46'
+  .prophecy/metadata/sqlseeds/service_classification_perf:
+    name: service_classification_perf
+    description: null
+    author: abhisheks+e2etests@prophecy.io
+    files:
+    - seeds/service_classification_perf.csv
+    createdAt: '2023-05-22 12:10:10'
+    modifiedAt: '2023-05-22 12:10:10'
+  .prophecy/metadata/sqlseeds/business_employee_perf:
+    name: business_employee_perf
+    description: null
+    author: abhisheks+e2etests@prophecy.io
+    files:
+    - seeds/business_employee_perf.csv
+    createdAt: '2023-05-22 13:56:37'
+    modifiedAt: '2023-05-22 13:56:37'
 sqlSources:
   .prophecy/metadata/sqlsources/spark_catalog_qa_performance_database:
     name: spark_catalog.qa_performance_database
@@ -53,6 +452,41 @@ sqlSources:
       author: abhisheks+e2etests@prophecy.io
       createdAt: '2023-05-19 13:01:25'
       modifiedAt: '2023-05-19 13:01:25'
+    - name: item
+      description: null
+      author: abhisheks+e2etests@prophecy.io
+      createdAt: '2023-05-19 13:07:16'
+      modifiedAt: '2023-05-19 13:07:16'
+    - name: store_sales
+      description: null
+      author: abhisheks+e2etests@prophecy.io
+      createdAt: '2023-05-19 13:07:17'
+      modifiedAt: '2023-05-19 13:07:17'
+    - name: date_dim
+      description: null
+      author: abhisheks+e2etests@prophecy.io
+      createdAt: '2023-05-19 13:07:27'
+      modifiedAt: '2023-05-19 13:07:27'
+    - name: catalog_sales
+      description: null
+      author: abhisheks+e2etests@prophecy.io
+      createdAt: '2023-05-19 13:11:05'
+      modifiedAt: '2023-05-19 13:11:05'
+    - name: warehouse
+      description: null
+      author: abhisheks+e2etests@prophecy.io
+      createdAt: '2023-05-19 13:11:08'
+      modifiedAt: '2023-05-19 13:11:08'
+    - name: ship_mode
+      description: null
+      author: abhisheks+e2etests@prophecy.io
+      createdAt: '2023-05-19 13:11:24'
+      modifiedAt: '2023-05-19 13:11:24'
+    - name: call_center
+      description: null
+      author: abhisheks+e2etests@prophecy.io
+      createdAt: '2023-05-19 13:11:34'
+      modifiedAt: '2023-05-19 13:11:34'
 sqlUnreferencedSources: {}
 sqlPipeline:
   name: sqlPipeline
