@@ -194,7 +194,37 @@ Limit_1 AS (
 
 Reformat_1 AS (
 
-  SELECT * 
+  SELECT 
+    Units_1 AS Units_1,
+    Data_value_1 AS Data_value_1,
+    Subject_1 AS Subject_1,
+    Series_title_3 AS Series_title_3,
+    Industry_name_NZSIOC AS Industry_name_NZSIOC,
+    service_label_1 AS service_label_1,
+    Series_reference AS Series_reference,
+    Variable_name_1 AS Variable_name_1,
+    Group_1 AS Group_1,
+    Series_title_4 AS Series_title_4,
+    Value_1 AS Value_1,
+    Year_1 AS Year_1,
+    Industry_code_NZSIOC AS Industry_code_NZSIOC,
+    Series_title_2 AS Series_title_2,
+    Period_1 AS Period_1,
+    Variable_category_1 AS Variable_category_1,
+    Series_title_1 AS Series_title_1,
+    Industry_aggregation_NZSIOC AS Industry_aggregation_NZSIOC,
+    Suppressed_1 AS Suppressed_1,
+    Series_title_5 AS Series_title_5,
+    country_code AS country_code,
+    STATUS_1 AS STATUS_1,
+    code_1 AS code_1,
+    Magnitude_1 AS Magnitude_1,
+    Variable_code_1 AS Variable_code_1,
+    country_label AS country_label,
+    Industry_code_ANZSIC06 AS Industry_code_ANZSIC06,
+    {{ Perf_SQL_Databricks._concat_3_macro('Subject_1') }} AS c_macrousage,
+    CAST('{{ dbt_utils.pretty_time() }}' AS TIMESTAMP) AS c_dbt_utils,
+    {{ dbt_date.day_of_week("'2022-03-06'") }} AS c_dbt_day_of_week
   
   FROM Limit_1 AS in0
 

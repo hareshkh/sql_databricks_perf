@@ -42,7 +42,7 @@
   "language_specific_concat_base" : {
     "name" : "language_specific_concat_base",
     "macroType" : "query",
-    "definition" : "{{ return(adapter.dispatch('language_specific_concat_base', 'SQL_BaseGitDepProjectAllFinal')()) }}",
+    "definition" : "{{ return(adapter.dispatch('language_specific_concat_base', 'Perf_SQL_Databricks')()) }}",
     "parameters" : {
       "type" : "record",
       "fields" : [ ]

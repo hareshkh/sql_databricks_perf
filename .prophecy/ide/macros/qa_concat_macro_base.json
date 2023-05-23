@@ -2,7 +2,7 @@
   "qa_macro_call_another_macro_base" : {
     "name" : "qa_macro_call_another_macro_base",
     "macroType" : "expression",
-    "definition" : "concat(\n  {{ SQL_BaseGitDepProjectAllFinal.qa_concat_macro_base(final_param_string_only) }}, \n  '{{final_param_string_only}}')",
+    "definition" : "concat(\n  {{ Perf_SQL_Databricks.qa_concat_macro_base(final_param_string_only) }}, \n  '{{final_param_string_only}}')",
     "parameters" : {
       "type" : "record",
       "fields" : [ {
@@ -20,7 +20,7 @@
   "qa_macro_call_another_macro_base_column" : {
     "name" : "qa_macro_call_another_macro_base_column",
     "macroType" : "expression",
-    "definition" : "concat({{ SQL_BaseGitDepProjectAllFinal.qa_concat_macro_base_column(param_column) }}, {{param_column}})",
+    "definition" : "concat({{ Perf_SQL_Databricks.qa_concat_macro_base_column(param_column) }}, {{param_column}})",
     "parameters" : {
       "type" : "record",
       "fields" : [ {
@@ -51,6 +51,23 @@
     },
     "staleState" : "none"
   },
+  "_concat_3_macro" : {
+    "name" : "_concat_3_macro",
+    "macroType" : "expression",
+    "definition" : "concat({{ Perf_SQL_Databricks._concat_2_macro(param_column) }}, {{param_column}})",
+    "parameters" : {
+      "type" : "record",
+      "fields" : [ {
+        "name" : "param_column",
+        "kind" : {
+          "type" : "value"
+        },
+        "optional" : false,
+        "isWorkflowNodeConfiguration" : false
+      } ]
+    },
+    "staleState" : "none"
+  },
   "_round_function_base" : {
     "name" : "_round_function_base",
     "macroType" : "expression",
@@ -71,6 +88,23 @@
           "value" : "2"
         },
         "optional" : true,
+        "isWorkflowNodeConfiguration" : false
+      } ]
+    },
+    "staleState" : "none"
+  },
+  "_concat_2_macro" : {
+    "name" : "_concat_2_macro",
+    "macroType" : "expression",
+    "definition" : "concat({{ Perf_SQL_Databricks._concat_1_macro(param_column) }}, {{param_column}})",
+    "parameters" : {
+      "type" : "record",
+      "fields" : [ {
+        "name" : "param_column",
+        "kind" : {
+          "type" : "value"
+        },
+        "optional" : false,
         "isWorkflowNodeConfiguration" : false
       } ]
     },
@@ -173,6 +207,106 @@
           "value" : "'hello'"
         },
         "optional" : true,
+        "isWorkflowNodeConfiguration" : false
+      } ]
+    },
+    "staleState" : "none",
+    "propertiesFile" : {
+      "name" : "macros",
+      "content" : "---\nversion: 2\nmacros:\n- name: \"qa_concat_macro_base\"\n  arguments:\n  - name: \"param1_string_only\"\n    default: \"'hello'\"\n    type: \"value\"\n  macroType: \"expression\"\n- name: \"tpcds_macros_query_1\"\n  arguments:\n  - name: \"store_returns\"\n    type: \"table\"\n    description: \"{\\\"ProphecyType\\\": \\\"table\\\"}\"\n  - name: \"date_dim\"\n    type: \"table\"\n    description: \"{\\\"ProphecyType\\\": \\\"table\\\"}\"\n  - name: \"d_year\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  - name: \"s_state\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  macroType: \"query\"\n- name: \"tpcds_macros_query_2\"\n  arguments:\n  - name: \"web_sales\"\n    type: \"table\"\n    description: \"{\\\"ProphecyType\\\": \\\"table\\\"}\"\n  - name: \"catalog_sales\"\n    type: \"table\"\n    description: \"{\\\"ProphecyType\\\": \\\"table\\\"}\"\n  - name: \"date_dim\"\n    type: \"table\"\n    description: \"{\\\"ProphecyType\\\": \\\"table\\\"}\"\n  - name: \"day_name\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  - name: \"d_year\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  macroType: \"query\"\n- name: \"tpcds_macros_query_3\"\n  arguments:\n  - name: \"date_dim\"\n    type: \"table\"\n    description: \"{\\\"ProphecyType\\\": \\\"table\\\"}\"\n  - name: \"store_sales\"\n    type: \"table\"\n    description: \"{\\\"ProphecyType\\\": \\\"table\\\"}\"\n  - name: \"item\"\n    type: \"table\"\n    description: \"{\\\"ProphecyType\\\": \\\"table\\\"}\"\n  - name: \"i_manufact_id\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  macroType: \"query\"\n",
+      "path" : "Perf_SQL_Databricks/macros/macros.yml",
+      "projectConfiguration" : null,
+      "folderConfiguration" : {
+        "version" : 2,
+        "macros" : [ {
+          "name" : "qa_concat_macro_base",
+          "arguments" : [ {
+            "name" : "param1_string_only",
+            "default" : "'hello'",
+            "type" : "value"
+          } ],
+          "macroType" : "expression"
+        }, {
+          "name" : "tpcds_macros_query_1",
+          "arguments" : [ {
+            "name" : "store_returns",
+            "type" : "table",
+            "description" : "{\"ProphecyType\": \"table\"}"
+          }, {
+            "name" : "date_dim",
+            "type" : "table",
+            "description" : "{\"ProphecyType\": \"table\"}"
+          }, {
+            "name" : "d_year",
+            "type" : "value",
+            "description" : "{\"ProphecyType\": \"value\"}"
+          }, {
+            "name" : "s_state",
+            "type" : "value",
+            "description" : "{\"ProphecyType\": \"value\"}"
+          } ],
+          "macroType" : "query"
+        }, {
+          "name" : "tpcds_macros_query_2",
+          "arguments" : [ {
+            "name" : "web_sales",
+            "type" : "table",
+            "description" : "{\"ProphecyType\": \"table\"}"
+          }, {
+            "name" : "catalog_sales",
+            "type" : "table",
+            "description" : "{\"ProphecyType\": \"table\"}"
+          }, {
+            "name" : "date_dim",
+            "type" : "table",
+            "description" : "{\"ProphecyType\": \"table\"}"
+          }, {
+            "name" : "day_name",
+            "type" : "value",
+            "description" : "{\"ProphecyType\": \"value\"}"
+          }, {
+            "name" : "d_year",
+            "type" : "value",
+            "description" : "{\"ProphecyType\": \"value\"}"
+          } ],
+          "macroType" : "query"
+        }, {
+          "name" : "tpcds_macros_query_3",
+          "arguments" : [ {
+            "name" : "date_dim",
+            "type" : "table",
+            "description" : "{\"ProphecyType\": \"table\"}"
+          }, {
+            "name" : "store_sales",
+            "type" : "table",
+            "description" : "{\"ProphecyType\": \"table\"}"
+          }, {
+            "name" : "item",
+            "type" : "table",
+            "description" : "{\"ProphecyType\": \"table\"}"
+          }, {
+            "name" : "i_manufact_id",
+            "type" : "value",
+            "description" : "{\"ProphecyType\": \"value\"}"
+          } ],
+          "macroType" : "query"
+        } ]
+      },
+      "packagesYml" : null
+    }
+  },
+  "_concat_1_macro" : {
+    "name" : "_concat_1_macro",
+    "macroType" : "expression",
+    "definition" : "concat({{param1_column}}, 'hellomain')",
+    "parameters" : {
+      "type" : "record",
+      "fields" : [ {
+        "name" : "param1_column",
+        "kind" : {
+          "type" : "value"
+        },
+        "optional" : false,
         "isWorkflowNodeConfiguration" : false
       } ]
     },

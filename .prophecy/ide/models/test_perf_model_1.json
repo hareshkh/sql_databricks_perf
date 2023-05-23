@@ -197,6 +197,11 @@
               "dataType" : {
                 "type" : "Bigint"
               }
+            }, {
+              "name" : "c_macro",
+              "dataType" : {
+                "type" : "String"
+              }
             } ]
           },
           "slug" : "in0"
@@ -557,7 +562,7 @@
         "x" : -100,
         "y" : -200,
         "phase" : 0,
-        "macroDependencies" : [ ]
+        "macroDependencies" : [ "Perf_SQL_Databricks._concat_2_macro" ]
       },
       "properties" : {
         "columnsSelector" : [ "LCrXVlQJVg5NFPHWHiTvm$$XzerQ2qPdCOyiz-c60XB5##c_tinyint", "LCrXVlQJVg5NFPHWHiTvm$$XzerQ2qPdCOyiz-c60XB5##c_smallint", "LCrXVlQJVg5NFPHWHiTvm$$XzerQ2qPdCOyiz-c60XB5##c_int", "LCrXVlQJVg5NFPHWHiTvm$$XzerQ2qPdCOyiz-c60XB5##c_bigint", "LCrXVlQJVg5NFPHWHiTvm$$XzerQ2qPdCOyiz-c60XB5##c_float", "LCrXVlQJVg5NFPHWHiTvm$$XzerQ2qPdCOyiz-c60XB5##c_double", "LCrXVlQJVg5NFPHWHiTvm$$XzerQ2qPdCOyiz-c60XB5##c_string", "LCrXVlQJVg5NFPHWHiTvm$$XzerQ2qPdCOyiz-c60XB5##c_boolean", "LCrXVlQJVg5NFPHWHiTvm$$XzerQ2qPdCOyiz-c60XB5##c_array", "LCrXVlQJVg5NFPHWHiTvm$$XzerQ2qPdCOyiz-c60XB5##c_struct", "LCrXVlQJVg5NFPHWHiTvm$$XzerQ2qPdCOyiz-c60XB5##c_struct.city", "LCrXVlQJVg5NFPHWHiTvm$$XzerQ2qPdCOyiz-c60XB5##c_struct.state", "LCrXVlQJVg5NFPHWHiTvm$$XzerQ2qPdCOyiz-c60XB5##c_struct.pin" ],
@@ -626,6 +631,11 @@
             "expression" : "c_struct.pin"
           },
           "alias" : "pin"
+        }, {
+          "expression" : {
+            "expression" : "{{ Perf_SQL_Databricks._concat_2_macro('c_string') }}"
+          },
+          "alias" : "c_macro"
         } ]
       },
       "ports" : {
@@ -793,6 +803,11 @@
               "name" : "pin",
               "dataType" : {
                 "type" : "Bigint"
+              }
+            }, {
+              "name" : "c_macro",
+              "dataType" : {
+                "type" : "String"
               }
             } ]
           },

@@ -526,8 +526,8 @@
       "component" : "SQLStatement",
       "metadata" : {
         "label" : "SQLStatement_1",
-        "x" : 1120,
-        "y" : 220,
+        "x" : 1140,
+        "y" : 180,
         "phase" : 0,
         "macroDependencies" : [ ]
       },
@@ -1549,8 +1549,8 @@
       "component" : "Macro",
       "metadata" : {
         "label" : "Macro_1",
-        "x" : 660,
-        "y" : 20,
+        "x" : 720,
+        "y" : -80,
         "phase" : 0,
         "macroDependencies" : [ "Perf_SQL_Databricks.qa_all_null_base" ]
       },
@@ -3711,7 +3711,7 @@
       "metadata" : {
         "label" : "Join_4",
         "x" : 1380,
-        "y" : 320,
+        "y" : 360,
         "phase" : 0,
         "macroDependencies" : [ ]
       },
@@ -3806,7 +3806,7 @@
           "alias" : "c_struct"
         } ],
         "activeTab" : "conditions",
-        "columnsSelector" : [ ],
+        "columnsSelector" : [ "o9kLkO6W##Series_title_1", "LEZX04Ho##Units_1", "N47Ggq68##c_string", "N47Ggq68##city", "N47Ggq68##state", "N47Ggq68##pin", "N47Ggq68##p_int", "N47Ggq68##p_string", "N47Ggq68##c_string", "N47Ggq68##c_int", "N47Ggq68##c_bigint", "N47Ggq68##c_smallint", "N47Ggq68##c_tinyint", "N47Ggq68##c_float", "N47Ggq68##c_boolean", "N47Ggq68##c_array", "N47Ggq68##c_double", "N47Ggq68##c_struct" ],
         "headAlias" : "in0"
       },
       "ports" : {
@@ -3970,6 +3970,21 @@
               "name" : "Industry_code_ANZSIC06",
               "dataType" : {
                 "type" : "String"
+              }
+            }, {
+              "name" : "c_macrousage",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "c_dbt_utils",
+              "dataType" : {
+                "type" : "Timestamp"
+              }
+            }, {
+              "name" : "c_dbt_day_of_week",
+              "dataType" : {
+                "type" : "Integer"
               }
             } ]
           },
@@ -4189,11 +4204,161 @@
         "x" : 860,
         "y" : 340,
         "phase" : 0,
-        "macroDependencies" : [ ]
+        "macroDependencies" : [ "Perf_SQL_Databricks._concat_3_macro", "dbt_date.day_of_week" ]
       },
       "properties" : {
-        "columnsSelector" : [ ],
-        "expressions" : [ ]
+        "columnsSelector" : [ "qNWupVn6##Units_1", "qNWupVn6##Data_value_1", "qNWupVn6##Subject_1", "qNWupVn6##Series_title_3", "qNWupVn6##Industry_name_NZSIOC", "qNWupVn6##service_label_1", "qNWupVn6##Series_reference", "qNWupVn6##Variable_name_1", "qNWupVn6##Group_1", "qNWupVn6##Series_title_4", "qNWupVn6##Value_1", "qNWupVn6##Year_1", "qNWupVn6##Industry_code_NZSIOC", "qNWupVn6##Series_title_2", "qNWupVn6##Period_1", "qNWupVn6##Variable_category_1", "qNWupVn6##Series_title_1", "qNWupVn6##Industry_aggregation_NZSIOC", "qNWupVn6##Suppressed_1", "qNWupVn6##Series_title_5", "qNWupVn6##country_code", "qNWupVn6##STATUS_1", "qNWupVn6##code_1", "qNWupVn6##Magnitude_1", "qNWupVn6##Variable_code_1", "qNWupVn6##country_label", "qNWupVn6##Industry_code_ANZSIC06" ],
+        "expressions" : [ {
+          "expression" : {
+            "expression" : "Units_1"
+          },
+          "alias" : "Units_1"
+        }, {
+          "expression" : {
+            "expression" : "Data_value_1"
+          },
+          "alias" : "Data_value_1"
+        }, {
+          "expression" : {
+            "expression" : "Subject_1"
+          },
+          "alias" : "Subject_1"
+        }, {
+          "expression" : {
+            "expression" : "Series_title_3"
+          },
+          "alias" : "Series_title_3"
+        }, {
+          "expression" : {
+            "expression" : "Industry_name_NZSIOC"
+          },
+          "alias" : "Industry_name_NZSIOC"
+        }, {
+          "expression" : {
+            "expression" : "service_label_1"
+          },
+          "alias" : "service_label_1"
+        }, {
+          "expression" : {
+            "expression" : "Series_reference"
+          },
+          "alias" : "Series_reference"
+        }, {
+          "expression" : {
+            "expression" : "Variable_name_1"
+          },
+          "alias" : "Variable_name_1"
+        }, {
+          "expression" : {
+            "expression" : "Group_1"
+          },
+          "alias" : "Group_1"
+        }, {
+          "expression" : {
+            "expression" : "Series_title_4"
+          },
+          "alias" : "Series_title_4"
+        }, {
+          "expression" : {
+            "expression" : "Value_1"
+          },
+          "alias" : "Value_1"
+        }, {
+          "expression" : {
+            "expression" : "Year_1"
+          },
+          "alias" : "Year_1"
+        }, {
+          "expression" : {
+            "expression" : "Industry_code_NZSIOC"
+          },
+          "alias" : "Industry_code_NZSIOC"
+        }, {
+          "expression" : {
+            "expression" : "Series_title_2"
+          },
+          "alias" : "Series_title_2"
+        }, {
+          "expression" : {
+            "expression" : "Period_1"
+          },
+          "alias" : "Period_1"
+        }, {
+          "expression" : {
+            "expression" : "Variable_category_1"
+          },
+          "alias" : "Variable_category_1"
+        }, {
+          "expression" : {
+            "expression" : "Series_title_1"
+          },
+          "alias" : "Series_title_1"
+        }, {
+          "expression" : {
+            "expression" : "Industry_aggregation_NZSIOC"
+          },
+          "alias" : "Industry_aggregation_NZSIOC"
+        }, {
+          "expression" : {
+            "expression" : "Suppressed_1"
+          },
+          "alias" : "Suppressed_1"
+        }, {
+          "expression" : {
+            "expression" : "Series_title_5"
+          },
+          "alias" : "Series_title_5"
+        }, {
+          "expression" : {
+            "expression" : "country_code"
+          },
+          "alias" : "country_code"
+        }, {
+          "expression" : {
+            "expression" : "STATUS_1"
+          },
+          "alias" : "STATUS_1"
+        }, {
+          "expression" : {
+            "expression" : "code_1"
+          },
+          "alias" : "code_1"
+        }, {
+          "expression" : {
+            "expression" : "Magnitude_1"
+          },
+          "alias" : "Magnitude_1"
+        }, {
+          "expression" : {
+            "expression" : "Variable_code_1"
+          },
+          "alias" : "Variable_code_1"
+        }, {
+          "expression" : {
+            "expression" : "country_label"
+          },
+          "alias" : "country_label"
+        }, {
+          "expression" : {
+            "expression" : "Industry_code_ANZSIC06"
+          },
+          "alias" : "Industry_code_ANZSIC06"
+        }, {
+          "expression" : {
+            "expression" : "{{ Perf_SQL_Databricks._concat_3_macro('Subject_1') }}"
+          },
+          "alias" : "c_macrousage"
+        }, {
+          "expression" : {
+            "expression" : "CAST('{{ dbt_utils.pretty_time() }}' AS TIMESTAMP)"
+          },
+          "alias" : "c_dbt_utils"
+        }, {
+          "expression" : {
+            "expression" : "{{ dbt_date.day_of_week(\"'2022-03-06'\") }}"
+          },
+          "alias" : "c_dbt_day_of_week"
+        } ]
       },
       "ports" : {
         "inputs" : [ {
@@ -4477,6 +4642,21 @@
               "name" : "Industry_code_ANZSIC06",
               "dataType" : {
                 "type" : "String"
+              }
+            }, {
+              "name" : "c_macrousage",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "c_dbt_utils",
+              "dataType" : {
+                "type" : "Timestamp"
+              }
+            }, {
+              "name" : "c_dbt_day_of_week",
+              "dataType" : {
+                "type" : "Integer"
               }
             } ]
           },

@@ -23,17 +23,29 @@ concat({{param1_column}}, 'hellomain')
 {% endmacro %}
 
  {% macro qa_macro_call_another_macro_base_column(param_column) %}
-concat({{ SQL_BaseGitDepProjectAllFinal.qa_concat_macro_base_column(param_column) }}, {{param_column}})
+concat({{ Perf_SQL_Databricks.qa_concat_macro_base_column(param_column) }}, {{param_column}})
 {% endmacro %}
 
  {% macro qa_macro_call_another_macro_base(final_param_string_only='random data') %}
 concat(
-  {{ SQL_BaseGitDepProjectAllFinal.qa_concat_macro_base(final_param_string_only) }}, 
+  {{ Perf_SQL_Databricks.qa_concat_macro_base(final_param_string_only) }}, 
   '{{final_param_string_only}}')
 {% endmacro %}
 
  {% macro round_function_base(n1, scale=2) %}
 ROUND({{n1}}, {{scale}})
+{% endmacro %}
+
+ {% macro _concat_1_macro(param1_column) %}
+concat({{param1_column}}, 'hellomain')
+{% endmacro %}
+
+ {% macro _concat_2_macro(param_column) %}
+concat({{ Perf_SQL_Databricks._concat_1_macro(param_column) }}, {{param_column}})
+{% endmacro %}
+
+ {% macro _concat_3_macro(param_column) %}
+concat({{ Perf_SQL_Databricks._concat_2_macro(param_column) }}, {{param_column}})
 {% endmacro %}
 
  

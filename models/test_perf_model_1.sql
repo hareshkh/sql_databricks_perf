@@ -81,7 +81,8 @@ Reformat_1 AS (
     c_struct AS c_struct,
     c_struct.city AS city,
     c_struct.state AS state,
-    c_struct.pin AS pin
+    c_struct.pin AS pin,
+    {{ Perf_SQL_Databricks._concat_2_macro('c_string') }} AS c_macro
   
   FROM OrderBy_1 AS in0
 

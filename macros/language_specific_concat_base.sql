@@ -1,5 +1,5 @@
 {%- macro language_specific_concat_base() -%}
-  {{ return(adapter.dispatch('language_specific_concat_base', 'SQL_BaseGitDepProjectAllFinal')()) }}
+  {{ return(adapter.dispatch('language_specific_concat_base', 'Perf_SQL_Databricks')()) }}
 {%- endmacro -%}
 
 {% macro default__language_specific_concat_base() %}
