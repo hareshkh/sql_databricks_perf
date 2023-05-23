@@ -303,7 +303,7 @@
       "component" : "TargetModel",
       "metadata" : {
         "label" : "tpcds_perf_sql_1",
-        "x" : 240,
+        "x" : 360,
         "y" : 60,
         "phase" : 0,
         "macroDependencies" : [ ]
@@ -312,7 +312,7 @@
         "customQueryDisabled" : true,
         "customQuery" : false,
         "incrementalEditorDisabled" : true,
-        "query" : "SELECT * \n\nFROM Join_1\n",
+        "query" : "SELECT * \n\nFROM Limit_1\n",
         "incrementalKey" : false,
         "incremental" : {
           "expression" : "true"
@@ -433,9 +433,19 @@
               "dataType" : {
                 "type" : "Bigint"
               }
+            }, {
+              "name" : "c_dbt_utils",
+              "dataType" : {
+                "type" : "Timestamp"
+              }
+            }, {
+              "name" : "c_self_macro",
+              "dataType" : {
+                "type" : "String"
+              }
             } ]
           },
-          "slug" : "Join_1"
+          "slug" : "Limit_1"
         } ],
         "outputs" : [ {
           "id" : "LBVRcGUW",
@@ -551,6 +561,16 @@
               "dataType" : {
                 "type" : "Bigint"
               }
+            }, {
+              "name" : "c_dbt_utils",
+              "dataType" : {
+                "type" : "Timestamp"
+              }
+            }, {
+              "name" : "c_self_macro",
+              "dataType" : {
+                "type" : "String"
+              }
             } ]
           },
           "slug" : "out"
@@ -567,7 +587,7 @@
         "x" : -20,
         "y" : 20,
         "phase" : 0,
-        "macroDependencies" : [ ]
+        "macroDependencies" : [ "Perf_SQL_Databricks._concat_2_macro" ]
       },
       "properties" : {
         "conditions" : [ {
@@ -581,7 +601,13 @@
           "expression" : {
             "expression" : "in1.i_current_price!=in2.h8_30_to_9"
           },
-          "joinType" : "inner"
+          "joinType" : "right"
+        }, {
+          "alias" : "in3",
+          "expression" : {
+            "expression" : "in2.h8_30_to_9!=in3.Excess_Discount_Amount"
+          },
+          "joinType" : "left"
         } ],
         "expressions" : [ {
           "expression" : {
@@ -693,9 +719,19 @@
             "expression" : "in2.h12_to_12_30"
           },
           "alias" : "h12_to_12_30"
+        }, {
+          "expression" : {
+            "expression" : "CAST('{{ dbt_utils.pretty_time() }}' AS TIMESTAMP)"
+          },
+          "alias" : "c_dbt_utils"
+        }, {
+          "expression" : {
+            "expression" : "{{ Perf_SQL_Databricks._concat_2_macro('in0.cc_name') }}"
+          },
+          "alias" : "c_self_macro"
         } ],
         "activeTab" : "expressions",
-        "columnsSelector" : [ "pLojs1lbR4_EmOP9jqblG$$4bxNeSGEjzst0lzRlzvCz##cc_name", "7X7TVC5_Qeuaclm3X0CaO$$C66SAb50W8wzXmNT4MJII##i_item_desc", "7X7TVC5_Qeuaclm3X0CaO$$C66SAb50W8wzXmNT4MJII##i_current_price", "zpiRFLfV9TMQEPn9H8Vcy$$EUp32O1hbne7ukCCslq0B##h8_30_to_9", "pLojs1lbR4_EmOP9jqblG$$4bxNeSGEjzst0lzRlzvCz##sm_type", "pLojs1lbR4_EmOP9jqblG$$4bxNeSGEjzst0lzRlzvCz##cc_name", "pLojs1lbR4_EmOP9jqblG$$4bxNeSGEjzst0lzRlzvCz##days_30", "pLojs1lbR4_EmOP9jqblG$$4bxNeSGEjzst0lzRlzvCz##days_31_60", "pLojs1lbR4_EmOP9jqblG$$4bxNeSGEjzst0lzRlzvCz##days_61_90", "pLojs1lbR4_EmOP9jqblG$$4bxNeSGEjzst0lzRlzvCz##days_90_120", "pLojs1lbR4_EmOP9jqblG$$4bxNeSGEjzst0lzRlzvCz##days_more_than_120", "7X7TVC5_Qeuaclm3X0CaO$$C66SAb50W8wzXmNT4MJII##i_item_id", "7X7TVC5_Qeuaclm3X0CaO$$C66SAb50W8wzXmNT4MJII##i_item_desc", "7X7TVC5_Qeuaclm3X0CaO$$C66SAb50W8wzXmNT4MJII##i_category", "7X7TVC5_Qeuaclm3X0CaO$$C66SAb50W8wzXmNT4MJII##i_class", "7X7TVC5_Qeuaclm3X0CaO$$C66SAb50W8wzXmNT4MJII##i_current_price", "7X7TVC5_Qeuaclm3X0CaO$$C66SAb50W8wzXmNT4MJII##itemrevenue", "7X7TVC5_Qeuaclm3X0CaO$$C66SAb50W8wzXmNT4MJII##revenueratio", "zpiRFLfV9TMQEPn9H8Vcy$$EUp32O1hbne7ukCCslq0B##h8_30_to_9", "zpiRFLfV9TMQEPn9H8Vcy$$EUp32O1hbne7ukCCslq0B##h9_to_9_30", "zpiRFLfV9TMQEPn9H8Vcy$$EUp32O1hbne7ukCCslq0B##h9_30_to_10", "zpiRFLfV9TMQEPn9H8Vcy$$EUp32O1hbne7ukCCslq0B##h10_to_10_30", "zpiRFLfV9TMQEPn9H8Vcy$$EUp32O1hbne7ukCCslq0B##h10_30_to_11", "zpiRFLfV9TMQEPn9H8Vcy$$EUp32O1hbne7ukCCslq0B##h11_to_11_30", "zpiRFLfV9TMQEPn9H8Vcy$$EUp32O1hbne7ukCCslq0B##h11_30_to_12", "zpiRFLfV9TMQEPn9H8Vcy$$EUp32O1hbne7ukCCslq0B##h12_to_12_30" ],
+        "columnsSelector" : [ "pLojs1lbR4_EmOP9jqblG$$4bxNeSGEjzst0lzRlzvCz##cc_name", "7X7TVC5_Qeuaclm3X0CaO$$C66SAb50W8wzXmNT4MJII##i_item_desc", "7X7TVC5_Qeuaclm3X0CaO$$C66SAb50W8wzXmNT4MJII##i_current_price", "zpiRFLfV9TMQEPn9H8Vcy$$EUp32O1hbne7ukCCslq0B##h8_30_to_9", "wdXDmj4-lqSo2vlbXAcHV$$mnRr_Ztfo091GxCptG2zX##Excess_Discount_Amount", "pLojs1lbR4_EmOP9jqblG$$4bxNeSGEjzst0lzRlzvCz##sm_type", "pLojs1lbR4_EmOP9jqblG$$4bxNeSGEjzst0lzRlzvCz##cc_name", "pLojs1lbR4_EmOP9jqblG$$4bxNeSGEjzst0lzRlzvCz##days_30", "pLojs1lbR4_EmOP9jqblG$$4bxNeSGEjzst0lzRlzvCz##days_31_60", "pLojs1lbR4_EmOP9jqblG$$4bxNeSGEjzst0lzRlzvCz##days_61_90", "pLojs1lbR4_EmOP9jqblG$$4bxNeSGEjzst0lzRlzvCz##days_90_120", "pLojs1lbR4_EmOP9jqblG$$4bxNeSGEjzst0lzRlzvCz##days_more_than_120", "7X7TVC5_Qeuaclm3X0CaO$$C66SAb50W8wzXmNT4MJII##i_item_id", "7X7TVC5_Qeuaclm3X0CaO$$C66SAb50W8wzXmNT4MJII##i_item_desc", "7X7TVC5_Qeuaclm3X0CaO$$C66SAb50W8wzXmNT4MJII##i_category", "7X7TVC5_Qeuaclm3X0CaO$$C66SAb50W8wzXmNT4MJII##i_class", "7X7TVC5_Qeuaclm3X0CaO$$C66SAb50W8wzXmNT4MJII##i_current_price", "7X7TVC5_Qeuaclm3X0CaO$$C66SAb50W8wzXmNT4MJII##itemrevenue", "7X7TVC5_Qeuaclm3X0CaO$$C66SAb50W8wzXmNT4MJII##revenueratio", "zpiRFLfV9TMQEPn9H8Vcy$$EUp32O1hbne7ukCCslq0B##h8_30_to_9", "zpiRFLfV9TMQEPn9H8Vcy$$EUp32O1hbne7ukCCslq0B##h9_to_9_30", "zpiRFLfV9TMQEPn9H8Vcy$$EUp32O1hbne7ukCCslq0B##h9_30_to_10", "zpiRFLfV9TMQEPn9H8Vcy$$EUp32O1hbne7ukCCslq0B##h10_to_10_30", "zpiRFLfV9TMQEPn9H8Vcy$$EUp32O1hbne7ukCCslq0B##h10_30_to_11", "zpiRFLfV9TMQEPn9H8Vcy$$EUp32O1hbne7ukCCslq0B##h11_to_11_30", "zpiRFLfV9TMQEPn9H8Vcy$$EUp32O1hbne7ukCCslq0B##h11_30_to_12", "zpiRFLfV9TMQEPn9H8Vcy$$EUp32O1hbne7ukCCslq0B##h12_to_12_30" ],
         "headAlias" : "in0"
       },
       "ports" : {
@@ -835,6 +871,23 @@
             } ]
           },
           "slug" : "in2"
+        }, {
+          "id" : "wdXDmj4-lqSo2vlbXAcHV$$mnRr_Ztfo091GxCptG2zX",
+          "schema" : {
+            "providerType" : "Databricks",
+            "fields" : [ {
+              "name" : "Excess_Discount_Amount",
+              "dataType" : {
+                "type" : "Decimal"
+              }
+            }, {
+              "name" : "Excess_Discount_Description",
+              "dataType" : {
+                "type" : "String"
+              }
+            } ]
+          },
+          "slug" : "in3"
         } ],
         "outputs" : [ {
           "id" : "buMtHgevdF1ZoYGwKSRtt$$j2-ZzMQ2KMZNpg5IAtK5j",
@@ -949,6 +1002,16 @@
               "name" : "h12_to_12_30",
               "dataType" : {
                 "type" : "Bigint"
+              }
+            }, {
+              "name" : "c_dbt_utils",
+              "dataType" : {
+                "type" : "Timestamp"
+              }
+            }, {
+              "name" : "c_self_macro",
+              "dataType" : {
+                "type" : "String"
               }
             } ]
           },
@@ -1416,8 +1479,8 @@
       "metadata" : {
         "label" : "SQLStatement_3",
         "slug" : "SQLStatement_3",
-        "x" : -360,
-        "y" : 220,
+        "x" : -340,
+        "y" : 120,
         "phase" : 0,
         "macroDependencies" : [ ]
       },
@@ -1604,6 +1667,46 @@
         "isCustomOutputSchema" : false
       }
     },
+    "JnrOhGMv4eMUki9skb36g" : {
+      "id" : "JnrOhGMv4eMUki9skb36g",
+      "component" : "Model",
+      "metadata" : {
+        "label" : "tpcds_perf_sql_0",
+        "slug" : "tpcds_perf_sql_0",
+        "x" : -360,
+        "y" : 300,
+        "phase" : 0
+      },
+      "properties" : {
+        "table" : {
+          "name" : "tpcds_perf_sql_0",
+          "sourceType" : "Model",
+          "alias" : ""
+        }
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "RvYuO-3eyZHE87QNJ4p0b",
+          "schema" : {
+            "providerType" : "Databricks",
+            "fields" : [ {
+              "name" : "Excess_Discount_Amount",
+              "dataType" : {
+                "type" : "Decimal"
+              }
+            }, {
+              "name" : "Excess_Discount_Description",
+              "dataType" : {
+                "type" : "String"
+              }
+            } ]
+          },
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
     "vjSoofnOWks2ln15sNa5y$$E6g0mPM_6XOv49YA-vdfE" : {
       "id" : "vjSoofnOWks2ln15sNa5y$$E6g0mPM_6XOv49YA-vdfE",
       "component" : "SQLStatement",
@@ -1668,6 +1771,282 @@
               "name" : "days_more_than_120",
               "dataType" : {
                 "type" : "Bigint"
+              }
+            } ]
+          },
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
+    "OjDuA8sn5YzYD70AnYsqk$$o9cso1--R2QiapLpWR-Bo" : {
+      "id" : "OjDuA8sn5YzYD70AnYsqk$$o9cso1--R2QiapLpWR-Bo",
+      "component" : "Limit",
+      "metadata" : {
+        "label" : "Limit_1",
+        "slug" : "Limit_1",
+        "x" : 180,
+        "y" : 40,
+        "phase" : 0,
+        "macroDependencies" : [ ]
+      },
+      "properties" : {
+        "limit" : {
+          "expression" : "10"
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "v6lxbwqp_kt_fR14HFFz9$$SW8mxE5ERIW1JNaENYD1Z",
+          "schema" : {
+            "providerType" : "Databricks",
+            "fields" : [ {
+              "name" : "sm_type",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "cc_name",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "days_30",
+              "dataType" : {
+                "type" : "Bigint"
+              }
+            }, {
+              "name" : "days_31_60",
+              "dataType" : {
+                "type" : "Bigint"
+              }
+            }, {
+              "name" : "days_61_90",
+              "dataType" : {
+                "type" : "Bigint"
+              }
+            }, {
+              "name" : "days_90_120",
+              "dataType" : {
+                "type" : "Bigint"
+              }
+            }, {
+              "name" : "days_more_than_120",
+              "dataType" : {
+                "type" : "Bigint"
+              }
+            }, {
+              "name" : "i_item_id",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "i_item_desc",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "i_category",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "i_class",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "i_current_price",
+              "dataType" : {
+                "type" : "Decimal"
+              }
+            }, {
+              "name" : "itemrevenue",
+              "dataType" : {
+                "type" : "Decimal"
+              }
+            }, {
+              "name" : "revenueratio",
+              "dataType" : {
+                "type" : "Decimal"
+              }
+            }, {
+              "name" : "h8_30_to_9",
+              "dataType" : {
+                "type" : "Bigint"
+              }
+            }, {
+              "name" : "h9_to_9_30",
+              "dataType" : {
+                "type" : "Bigint"
+              }
+            }, {
+              "name" : "h9_30_to_10",
+              "dataType" : {
+                "type" : "Bigint"
+              }
+            }, {
+              "name" : "h10_to_10_30",
+              "dataType" : {
+                "type" : "Bigint"
+              }
+            }, {
+              "name" : "h10_30_to_11",
+              "dataType" : {
+                "type" : "Bigint"
+              }
+            }, {
+              "name" : "h11_to_11_30",
+              "dataType" : {
+                "type" : "Bigint"
+              }
+            }, {
+              "name" : "h11_30_to_12",
+              "dataType" : {
+                "type" : "Bigint"
+              }
+            }, {
+              "name" : "h12_to_12_30",
+              "dataType" : {
+                "type" : "Bigint"
+              }
+            }, {
+              "name" : "c_dbt_utils",
+              "dataType" : {
+                "type" : "Timestamp"
+              }
+            }, {
+              "name" : "c_self_macro",
+              "dataType" : {
+                "type" : "String"
+              }
+            } ]
+          },
+          "slug" : "in0"
+        } ],
+        "outputs" : [ {
+          "id" : "g5CenBCeBCgLXq31BNaGX$$qCspvoSVwjsofa-t-_mgr",
+          "schema" : {
+            "providerType" : "Databricks",
+            "fields" : [ {
+              "name" : "sm_type",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "cc_name",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "days_30",
+              "dataType" : {
+                "type" : "Bigint"
+              }
+            }, {
+              "name" : "days_31_60",
+              "dataType" : {
+                "type" : "Bigint"
+              }
+            }, {
+              "name" : "days_61_90",
+              "dataType" : {
+                "type" : "Bigint"
+              }
+            }, {
+              "name" : "days_90_120",
+              "dataType" : {
+                "type" : "Bigint"
+              }
+            }, {
+              "name" : "days_more_than_120",
+              "dataType" : {
+                "type" : "Bigint"
+              }
+            }, {
+              "name" : "i_item_id",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "i_item_desc",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "i_category",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "i_class",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "i_current_price",
+              "dataType" : {
+                "type" : "Decimal"
+              }
+            }, {
+              "name" : "itemrevenue",
+              "dataType" : {
+                "type" : "Decimal"
+              }
+            }, {
+              "name" : "revenueratio",
+              "dataType" : {
+                "type" : "Decimal"
+              }
+            }, {
+              "name" : "h8_30_to_9",
+              "dataType" : {
+                "type" : "Bigint"
+              }
+            }, {
+              "name" : "h9_to_9_30",
+              "dataType" : {
+                "type" : "Bigint"
+              }
+            }, {
+              "name" : "h9_30_to_10",
+              "dataType" : {
+                "type" : "Bigint"
+              }
+            }, {
+              "name" : "h10_to_10_30",
+              "dataType" : {
+                "type" : "Bigint"
+              }
+            }, {
+              "name" : "h10_30_to_11",
+              "dataType" : {
+                "type" : "Bigint"
+              }
+            }, {
+              "name" : "h11_to_11_30",
+              "dataType" : {
+                "type" : "Bigint"
+              }
+            }, {
+              "name" : "h11_30_to_12",
+              "dataType" : {
+                "type" : "Bigint"
+              }
+            }, {
+              "name" : "h12_to_12_30",
+              "dataType" : {
+                "type" : "Bigint"
+              }
+            }, {
+              "name" : "c_dbt_utils",
+              "dataType" : {
+                "type" : "Timestamp"
+              }
+            }, {
+              "name" : "c_self_macro",
+              "dataType" : {
+                "type" : "String"
               }
             } ]
           },
@@ -1892,11 +2271,23 @@
     "target" : "YkVCA_wwQcR57pJHClZdA$$VPSyuTOYeN6T_82LFp437",
     "targetPort" : "zpiRFLfV9TMQEPn9H8Vcy$$EUp32O1hbne7ukCCslq0B"
   }, {
-    "id" : "oOgzmFgO9Pi_lVXD4DnpV",
+    "id" : "TqXO8Yb9DY1a0QuiXSA34",
     "source" : "YkVCA_wwQcR57pJHClZdA$$VPSyuTOYeN6T_82LFp437",
     "sourcePort" : "buMtHgevdF1ZoYGwKSRtt$$j2-ZzMQ2KMZNpg5IAtK5j",
+    "target" : "OjDuA8sn5YzYD70AnYsqk$$o9cso1--R2QiapLpWR-Bo",
+    "targetPort" : "v6lxbwqp_kt_fR14HFFz9$$SW8mxE5ERIW1JNaENYD1Z"
+  }, {
+    "id" : "ArxlXIXmDSdF3gqMTFTVh",
+    "source" : "OjDuA8sn5YzYD70AnYsqk$$o9cso1--R2QiapLpWR-Bo",
+    "sourcePort" : "g5CenBCeBCgLXq31BNaGX$$qCspvoSVwjsofa-t-_mgr",
     "target" : "tpcds_perf_sql_1##cZazG9GX",
     "targetPort" : "JEY5NYFi"
+  }, {
+    "id" : "5E8m4nHKKcRY25Ri7y23A",
+    "source" : "JnrOhGMv4eMUki9skb36g",
+    "sourcePort" : "RvYuO-3eyZHE87QNJ4p0b",
+    "target" : "YkVCA_wwQcR57pJHClZdA$$VPSyuTOYeN6T_82LFp437",
+    "targetPort" : "wdXDmj4-lqSo2vlbXAcHV$$mnRr_Ztfo091GxCptG2zX"
   } ],
   "component" : "Model"
 }

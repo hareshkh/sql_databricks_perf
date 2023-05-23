@@ -1,4 +1,12 @@
-WITH ecards_transactions_perf AS (
+WITH test_perf_model_1 AS (
+
+  SELECT * 
+  
+  FROM {{ ref('test_perf_model_1')}}
+
+),
+
+ecards_transactions_perf AS (
 
   SELECT * 
   
@@ -55,18 +63,9 @@ economic_survey_perf AS (
 
 ),
 
-ecards_transactions_perf_1 AS (
-
-  SELECT * 
-  
-  FROM {{ ref('ecards_transactions_perf')}}
-
-),
-
 Join_2 AS (
 
   SELECT 
-    ecards_transactions_perf_1.Data_value_1 AS Data_value_1,
     economic_survey_perf.STATUS_1 AS STATUS_1,
     economic_survey_perf.UNITS_1 AS UNITS_1,
     economic_survey_perf.Series_reference AS Series_reference,
@@ -83,8 +82,8 @@ Join_2 AS (
     economic_survey_perf.Group_1 AS Group_1
   
   FROM economic_survey_perf
-  INNER JOIN ecards_transactions_perf_1
-     ON economic_survey_perf.Series_reference = ecards_transactions_perf_1.Series_reference AND economic_survey_perf.Period_1 = ecards_transactions_perf_1.Period_1 AND economic_survey_perf.Suppressed_1 = ecards_transactions_perf_1.Suppressed_1 AND economic_survey_perf.STATUS_1 = ecards_transactions_perf_1.STATUS_1 AND economic_survey_perf.UNITS_1 = ecards_transactions_perf_1.UNITS_1 AND economic_survey_perf.Magnitude_1 = ecards_transactions_perf_1.Magnitude_1 AND economic_survey_perf.Subject_1 = ecards_transactions_perf_1.Subject_1 AND economic_survey_perf.Group_1 = ecards_transactions_perf_1.Group_1 AND economic_survey_perf.Series_title_1 = ecards_transactions_perf_1.Series_title_1 AND economic_survey_perf.Series_title_2 = ecards_transactions_perf_1.Series_title_2 AND economic_survey_perf.Series_title_3 = ecards_transactions_perf_1.Series_title_3 AND economic_survey_perf.Series_title_4 = ecards_transactions_perf_1.Series_title_4 AND economic_survey_perf.Series_title_5 = ecards_transactions_perf_1.Series_title_5
+  INNER JOIN test_perf_model_1 AS ecards_transactions_perf_1
+     ON economic_survey_perf.Series_title_1 != ecards_transactions_perf_1.c_string
 
 ),
 

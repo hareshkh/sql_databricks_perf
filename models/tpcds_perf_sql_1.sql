@@ -78,6 +78,14 @@ SQLStatement_3 AS (
 
 ),
 
+tpcds_perf_sql_0 AS (
+
+  SELECT * 
+  
+  FROM {{ ref('tpcds_perf_sql_0')}}
+
+),
+
 item AS (
 
   SELECT * 
@@ -191,16 +199,30 @@ Join_1 AS (
     in2.h10_30_to_11 AS h10_30_to_11,
     in2.h11_to_11_30 AS h11_to_11_30,
     in2.h11_30_to_12 AS h11_30_to_12,
-    in2.h12_to_12_30 AS h12_to_12_30
+    in2.h12_to_12_30 AS h12_to_12_30,
+    CAST('{{ dbt_utils.pretty_time() }}' AS TIMESTAMP) AS c_dbt_utils,
+    {{ Perf_SQL_Databricks._concat_2_macro('in0.cc_name') }} AS c_self_macro
   
   FROM SQLStatement_1 AS in0
   INNER JOIN SQLStatement_2 AS in1
      ON in0.cc_name != in1.i_item_desc
-  INNER JOIN SQLStatement_3 AS in2
+  RIGHT JOIN SQLStatement_3 AS in2
      ON in1.i_current_price != in2.h8_30_to_9
+  LEFT JOIN tpcds_perf_sql_0 AS in3
+     ON in2.h8_30_to_9 != in3.Excess_Discount_Amount
+
+),
+
+Limit_1 AS (
+
+  SELECT * 
+  
+  FROM Join_1 AS in0
+  
+  LIMIT 10
 
 )
 
 SELECT *
 
-FROM Join_1
+FROM Limit_1

@@ -1,4 +1,12 @@
-WITH all_type_non_partitioned AS (
+WITH test_perf_model_0 AS (
+
+  SELECT * 
+  
+  FROM {{ ref('test_perf_model_0')}}
+
+),
+
+all_type_non_partitioned AS (
 
   SELECT * 
   
@@ -110,9 +118,21 @@ Join_1 AS (
   FROM Reformat_1 AS in0
   INNER JOIN Aggregate_1 AS in1
      ON in0.c_tinyint = in1.c_tinyint
+  LEFT JOIN test_perf_model_0 AS in2
+     ON in1.c_string != in2.Units_1
+
+),
+
+Limit_2 AS (
+
+  SELECT * 
+  
+  FROM Join_1 AS in0
+  
+  LIMIT 10
 
 )
 
 SELECT *
 
-FROM Join_1
+FROM Limit_2

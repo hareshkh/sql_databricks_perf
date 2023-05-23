@@ -405,6 +405,16 @@
               "dataType" : {
                 "type" : "Bigint"
               }
+            }, {
+              "name" : "c_dbt_utils",
+              "dataType" : {
+                "type" : "Timestamp"
+              }
+            }, {
+              "name" : "c_self_macro",
+              "dataType" : {
+                "type" : "String"
+              }
             } ]
           },
           "slug" : "out"
@@ -791,6 +801,16 @@
               "name" : "h12_to_12_30",
               "dataType" : {
                 "type" : "Bigint"
+              }
+            }, {
+              "name" : "c_dbt_utils",
+              "dataType" : {
+                "type" : "Timestamp"
+              }
+            }, {
+              "name" : "c_self_macro",
+              "dataType" : {
+                "type" : "String"
               }
             } ]
           },
