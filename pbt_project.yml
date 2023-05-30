@@ -21,6 +21,90 @@ subgraphs: {}
 sqlModels:
   .prophecy/metadata/sqlmodels/test_perf_model_2:
     name: test_perf_model_2
+    schema:
+      providerType: Databricks
+      fields:
+      - name: Series_reference
+        dataType:
+          type: String
+      - name: Period_1
+        dataType:
+          type: Float
+      - name: Data_value_1
+        dataType:
+          type: Float
+      - name: Suppressed_1
+        dataType:
+          type: String
+      - name: STATUS_1
+        dataType:
+          type: String
+      - name: UNITS_1
+        dataType:
+          type: String
+      - name: Magnitude_1
+        dataType:
+          type: Integer
+      - name: Subject_1
+        dataType:
+          type: String
+      - name: Group_1
+        dataType:
+          type: String
+      - name: Series_title_1
+        dataType:
+          type: String
+      - name: Series_title_2
+        dataType:
+          type: String
+      - name: Series_title_3
+        dataType:
+          type: String
+      - name: Series_title_4
+        dataType:
+          type: String
+      - name: Series_title_5
+        dataType:
+          type: String
+      - name: Variable_category_1
+        dataType:
+          type: String
+      - name: Industry_code_NZSIOC
+        dataType:
+          type: Integer
+      - name: Year_1
+        dataType:
+          type: Integer
+      - name: Industry_code_ANZSIC06
+        dataType:
+          type: String
+      - name: Variable_name_1
+        dataType:
+          type: String
+      - name: Industry_aggregation_NZSIOC
+        dataType:
+          type: String
+      - name: Variable_code_1
+        dataType:
+          type: String
+      - name: Value_1
+        dataType:
+          type: String
+      - name: Industry_name_NZSIOC
+        dataType:
+          type: String
+      - name: code_1
+        dataType:
+          type: String
+      - name: service_label_1
+        dataType:
+          type: String
+      - name: country_code
+        dataType:
+          type: String
+      - name: country_label
+        dataType:
+          type: String
     description: null
     author: abhisheks+e2etests@prophecy.io
     files:
@@ -33,6 +117,51 @@ sqlModels:
     modifiedAt: '2023-05-22 12:50:32'
   .prophecy/metadata/sqlmodels/tpcds_perf_sql_2:
     name: tpcds_perf_sql_2
+    schema:
+      providerType: Databricks
+      fields:
+      - name: sm_type
+        dataType:
+          type: String
+      - name: cc_name
+        dataType:
+          type: String
+      - name: a_30_days
+        dataType:
+          type: Bigint
+      - name: a_31_60_days
+        dataType:
+          type: Bigint
+      - name: a_61_90_days
+        dataType:
+          type: Bigint
+      - name: a_91_120_days
+        dataType:
+          type: Bigint
+      - name: a_120_days_and_more
+        dataType:
+          type: Bigint
+      - name: i_item_id
+        dataType:
+          type: String
+      - name: i_item_desc
+        dataType:
+          type: String
+      - name: i_category
+        dataType:
+          type: String
+      - name: i_class
+        dataType:
+          type: String
+      - name: i_current_price
+        dataType:
+          type: Decimal
+      - name: itemrevenue
+        dataType:
+          type: Decimal
+      - name: revenueratio
+        dataType:
+          type: Decimal
     description: null
     author: abhisheks+e2etests@prophecy.io
     files:
@@ -45,6 +174,66 @@ sqlModels:
     modifiedAt: '2023-05-19 13:06:44'
   .prophecy/metadata/sqlmodels/test_perf_model_3_use_all:
     name: test_perf_model_3_use_all
+    schema:
+      providerType: Databricks
+      fields:
+      - name: city
+        dataType:
+          type: String
+      - name: state
+        dataType:
+          type: String
+      - name: pin
+        dataType:
+          type: Bigint
+      - name: p_int
+        dataType:
+          type: Integer
+      - name: p_string
+        dataType:
+          type: String
+      - name: c_string
+        dataType:
+          type: String
+      - name: c_int
+        dataType:
+          type: Integer
+      - name: c_bigint
+        dataType:
+          type: Bigint
+      - name: c_smallint
+        dataType:
+          type: SmallInt
+      - name: c_tinyint
+        dataType:
+          type: TinyInt
+      - name: c_float
+        dataType:
+          type: Float
+      - name: c_boolean
+        dataType:
+          type: Boolean
+      - name: c_array
+        dataType:
+          type: Array
+          dataType:
+            type: String
+      - name: c_double
+        dataType:
+          type: Float
+      - name: c_struct
+        dataType:
+          type: Struct
+          fields:
+          - name: city
+            dataType:
+              type: String
+          - name: state
+            dataType:
+              type: String
+          - name: pin
+            dataType:
+              type: Bigint
     description: null
     author: abhisheks+e2etests@prophecy.io
     files:
@@ -57,6 +246,27 @@ sqlModels:
     modifiedAt: '2023-05-22 12:58:25'
   .prophecy/metadata/sqlmodels/z_test_perf_only_seeds:
     name: z_test_perf_only_seeds
+    schema:
+      providerType: Databricks
+      fields:
+      - name: description_1
+        dataType:
+          type: String
+      - name: industry_1
+        dataType:
+          type: String
+      - name: level_1
+        dataType:
+          type: Integer
+      - name: size_1
+        dataType:
+          type: String
+      - name: line_code
+        dataType:
+          type: String
+      - name: value_1
+        dataType:
+          type: Integer
     description: null
     author: abhisheks+e2etests@prophecy.io
     files:
@@ -69,6 +279,39 @@ sqlModels:
     modifiedAt: '2023-05-22 13:56:56'
   .prophecy/metadata/sqlmodels/test_perf_model_0:
     name: test_perf_model_0
+    schema:
+      providerType: Databricks
+      fields:
+      - name: Year_1
+        dataType:
+          type: Integer
+      - name: Industry_aggregation_NZSIOC
+        dataType:
+          type: String
+      - name: Industry_code_NZSIOC
+        dataType:
+          type: Integer
+      - name: Industry_name_NZSIOC
+        dataType:
+          type: String
+      - name: Units_1
+        dataType:
+          type: String
+      - name: Variable_code_1
+        dataType:
+          type: String
+      - name: Variable_name_1
+        dataType:
+          type: String
+      - name: Variable_category_1
+        dataType:
+          type: String
+      - name: Value_1
+        dataType:
+          type: String
+      - name: Industry_code_ANZSIC06
+        dataType:
+          type: String
     description: null
     author: abhisheks+e2etests@prophecy.io
     files:
@@ -81,6 +324,81 @@ sqlModels:
     modifiedAt: '2023-05-22 13:24:41'
   .prophecy/metadata/sqlmodels/tpcds_perf_sql_1:
     name: tpcds_perf_sql_1
+    schema:
+      providerType: Databricks
+      fields:
+      - name: sm_type
+        dataType:
+          type: String
+      - name: cc_name
+        dataType:
+          type: String
+      - name: days_30
+        dataType:
+          type: Bigint
+      - name: days_31_60
+        dataType:
+          type: Bigint
+      - name: days_61_90
+        dataType:
+          type: Bigint
+      - name: days_90_120
+        dataType:
+          type: Bigint
+      - name: days_more_than_120
+        dataType:
+          type: Bigint
+      - name: i_item_id
+        dataType:
+          type: String
+      - name: i_item_desc
+        dataType:
+          type: String
+      - name: i_category
+        dataType:
+          type: String
+      - name: i_class
+        dataType:
+          type: String
+      - name: i_current_price
+        dataType:
+          type: Decimal
+      - name: itemrevenue
+        dataType:
+          type: Decimal
+      - name: revenueratio
+        dataType:
+          type: Decimal
+      - name: h8_30_to_9
+        dataType:
+          type: Bigint
+      - name: h9_to_9_30
+        dataType:
+          type: Bigint
+      - name: h9_30_to_10
+        dataType:
+          type: Bigint
+      - name: h10_to_10_30
+        dataType:
+          type: Bigint
+      - name: h10_30_to_11
+        dataType:
+          type: Bigint
+      - name: h11_to_11_30
+        dataType:
+          type: Bigint
+      - name: h11_30_to_12
+        dataType:
+          type: Bigint
+      - name: h12_to_12_30
+        dataType:
+          type: Bigint
+      - name: c_dbt_utils
+        dataType:
+          type: Timestamp
+      - name: c_self_macro
+        dataType:
+          type: String
     description: null
     author: abhisheks+e2etests@prophecy.io
     files:
@@ -93,6 +411,66 @@ sqlModels:
     modifiedAt: '2023-05-19 13:06:39'
   .prophecy/metadata/sqlmodels/test_perf_model_1:
     name: test_perf_model_1
+    schema:
+      providerType: Databricks
+      fields:
+      - name: c_tinyint
+        dataType:
+          type: TinyInt
+      - name: c_smallint
+        dataType:
+          type: SmallInt
+      - name: c_int
+        dataType:
+          type: Integer
+      - name: c_bigint
+        dataType:
+          type: Bigint
+      - name: c_float
+        dataType:
+          type: Float
+      - name: c_double
+        dataType:
+          type: Float
+      - name: c_string
+        dataType:
+          type: String
+      - name: c_boolean
+        dataType:
+          type: Boolean
+      - name: c_array
+        dataType:
+          type: Array
+          dataType:
+            type: String
+      - name: c_struct
+        dataType:
+          type: Struct
+          fields:
+          - name: city
+            dataType:
+              type: String
+          - name: state
+            dataType:
+              type: String
+          - name: pin
+            dataType:
+              type: Bigint
+      - name: city
+        dataType:
+          type: String
+      - name: state
+        dataType:
+          type: String
+      - name: pin
+        dataType:
+          type: Bigint
+      - name: p_int
+        dataType:
+          type: Integer
+      - name: p_string
+        dataType:
+          type: String
     description: null
     author: abhisheks+e2etests@prophecy.io
     files:
@@ -105,6 +483,90 @@ sqlModels:
     modifiedAt: '2023-05-19 12:50:42'
   .prophecy/metadata/sqlmodels/tpcds_perf_sql_3_useall_tpcds:
     name: tpcds_perf_sql_3_useall_tpcds
+    schema:
+      providerType: Databricks
+      fields:
+      - name: a_30_days
+        dataType:
+          type: Bigint
+      - name: a_31_60_days
+        dataType:
+          type: Bigint
+      - name: a_61_90_days
+        dataType:
+          type: Bigint
+      - name: a_91_120_days
+        dataType:
+          type: Bigint
+      - name: a_120_days_and_more
+        dataType:
+          type: Bigint
+      - name: h10_30_to_11
+        dataType:
+          type: Bigint
+      - name: h9_30_to_10
+        dataType:
+          type: Bigint
+      - name: h9_to_9_30
+        dataType:
+          type: Bigint
+      - name: days_31_60
+        dataType:
+          type: Bigint
+      - name: days_30
+        dataType:
+          type: Bigint
+      - name: i_current_price
+        dataType:
+          type: Decimal
+      - name: i_item_id
+        dataType:
+          type: String
+      - name: days_61_90
+        dataType:
+          type: Bigint
+      - name: i_item_desc
+        dataType:
+          type: String
+      - name: revenueratio
+        dataType:
+          type: Decimal
+      - name: days_more_than_120
+        dataType:
+          type: Bigint
+      - name: h11_to_11_30
+        dataType:
+          type: Bigint
+      - name: sm_type
+        dataType:
+          type: String
+      - name: i_category
+        dataType:
+          type: String
+      - name: h11_30_to_12
+        dataType:
+          type: Bigint
+      - name: i_class
+        dataType:
+          type: String
+      - name: cc_name
+        dataType:
+          type: String
+      - name: itemrevenue
+        dataType:
+          type: Decimal
+      - name: h12_to_12_30
+        dataType:
+          type: Bigint
+      - name: h8_30_to_9
+        dataType:
+          type: Bigint
+      - name: h10_to_10_30
+        dataType:
+          type: Bigint
+      - name: days_90_120
+        dataType:
+          type: Bigint
     description: null
     author: abhisheks+e2etests@prophecy.io
     files:
@@ -117,6 +579,66 @@ sqlModels:
     modifiedAt: '2023-05-22 12:28:51'
   .prophecy/metadata/sqlmodels/z_test_perf_only_project_models:
     name: z_test_perf_only_project_models
+    schema:
+      providerType: Databricks
+      fields:
+      - name: city
+        dataType:
+          type: String
+      - name: state
+        dataType:
+          type: String
+      - name: pin
+        dataType:
+          type: Bigint
+      - name: p_int
+        dataType:
+          type: Integer
+      - name: p_string
+        dataType:
+          type: String
+      - name: c_string
+        dataType:
+          type: String
+      - name: c_int
+        dataType:
+          type: Integer
+      - name: c_bigint
+        dataType:
+          type: Bigint
+      - name: c_smallint
+        dataType:
+          type: SmallInt
+      - name: c_tinyint
+        dataType:
+          type: TinyInt
+      - name: c_float
+        dataType:
+          type: Float
+      - name: c_boolean
+        dataType:
+          type: Boolean
+      - name: c_array
+        dataType:
+          type: Array
+          dataType:
+            type: String
+      - name: c_double
+        dataType:
+          type: Float
+      - name: c_struct
+        dataType:
+          type: Struct
+          fields:
+          - name: city
+            dataType:
+              type: String
+          - name: state
+            dataType:
+              type: String
+          - name: pin
+            dataType:
+              type: Bigint
     description: null
     author: abhisheks+e2etests@prophecy.io
     files:
@@ -129,6 +651,15 @@ sqlModels:
     modifiedAt: '2023-05-22 13:24:12'
   .prophecy/metadata/sqlmodels/tpcds_perf_sql_0:
     name: tpcds_perf_sql_0
+    schema:
+      providerType: Databricks
+      fields:
+      - name: Excess_Discount_Amount
+        dataType:
+          type: Decimal
+      - name: Excess_Discount_Description
+        dataType:
+          type: String
     description: null
     author: abhisheks+e2etests@prophecy.io
     files:
@@ -412,6 +943,51 @@ sqlMacros:
 sqlSeeds:
   .prophecy/metadata/sqlseeds/economic_survey_perf:
     name: economic_survey_perf
+    schema:
+      providerType: Databricks
+      fields:
+      - name: Series_reference
+        dataType:
+          type: String
+      - name: Period_1
+        dataType:
+          type: Float
+      - name: Data_value
+        dataType:
+          type: Float
+      - name: Suppressed_1
+        dataType:
+          type: String
+      - name: STATUS_1
+        dataType:
+          type: String
+      - name: UNITS_1
+        dataType:
+          type: String
+      - name: Magnitude_1
+        dataType:
+          type: Integer
+      - name: Subject_1
+        dataType:
+          type: String
+      - name: Group_1
+        dataType:
+          type: String
+      - name: Series_title_1
+        dataType:
+          type: String
+      - name: Series_title_2
+        dataType:
+          type: String
+      - name: Series_title_3
+        dataType:
+          type: String
+      - name: Series_title_4
+        dataType:
+          type: String
+      - name: Series_title_5
+        dataType:
+          type: String
     description: null
     author: abhisheks+e2etests@prophecy.io
     files:
@@ -420,6 +996,15 @@ sqlSeeds:
     modifiedAt: '2023-05-22 12:09:54'
   .prophecy/metadata/sqlseeds/country_classification_perf:
     name: country_classification_perf
+    schema:
+      providerType: Databricks
+      fields:
+      - name: country_code
+        dataType:
+          type: String
+      - name: country_label
+        dataType:
+          type: String
     description: null
     author: abhisheks+e2etests@prophecy.io
     files:
@@ -428,6 +1013,30 @@ sqlSeeds:
     modifiedAt: '2023-05-22 12:09:07'
   .prophecy/metadata/sqlseeds/revised_perf:
     name: revised_perf
+    schema:
+      providerType: Databricks
+      fields:
+      - name: time_ref
+        dataType:
+          type: Integer
+      - name: account_1
+        dataType:
+          type: String
+      - name: code_1
+        dataType:
+          type: String
+      - name: country_code
+        dataType:
+          type: String
+      - name: product_type
+        dataType:
+          type: String
+      - name: value_1
+        dataType:
+          type: Float
+      - name: status_1
+        dataType:
+          type: String
     description: null
     author: abhisheks+e2etests@prophecy.io
     files:
@@ -436,6 +1045,51 @@ sqlSeeds:
     modifiedAt: '2023-05-22 13:55:03'
   .prophecy/metadata/sqlseeds/business_financial_data_perf:
     name: business_financial_data_perf
+    schema:
+      providerType: Databricks
+      fields:
+      - name: Series_reference
+        dataType:
+          type: String
+      - name: Period1
+        dataType:
+          type: Float
+      - name: Data_value
+        dataType:
+          type: Float
+      - name: Suppressed1
+        dataType:
+          type: String
+      - name: STATUS1
+        dataType:
+          type: String
+      - name: UNITS1
+        dataType:
+          type: String
+      - name: Magnitude_1
+        dataType:
+          type: Integer
+      - name: Subject_1
+        dataType:
+          type: String
+      - name: Group_1
+        dataType:
+          type: String
+      - name: Series_title_1
+        dataType:
+          type: String
+      - name: Series_title_2
+        dataType:
+          type: String
+      - name: Series_title_3
+        dataType:
+          type: String
+      - name: Series_title_4
+        dataType:
+          type: String
+      - name: Series_title_5
+        dataType:
+          type: String
     description: null
     author: abhisheks+e2etests@prophecy.io
     files:
@@ -444,6 +1098,51 @@ sqlSeeds:
     modifiedAt: '2023-05-22 12:09:23'
   .prophecy/metadata/sqlseeds/ecards_transactions_perf:
     name: ecards_transactions_perf
+    schema:
+      providerType: Databricks
+      fields:
+      - name: Series_reference
+        dataType:
+          type: String
+      - name: Period_1
+        dataType:
+          type: Float
+      - name: Data_value_1
+        dataType:
+          type: Float
+      - name: Suppressed_1
+        dataType:
+          type: String
+      - name: STATUS_1
+        dataType:
+          type: String
+      - name: UNITS_1
+        dataType:
+          type: String
+      - name: Magnitude_1
+        dataType:
+          type: Integer
+      - name: Subject_1
+        dataType:
+          type: String
+      - name: Group_1
+        dataType:
+          type: String
+      - name: Series_title_1
+        dataType:
+          type: String
+      - name: Series_title_2
+        dataType:
+          type: String
+      - name: Series_title_3
+        dataType:
+          type: String
+      - name: Series_title_4
+        dataType:
+          type: String
+      - name: Series_title_5
+        dataType:
+          type: String
     description: null
     author: abhisheks+e2etests@prophecy.io
     files:
@@ -452,6 +1151,195 @@ sqlSeeds:
     modifiedAt: '2023-05-22 12:09:38'
   .prophecy/metadata/sqlseeds/epl_data_perf:
     name: epl_data_perf
+    schema:
+      providerType: Databricks
+      fields:
+      - name: Div_1
+        dataType:
+          type: String
+      - name: Date_1
+        dataType:
+          type: String
+      - name: HomeTeam_1
+        dataType:
+          type: String
+      - name: AwayTeam_1
+        dataType:
+          type: String
+      - name: FTHG_1
+        dataType:
+          type: Integer
+      - name: FTAG_1
+        dataType:
+          type: Integer
+      - name: FTR_1
+        dataType:
+          type: String
+      - name: HTHG_1
+        dataType:
+          type: Integer
+      - name: HTAG_1
+        dataType:
+          type: Integer
+      - name: HTR_1
+        dataType:
+          type: String
+      - name: Referee_1
+        dataType:
+          type: String
+      - name: HS_1
+        dataType:
+          type: Integer
+      - name: AS_1
+        dataType:
+          type: Integer
+      - name: HST_1
+        dataType:
+          type: Integer
+      - name: AST_1
+        dataType:
+          type: Integer
+      - name: HF_1
+        dataType:
+          type: Integer
+      - name: AF_1
+        dataType:
+          type: Integer
+      - name: HC_1
+        dataType:
+          type: Integer
+      - name: AC_1
+        dataType:
+          type: Integer
+      - name: HY_1
+        dataType:
+          type: Integer
+      - name: AY_1
+        dataType:
+          type: Integer
+      - name: HR_1
+        dataType:
+          type: Integer
+      - name: AR_1
+        dataType:
+          type: Integer
+      - name: B365H_1
+        dataType:
+          type: Float
+      - name: B365D_1
+        dataType:
+          type: Float
+      - name: B365A_1
+        dataType:
+          type: Float
+      - name: BWH_1
+        dataType:
+          type: Float
+      - name: BWD_1
+        dataType:
+          type: Float
+      - name: BWA_1
+        dataType:
+          type: Float
+      - name: IWH_1
+        dataType:
+          type: Float
+      - name: IWD_1
+        dataType:
+          type: Float
+      - name: IWA_1
+        dataType:
+          type: Float
+      - name: PSH_1
+        dataType:
+          type: Float
+      - name: PSD_1
+        dataType:
+          type: Float
+      - name: PSA_1
+        dataType:
+          type: Float
+      - name: WHH_1
+        dataType:
+          type: Float
+      - name: WHD_1
+        dataType:
+          type: Float
+      - name: WHA_1
+        dataType:
+          type: Float
+      - name: VCH_1
+        dataType:
+          type: Float
+      - name: VCD_1
+        dataType:
+          type: Float
+      - name: VCA_1
+        dataType:
+          type: Float
+      - name: Bb1X2_1
+        dataType:
+          type: Integer
+      - name: BbMxH_1
+        dataType:
+          type: Float
+      - name: BbAvH_1
+        dataType:
+          type: Float
+      - name: BbMxD_1
+        dataType:
+          type: Float
+      - name: BbAvD_1
+        dataType:
+          type: Float
+      - name: BbMxA_1
+        dataType:
+          type: Float
+      - name: BbAvA_1
+        dataType:
+          type: Float
+      - name: BbOU_1
+        dataType:
+          type: Integer
+      - name: BbMx_2_5
+        dataType:
+          type: Float
+      - name: BbAv_2_5
+        dataType:
+          type: Float
+      - name: BbMx_2_5_1
+        dataType:
+          type: Float
+      - name: BbAv_2_5_1
+        dataType:
+          type: Float
+      - name: BbAH_1
+        dataType:
+          type: Integer
+      - name: BbAHh_1
+        dataType:
+          type: Float
+      - name: BbMxAHH_1
+        dataType:
+          type: Float
+      - name: BbAvAHH_1
+        dataType:
+          type: Float
+      - name: BbMxAHA_1
+        dataType:
+          type: Float
+      - name: BbAvAHA_1
+        dataType:
+          type: Float
+      - name: PSCH_1
+        dataType:
+          type: Float
+      - name: PSCD_1
+        dataType:
+          type: Float
+      - name: PSCA_1
+        dataType:
+          type: Float
     description: null
     author: abhisheks+e2etests@prophecy.io
     files:
@@ -460,6 +1348,27 @@ sqlSeeds:
     modifiedAt: '2023-05-22 12:10:24'
   .prophecy/metadata/sqlseeds/bos2021model_perf:
     name: bos2021model_perf
+    schema:
+      providerType: Databricks
+      fields:
+      - name: description_1
+        dataType:
+          type: String
+      - name: industry_1
+        dataType:
+          type: String
+      - name: level_1
+        dataType:
+          type: Integer
+      - name: size_1
+        dataType:
+          type: String
+      - name: line_code
+        dataType:
+          type: String
+      - name: value_1
+        dataType:
+          type: Integer
     description: null
     author: abhisheks+e2etests@prophecy.io
     files:
@@ -468,6 +1377,39 @@ sqlSeeds:
     modifiedAt: '2023-05-22 13:55:58'
   .prophecy/metadata/sqlseeds/annual_enterprise_perf:
     name: annual_enterprise_perf
+    schema:
+      providerType: Databricks
+      fields:
+      - name: Year_1
+        dataType:
+          type: Integer
+      - name: Industry_aggregation_NZSIOC
+        dataType:
+          type: String
+      - name: Industry_code_NZSIOC
+        dataType:
+          type: Integer
+      - name: Industry_name_NZSIOC
+        dataType:
+          type: String
+      - name: Units_1
+        dataType:
+          type: String
+      - name: Variable_code_1
+        dataType:
+          type: String
+      - name: Variable_name_1
+        dataType:
+          type: String
+      - name: Variable_category_1
+        dataType:
+          type: String
+      - name: Value_1
+        dataType:
+          type: String
+      - name: Industry_code_ANZSIC06
+        dataType:
+          type: String
     description: null
     author: abhisheks+e2etests@prophecy.io
     files:
@@ -476,6 +1418,15 @@ sqlSeeds:
     modifiedAt: '2023-05-22 12:08:46'
   .prophecy/metadata/sqlseeds/service_classification_perf:
     name: service_classification_perf
+    schema:
+      providerType: Databricks
+      fields:
+      - name: code_1
+        dataType:
+          type: String
+      - name: service_label_1
+        dataType:
+          type: String
     description: null
     author: abhisheks+e2etests@prophecy.io
     files:
@@ -484,6 +1435,51 @@ sqlSeeds:
     modifiedAt: '2023-05-22 12:10:10'
   .prophecy/metadata/sqlseeds/business_employee_perf:
     name: business_employee_perf
+    schema:
+      providerType: Databricks
+      fields:
+      - name: Series_reference
+        dataType:
+          type: String
+      - name: Period
+        dataType:
+          type: Float
+      - name: Data_value
+        dataType:
+          type: Integer
+      - name: Suppressed
+        dataType:
+          type: String
+      - name: STATUS
+        dataType:
+          type: String
+      - name: UNITS
+        dataType:
+          type: String
+      - name: Magnitude
+        dataType:
+          type: Integer
+      - name: Subject
+        dataType:
+          type: String
+      - name: Group
+        dataType:
+          type: String
+      - name: Series_title_1
+        dataType:
+          type: String
+      - name: Series_title_2
+        dataType:
+          type: String
+      - name: Series_title_3
+        dataType:
+          type: String
+      - name: Series_title_4
+        dataType:
+          type: String
+      - name: Series_title_5
+        dataType:
+          type: String
     description: null
     author: abhisheks+e2etests@prophecy.io
     files:
@@ -501,46 +1497,73 @@ sqlSources:
     modifiedAt: '2023-05-19 13:01:25'
     tables:
     - name: all_type_non_partitioned
+      schema:
+        providerType: databricks
+        fields: []
       description: null
       author: abhisheks+e2etests@prophecy.io
       createdAt: '2023-05-19 13:01:25'
       modifiedAt: '2023-05-19 13:01:25'
     - name: all_type_partitioned
+      schema:
+        providerType: databricks
+        fields: []
       description: null
       author: abhisheks+e2etests@prophecy.io
       createdAt: '2023-05-19 13:01:25'
       modifiedAt: '2023-05-19 13:01:25'
     - name: item
+      schema:
+        providerType: databricks
+        fields: []
       description: null
       author: abhisheks+e2etests@prophecy.io
       createdAt: '2023-05-19 13:07:16'
       modifiedAt: '2023-05-19 13:07:16'
     - name: store_sales
+      schema:
+        providerType: databricks
+        fields: []
       description: null
       author: abhisheks+e2etests@prophecy.io
       createdAt: '2023-05-19 13:07:17'
       modifiedAt: '2023-05-19 13:07:17'
     - name: date_dim
+      schema:
+        providerType: databricks
+        fields: []
       description: null
       author: abhisheks+e2etests@prophecy.io
       createdAt: '2023-05-19 13:07:27'
       modifiedAt: '2023-05-19 13:07:27'
     - name: catalog_sales
+      schema:
+        providerType: databricks
+        fields: []
       description: null
       author: abhisheks+e2etests@prophecy.io
       createdAt: '2023-05-19 13:11:05'
       modifiedAt: '2023-05-19 13:11:05'
     - name: warehouse
+      schema:
+        providerType: databricks
+        fields: []
       description: null
       author: abhisheks+e2etests@prophecy.io
       createdAt: '2023-05-19 13:11:08'
       modifiedAt: '2023-05-19 13:11:08'
     - name: ship_mode
+      schema:
+        providerType: databricks
+        fields: []
       description: null
       author: abhisheks+e2etests@prophecy.io
       createdAt: '2023-05-19 13:11:24'
       modifiedAt: '2023-05-19 13:11:24'
     - name: call_center
+      schema:
+        providerType: databricks
+        fields: []
       description: null
       author: abhisheks+e2etests@prophecy.io
       createdAt: '2023-05-19 13:11:34'
